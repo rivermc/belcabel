@@ -1,7 +1,28 @@
 .callback_following {
-  .g_padding(20px, 20px);
   .flex();
+  .g_padding(20px, 20px);
   background: @c_submain;
   align-items: center;
   justify-content: space-between;
+
+  .title {
+    .cols(8);
+    font-size: @s_text_2;
+    font-family: @f_Monserat_b;
+    margin: 0;
+  }
+
+  .follow {
+    .cols(7);
+
+    form {
+      .flex();
+      justify-content: flex-end;
+
+      .form_group {
+        margin: 0 20px 0 0;
+        min-width: 255px;
+      }
+    }
+  }
 }

@@ -136,9 +136,10 @@ button {
   border-radius: @radius;
   border: 0;
   text-align: center;
-  padding: 12px 35px;
+  padding: 15px 35px;
   cursor: pointer;
   display: table;
+  line-height: 1em;
 
   @media @smMinus {
     font-size: @sizeSx;
@@ -212,26 +213,31 @@ button {
   }
 }
 
-.hidden {
-  display: none;
-}
-
 .form {
 
   &_group {
     margin: 0 0 10px 0;
+    position: relative;
 
     &_input {
       .cols(16);
-      border: 1px solid @c_black;
+      border: 1px solid @c_gray;
       border-radius: @radius;
-      font-size: @s_text_2;
-      text-align: center;
-      padding: 6px;
+      font-size: @s_text_0;
+      padding: 15px 35px;
 
       &:-internal-autofill-selected {
         background: @c_white;
       }
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      border: 0;
+      padding: 0 10px;
     }
   }
 }

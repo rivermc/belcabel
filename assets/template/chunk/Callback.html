@@ -2,9 +2,22 @@
 	<div class="callback__wrap [[+class:notempty=`[[+class]]`]]__wrap">
 		<div class="callback__error"></div>
 		<form action="POST" class="form callback__form" id="callback__form_[[+class]]">
-			<div class="form_group">
-				<input type="text" name="phone" class="form_group_input callback__form_group_input_phone" placeholder="Ваш номер телефона">
-			</div>
+			[[+field_phone:is=`1`:then=`
+				<div class="form_group">
+					<input type="text" name="phone" class="form_group_input callback__form_group_input_phone" placeholder="Ваш номер телефона">
+					<div class="icon">[[IncSvg? &file=`icons/phone.svg`]]</div>
+				</div>
+			`:else=`
+				<input type="text" name="phone" class="hidden" value="00000000000">
+			`]]
+			[[+field_email:is=`1`:then=`
+				<div class="form_group">
+					<input type="text" name="email" class="form_group_input callback__form_group_input_email" placeholder="Ваша почта">
+					<div class="icon">[[IncSvg? &file=`icons/email.svg`]]</div>
+				</div>
+			`:else=`
+				<input type="text" name="email" class="hidden"  value="empty@belcabel.ru">
+			`]]
 			<button type="submit" class="button form_button">[[+text_button]]</button>
 		</form>
 	</div>
