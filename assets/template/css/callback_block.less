@@ -1,0 +1,53 @@
+.callback_block {
+  .flex();
+  .g_padding(100px, 0);
+  align-items: flex-start;
+
+  &__content {
+    .cols(8);
+    .colsOf(1);
+    border: 2px solid @c_main;
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      border-top: 2px solid @c_main;
+      border-right: 2px solid @c_main;
+      content: '';
+      height: 70px;
+      background: #fff;
+      width: 70px;
+      position: absolute;
+      transform: rotate(45deg);
+      right: -38px;
+      top: 200px;
+    }
+
+    .title {
+      color: @c_main;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      margin: 40px 0;
+    }
+
+    .form_block {
+      max-width: 365px;
+
+      button {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__img {
+    .cols(7);
+
+    img {
+      position: relative;
+      top: 3px;
+    }
+  }
+}

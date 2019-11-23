@@ -2,6 +2,12 @@
 	<div class="callback__wrap [[+class:notempty=`[[+class]]`]]__wrap">
 		<div class="callback__error"></div>
 		<form action="POST" class="form callback__form" id="callback__form_[[+class]]">
+			[[+field_name:is=`1`:then=`
+				<div class="form_group">
+					<input type="text" name="name" class="form_group_input callback__form_group_input_name" placeholder="Ваше имя">
+					<div class="icon">[[IncSvg? &file=`icons/name.svg`]]</div>
+				</div>
+			`]]
 			[[+field_phone:is=`1`:then=`
 				<div class="form_group">
 					<input type="text" name="phone" class="form_group_input callback__form_group_input_phone" placeholder="Ваш номер телефона">
