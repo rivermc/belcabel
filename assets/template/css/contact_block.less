@@ -3,7 +3,7 @@
   justify-content: space-between;
   background: @c_submain;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 50px;
   position: relative;
 
   &.full_map {
@@ -27,7 +27,7 @@
     }
 
     #map {
-      height: 550px;
+      height: 700px;
 
       @media @smMinus {
         height: 300px;
@@ -64,28 +64,20 @@
         .colsOfR(0);
       }
 
+      .subtitle {
+        font-family: @f_Monserat_b;
+      }
+
       h2 {
         color: @c_main;
-        font-size: @sizeBx;
-        font-weight: bold;
-        text-transform: uppercase;
-        margin: 0 0 30px;
-
-        @media @smMinus {
-          font-size: @sizeB;
-          margin: 0 0 10px;
-        }
+        margin: 0 0 100px;
       }
 
       p {
-        font-size: @sizeM;
-
-        @media @smMinus {
-          font-size: @sizeS;
-        }
+        font-size: @s_text;
       }
 
-      .link_wrap {
+      .phone_block {
         margin: 30px 0 50px;
 
         @media @smMinus {
@@ -94,15 +86,15 @@
 
         a {
           color: @c_main;
-          font-size: @sizeM;
+          font-size: @s_text;
+          font-family: @f_Monserat_b;
           display: block;
           margin-bottom: 10px;
-          text-decoration: underline;
         }
       }
 
-      .contact_callback {
-        margin-top: 20px;
+      .button {
+        margin-top: 30px;
       }
     }
   }
