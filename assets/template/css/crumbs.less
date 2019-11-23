@@ -1,0 +1,26 @@
+ul.breadcrumb {
+  .flex();
+  margin: 10px 0;
+
+  li {
+    font-size: @sizeSx;
+    margin: 0;
+
+    a {
+      .animation();
+      color: @c_black;
+
+      &:hover {
+        color: @c_main;
+      }
+    }
+
+    &.wrapper {
+     margin: 0 5px;
+    }
+  }
+
+  li.active {
+    color: @c_main;
+  }
+}

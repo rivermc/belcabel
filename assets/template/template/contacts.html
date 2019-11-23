@@ -1,0 +1,38 @@
+[[$StartPage]]
+[[$Header]]
+<main>
+    <div class="contacts">
+        <div class="container">
+            [[$Crumbs]]
+            <h1>[[*longtitle]]</h1>
+        </div>
+        [[$ContactBlock?
+            &full = `1`
+        ]]
+        <div class="container">
+            <div class="contacts_wrap">
+                <div class="contacts_item contact">
+                    <p class="subtitle h4">Офис продаж и склад</p>
+                    <p>[[#1.SiteAddress]]</p>
+                    <div class="phone_block">
+                        [[#1.SitePhone]]
+                        [[#1.SitePhone2]]
+                    </div>
+                    [[#1.WorkTime]]
+                </div>
+                <div class="contacts_item ur_info">
+                    <p class="subtitle h4">Юридическая информация</p>
+                    [[*content]]
+                </div>
+                <div class="contacts_item dops_info">
+                    <p class="subtitle h4">Дополнительная информация</p>
+                    [[*DopsInfo]]
+                </div>
+            </div>
+        </div>
+
+        [[$CallbackFollowing]]
+    </div>
+</main>
+[[$Footer]]
+[[$StopPage]]
