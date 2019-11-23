@@ -1,0 +1,54 @@
+.slider {
+	.flex();
+	min-height: 590px;
+	background: url('/assets/template/images/bg/slider.jpg');
+	align-items: center;
+	position: relative;
+
+	&_wrap {
+		.cols(8);
+
+	}
+
+	&_item {
+
+		.title,
+		.text {
+			color: @c_white;
+		}
+
+		.text {
+			margin: 20px 0 40px;
+		}
+	}
+
+	&_dots {
+		position: absolute;
+		left: 52%;
+		bottom: 30px;
+
+		ul {
+			.flex();
+
+			li {
+				margin: 0 5px;
+
+				&.slick-active {
+
+					a {
+						background: @c_main;
+					}
+				}
+
+				a {
+					background: @c_white;
+					border: 2px solid @c_white;
+					width: 14px;
+					height: 14px;
+					display: block;
+					border-radius: 10px;
+				}
+			}
+		}
+	}
+}
