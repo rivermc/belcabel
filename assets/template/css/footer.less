@@ -1,3 +1,142 @@
 footer {
   background: @c_black;
+  padding: 30px 0;
+
+  .footer {
+    .flex();
+    justify-content: space-between;
+
+    &_left {
+      .cols(6);
+
+      &__logo {
+
+        a {
+          max-width: 340px;
+          display: block;
+
+          svg {
+            width: 100%;
+
+            path {
+              fill: @c_white;
+
+              &.box {
+                fill: @c_main;
+              }
+            }
+          }
+        }
+      }
+
+      &__info {
+        padding-left: 75px;
+        margin: 50px 0 80px;
+
+        p {
+          color: @c_white;
+        }
+      }
+
+      &__copyright {
+        padding-left: 75px;
+
+        p {
+          color: @c_white;
+          font-size: @s_text_0;
+          line-height: 2em;
+          margin: 0;
+        }
+      }
+    }
+
+    &_center {
+      .cols(3);
+      padding-top: 20px;
+
+      &__menu {
+        height: 100%;
+
+        ul {
+          .flex();
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+
+          li {
+            margin: 0 0 5px;
+
+            a {
+              font-size: @s_text_2;
+              color: @c_white;
+              font-family: @f_Monserat_b;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+
+    &_right {
+      .cols(3);
+      .flex();
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 20px;
+
+      &__contact {
+        text-align: right;
+
+        .phone_link {
+          color: @c_white;
+          font-size: @s_text_3;
+          font-family: @f_Monserat_b;
+          display: block;
+        }
+
+        .email_link {
+          color: @c_main_l;
+          font-size: @s_text_1;
+          font-family: @f_Monserat_b;
+          display: block;
+          margin-top: 25px;
+        }
+      }
+
+      &__payment {
+        .flex();
+        justify-content: flex-end;
+        align-items: center;
+
+        p {
+          .cols(16);
+          color: @c_white;
+          font-size: @s_text_1;
+          text-align: right;
+        }
+
+        svg {
+          margin: 0 0 0 10px;
+        }
+      }
+
+      &__social {
+        .flex();
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 5px;
+
+        a {
+          margin-left: 30px;
+
+          svg {
+
+            path {
+              fill: @c_white;
+            }
+          }
+        }
+      }
+    }
+  }
 }

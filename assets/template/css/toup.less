@@ -1,0 +1,38 @@
+//-------------------------------------------------------------------------//
+		// To Up //
+//-------------------------------------------------------------------------//
+
+.toUp {
+	.animation();
+	.flex();
+	background: @c_main;
+	padding: 10px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	cursor: pointer;
+	z-index: 999;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+
+
+	&:hover {
+		transform: translateY(-10px);
+	}
+
+	svg {
+		margin-bottom: 5px;
+
+		path {
+			fill: @c_white;
+		}
+	}
+
+	p {
+		color: @c_white;
+		font-size: @s_text_0;
+		margin: 0;
+	}
+}
+
