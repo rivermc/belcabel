@@ -1,0 +1,47 @@
+<header>
+    <div class="header">
+        <div class="header_top g_container">
+            <div class="header_top__email">
+                [[#1.SiteEmail]]
+            </div>
+            <div class="header_top__search">
+                [[$SearchForms]]
+            </div>
+            <div class="header_top__contact">
+                <div class="header_top__contact_phone">
+                    [[IncSvg? &file=`icons/phone.svg`]]
+                    [[#1.SitePhone]]
+                </div>
+                <div class="header_top__contact_callback">
+                    <a href="#callback_modal" class="js_no_preload js_modal_button button callback_link">Заказать звонок</a>
+                </div>
+            </div>
+            <div class="header_top__basket">
+                <a href="[[~3]]" class="">
+                    [[IncSvg? &file=`icons/basket.svg`]]
+                    <span class="cart_count">
+                        [[!msMiniCart?
+                            &tpl = `@INLINE [[+total_count]]`
+                        ]]
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="header_bottom g_container">
+            <div class="header_bottom__logo">
+                <a href="/">[[IncSvg? &file=`logo.svg`]]</a>
+            </div>
+            <nav class="header_bottom__menu">
+                [[pdoMenu?
+                    &parents=`0`
+                    &resources=`1366,1367,154,155,156,157`
+                ]]
+            </nav>
+            <div class="header_bottom__social">
+                [[$SocialBlock]]
+            </div>
+        </div>
+
+        
+    </div>
+</header>

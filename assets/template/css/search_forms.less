@@ -1,0 +1,28 @@
+.search {
+  .animation();
+  .cols(16);
+
+  &__form {
+    position: relative;
+
+    input {
+      .animation();
+      border: 1px solid @c_gray;
+      border-radius: @radius;
+      margin: 0 0 0 auto;
+      display: table;
+      padding: 6px 20px 6px 35px;
+      width: 100%;
+    }
+
+    button {
+      position: absolute;
+      height: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      border: 0;
+      padding: 0 10px;
+    }
+  }
+}

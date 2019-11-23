@@ -1,0 +1,118 @@
+header {
+  margin-bottom: 20px;
+
+  .header {
+
+    &_top {
+      .flex();
+      .g_padding(10px, 10px);
+      align-items: center;
+      justify-content: space-between;
+      background: @c_submain;
+
+      &__email {
+        .cols(4);
+
+        a {
+          color: @c_black;
+          font-size: @s_text_0;
+          font-family: @f_Monserat_b;
+        }
+      }
+
+      &__search {
+        .cols(6);
+      }
+
+      &__contact {
+        .cols(5);
+        .flex();
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0 0 20px;
+
+        &_phone {
+          .flex();
+          align-items: center;
+          justify-content: space-between;
+
+          .phone_link {
+            color: @c_black;
+            font-size: @s_text_1;
+            font-family: @f_Monserat_b;
+            margin-left: 10px;
+          }
+        }
+
+        &_callback {
+
+          .callback_link {
+            font-size: @s_text_0;
+            padding: 5px 20px;
+          }
+        }
+      }
+
+      &__basket {
+        .cols(1);
+
+        a {
+          position: relative;
+          display: table;
+          margin: 0 0 0 auto;
+
+          .cart_count {
+            color: @c_white;
+            position: absolute;
+            left: 0;
+            top: 1px;
+            width: 14px;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    &_bottom {
+      .flex();
+      .g_padding(20px, 20px);
+      align-items: center;
+      justify-content: space-between;
+
+      &__logo {
+        .cols(3);
+
+      }
+
+      &__menu {
+        .cols(10);
+        .colsOf(0.5);
+        .colsOfR(0.5);
+
+        ul {
+          .flex();
+          align-items: center;
+          justify-content: space-between;
+
+          li {
+            margin: 0;
+
+            a {
+              color: @c_black;
+              font-size: @s_text_1;
+              font-family: @f_Monserat_b;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+
+      &__social {
+        .cols(1.5);
+        .flex();
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+}
