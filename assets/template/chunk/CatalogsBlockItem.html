@@ -1,0 +1,19 @@
+<div class="catalogs_block__item" data-id="[[+id]]">
+    <div class="catalogs_block__item_img">
+        <a href="[[+uri]]" data-id="[[+id]]"><img src="[[+tv.CatalogImg]]" alt="[[+pagetitle]]"></a>
+    </div>
+    <div class="catalogs_block__item_title">
+        <a href="[[+uri]]" data-id="[[+id]]">
+            <h3>[[+menutitle:empty=`[[+pagetitle]]`:default=`[[+menutitle]]`]]</h3>
+            <p class="count">Товаров: [[getCountDocs? &parent=`[[+id]]` &template=`5`]]</p>
+        </a>
+    </div>
+    <div class="catalogs_block__item_menu">
+        [[pdoMenu?
+            &parents=`[[+id]]`
+            &level=`0`
+            &tplInner=`SubmenuBlock`
+            &where = `{"template":"5"}`
+        ]]
+    </div>
+</div>

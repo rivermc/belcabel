@@ -1,0 +1,331 @@
+//-------------------------------------------------------------------------//
+// Animation KeyFrames //
+//-------------------------------------------------------------------------//
+
+@keyframes spin { 0% {transform: rotate(0deg)  } 100% { transform: rotate(360deg) }   }
+@keyframes shake {  10%, 90% {    transform: translate3d(-1px, 0, 0);   } 20%, 80% {transform: translate3d(2px, 0, 0);}  30%, 50%, 70% { transform: translate3d(-4px, 0, 0);  }  40%, 60% {    transform: translate3d(4px, 0, 0);  }}
+@keyframes modalComeIn { 0% {transform: scale(0, 0);} 65.5% {transform: scale(1.03, 1.03);} 100% {transform: scale(1, 1);} }
+@keyframes modalComeInClose { 0% { transform: scale(1, 1); opacity: 1;} 65.5% {transform: scale(1.1, 1.1);}  100% {transform: scale(.8, .8); opacity: 0;} }
+@keyframes bgAnim { 0% { background-position: 100% 100%;} 20% {background-position: 95% 95%;}  50% {background-position: 98% 93%;}  80% {background-position: 94% 98%;}  100% {background-position: 100% 100%;}}
+@keyframes cloud { 0% {background-position: 0 0 } 100% { background-position: -1920px 0 }   }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.25); } 100% { transform: scale(1); } }
+@keyframes modalComeIn { 0% {transform: scale(.8, .8);} 65.5% {transform: scale(1.03, 1.03);} 100% {transform: scale(1, 1);} }
+@keyframes modalComeInClose { 0% {transform: translateY(0) scale(1, 1); opacity: 1;} 100% {transform: translateY(35px) scale(.97, .97); opacity: 0;} }
+@keyframes fadeIn { 100% {opacity: 1; transform: none;}}
+
+
+//-------------------------------------------------------------------------//
+// Animation //
+//-------------------------------------------------------------------------//
+
+
+.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+
+
+//-------------------------------------------------------------------------//
+// Main //
+//-------------------------------------------------------------------------//
+
+html {
+  overflow-x: hidden;
+  min-width: 320px;
+
+  &.noscroll {
+    overflow: hidden;
+  }
+}
+
+body {
+  color: @c_black;
+  font-family: @f_Monserat;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+
+//-------------------------------------------------------------------------//
+// Typograph //
+//-------------------------------------------------------------------------//
+
+
+h1, .h1 {
+  font-size: @s_title_1;
+  margin: 10px 0 20px;
+  text-transform: uppercase;
+
+  @media @md {
+    font-size: @s_title_2;
+  }
+
+  @media @smMinus {
+    font-size: @s_title_3;
+  }
+}
+
+h2, .h2 {
+  font-size: @s_title_2;
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+
+  @media @sm {
+    font-size: @s_title_3;
+  }
+  @media @xs {
+    font-size: @s_title_4;
+  }
+}
+
+h3, .h3 {
+  font-size: @s_title_3;
+  margin: 20px 0 10px;
+
+  @media @smMinus {
+    font-size: @s_title_4;
+  }
+}
+
+
+p,
+label {
+  font-size: @s_text;
+  margin: 0 0 10px;
+}
+
+ymaps p {
+  font-size: @s_text;
+  margin: 0;
+}
+
+ul,
+ol {
+
+  li {
+    font-size: @s_text;
+    margin: 0 0 10px;
+  }
+}
+
+object {
+  width: auto;
+  height: auto;
+}
+fieldset {
+  border: 0;
+}
+
+svg {
+  max-width: 100%;
+}
+
+button {
+  border: 1px solid @c_black;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  background: transparent;
+}
+
+.button {
+  .animation();
+  font-size: @s_text;
+  background: @c_main;
+  color: @c_white;
+  border: 0;
+  text-align: center;
+  padding: 12px 35px;
+  cursor: pointer;
+  display: table;
+  border-radius: 50px;
+
+  @media @smMinus {
+    font-size: @sizeSx;
+  }
+
+  &_white {
+    color: @c_main;
+    background: @c_white;
+  }
+
+  &_transparent {
+    color: @c_main;
+    background: transparent;
+
+    &:hover {
+      border: 1px solid @c_white;
+    }
+  }
+
+  &_filter {
+    font-size: @sizeS;
+    color: @c_black;
+    border: 1px solid @c_main;
+    background: transparent;
+    margin: 0 10px 10px 0;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 6px;
+      height: 6px;
+      background: url('./../images/icons/close.svg');
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      border: 1px solid @c_black;
+    }
+  }
+
+  &_svg {
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+      margin-right: 10px;
+
+      path {
+        .animation();
+      }
+    }
+
+    &:hover {
+
+      svg {
+
+        path {
+          fill: @c_white;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    color: @c_white;
+    background: @c_main;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.form {
+
+  &_group {
+    margin: 0 0 10px 0;
+
+    &_input {
+      .cols(16);
+      border: 1px solid @c_black;
+      border-radius: @radius;
+      font-size: @sizeS;
+      text-align: center;
+      padding: 6px;
+
+      &:-internal-autofill-selected {
+        background: @c_white;
+      }
+    }
+  }
+}
+
+
+@font-face {
+  .fontLoad ('Montserrat-Regular', 'Montserrat-Regular');
+}
+@font-face {
+  .fontLoad ('Montserrat-Bold', 'Montserrat-Bold');
+}
+
+
+
+//-------------------------------------------------------------------------//
+// Grid Style //
+//-------------------------------------------------------------------------//
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 1200px;
+
+  @media @lg {
+    width: 992px;
+  }
+
+  @media @md {
+    width: 768px;
+  }
+
+  @media @sm {
+    width: 550px;
+  }
+
+  @media @xs {
+    width: 100%;
+  }
+}
+
+.container-max {
+  width: 100%;
+}
+
+
+.g_container {
+  padding: 0 15px;
+
+  @media @smPlus {
+    padding: 0 ~'calc(50% - 270px)';
+  }
+
+  @media @mdPlus {
+    padding: 0 ~'calc(50% - 360px)';
+  }
+
+  @media @lgPlus {
+    padding: 0 ~'calc(50% - 480px)';
+  }
+
+  @media @xl {
+      padding: 0 ~'calc(50% - 590px)';
+  }
+}
+
+
+.g_flex {
+  .flex();
+
+  &_j { // justify-content
+
+    &_between {
+      justify-content: space-between;
+    }
+    &_center {
+      justify-content: center;
+    }
+    &_start {
+      justify-content: flex-start;
+    }
+    &_end {
+      justify-content: flex-end;
+    }
+  }
+
+  &_a { // align-items
+
+    &_center {
+      align-items: center;
+    }
+    &_start {
+      align-items: flex-start;
+    }
+    &_end {
+      align-items: flex-end;
+    }
+  }
+}

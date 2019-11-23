@@ -1,0 +1,19 @@
+<div class="catalogs_block">
+    [[pdoResources?
+        &parents = `[[+parent]]`
+        &sortby=`{"menuindex":"ASC"}`
+        &sortdir=`ASC`
+        &where = `{"template":"5"}`
+        &depth = `0`
+        &limit = `0`
+        &includeTVs = `CatalogImg`
+        &tpl = `CatalogsBlockItem`
+    ]]
+    <div class="catalogs_block__callback">
+        <div class="catalogs_block__callback_wrap">
+            <h2>Больше товаров под заказ</h2>
+            <p>Если вы не нашли нужный товар в нашем каталоге вы можете оформить заказ</p>
+            <a href="#callback_modal" class="js_no_preload js_modal_button button">Оставить заявку</a>
+        </div>
+    </div>
+</div>
