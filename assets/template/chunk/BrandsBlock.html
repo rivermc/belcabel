@@ -1,0 +1,16 @@
+<div class="brands_block">
+    <div class="container">
+        <h2>В нашем каталоге продукция таких брендов как</h2>
+        <div class="brands_block_wrap">
+            [[pdoResources?
+                &parents = `1366`
+                &depth = `0`
+                &limit = `9`
+                &sortby = `RAND()`
+                &includeTVs = `CatalogImg`
+                &tpl = `@INLINE <a href="[[+uri]]"><img src="[[+tv.CatalogImg]]" alt="[[+pagetitle]]"></a>`
+            ]]
+        </div>
+        <a href="[[~1366]]" class="button">Посмотреть все бренды</a>
+    </div>
+</div>
