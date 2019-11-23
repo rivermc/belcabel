@@ -1,0 +1,27 @@
+.advantages {
+
+  h2 {
+    color: @c_main;
+  }
+
+  &_wrap {
+    .flex();
+    justify-content: space-between;
+  }
+
+  &_item {
+    .cols(5);
+    padding: 20px 50px;
+
+    svg {
+      height: 150px;
+      margin-bottom: 20px
+    }
+
+    .title {
+      color: @c_main;
+      font-size: @s_text_4;
+      font-family: @f_Monserat_b;
+    }
+  }
+}
