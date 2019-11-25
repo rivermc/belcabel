@@ -1,0 +1,37 @@
+[[$StartPage]]
+[[$Header]]
+<main>
+    <div class="brands">
+        <div class="container">
+            <div class="brands_wrap g_wrap">
+                <div class="g_left">
+                    <div class="brands__menu">
+                        [[pdoMenu?
+                            &parents = `1367`
+                            &sortby=`{"menuindex":"ASC"}`
+                            &sortdir=`ASC`
+                            &where = `{"template":"5"}`
+                            &level = `2`
+                            &includeTVs = `CatalogImg`
+                        ]]
+                    </div>
+                </div>
+                <div class="g_right">
+                    <div class="brands__items">
+                        [[pdoResources?
+                            &parents = `[[*id]]`
+                            &depth = `0`
+                            &limit = `0`
+                            &includeTVs = `CatalogImg`
+                            &tpl = `BrandsItem`
+                        ]]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    [[$Advantages]]
+    [[$ContactBlock]]
+</main>
+[[$Footer]]
+[[$StopPage]]
