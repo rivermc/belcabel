@@ -7,29 +7,24 @@
                 <div class="g_left">
                     <div class="vertical_menu">
                         [[pdoMenu?
-                            &parents = `1367`
-                            &level = `2`
+                            &parents = `1366`
+                            &level = `3`
                             &includeTVs = `CatalogImg`
                             &tplParentRow = `@INLINE <li class="submenu "><a href="[[+link]]" class="js_no_preload level_[[+level]]"><span class="js_menu_toggle menu_toggle">+</span><span class="menu_title">[[+menutitle]]</span></a>[[+wrapper]]</li>`
                         ]]
                     </div>
                 </div>
                 <div class="g_right">
-                    <div class="brands__items">
-                        [[pdoResources?
-                            &parents = `[[*id]]`
-                            &depth = `0`
-                            &limit = `0`
-                            &includeTVs = `CatalogImg`
-                            &tpl = `BrandsItem`
-                        ]]
-                    </div>
+                    [[$Crumbs]]
+                    <img src="[[*CatalogImg]]" alt="[[*pagetitle]]">
+                    [[*content]]
+                    <h2>Продукция</h2>
+                    [[$BrandCatalogs]]
                 </div>
             </div>
         </div>
     </div>
-    [[$Advantages]]
-    [[$ContactBlock]]
+    [[$CallbackFollowing]]
 </main>
 [[$Footer]]
 [[$StopPage]]

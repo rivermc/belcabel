@@ -1,0 +1,136 @@
+.brand_catalogs {
+  .flex();
+  .g_padding(40px, 40px);
+  justify-content: space-between;
+
+  &__item {
+    .animation();
+    .cols(7.75);
+    .flex();
+    position: relative;
+    margin-bottom: 10px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid @c_submain;
+    border-bottom: 0;
+
+    @media @lgMinus {
+      .cols(3.75);
+    }
+    @media @sm {
+      .cols(5);
+    }
+    @media @xs {
+      .cols(8);
+    }
+
+    &:hover {
+      box-shadow: @shadow;
+      border: 1px solid @c_main_l;
+      border-bottom: 0;
+
+      .brand_catalogs__item_title {
+        background: @c_main;
+
+        h3 {
+          color: @c_white;
+        }
+
+        svg {
+
+          path {
+            fill: @c_white;
+          }
+        }
+      }
+
+      .brand_catalogs__item_menu {
+        opacity: 1;
+        visibility: visible;
+
+        ul {
+          box-shadow: @shadow;
+          animation: fadeIn 0.8s ease 1 forwards;
+        }
+      }
+    }
+
+    &_img {
+      .cols(16);
+      text-align: center;
+      min-height: 150px;
+
+      a {
+        line-height: 0;
+        display: block;
+      }
+    }
+
+    &_menu {
+      opacity: 0;
+      visibility: hidden;
+
+      ul {
+        .animation();
+        background: @c_submain;
+        border: 1px solid @c_main_l;
+        width: ~'calc(100% + 2px)';
+        box-shadow: none;
+        margin: 0 -1px;
+        position: absolute;
+        padding: 10px;
+        z-index: 9;
+        left: 0;
+        opacity: 0;
+        border-top: 0;
+
+        li {
+          margin: 0 0 5px;
+
+          a {
+            .animation();
+            color: @c_black;
+            font-size: @sizeM;
+
+            &:hover {
+              color: @c_main;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    &_title {
+      .cols(16);
+      .animation();
+      background: @c_submain;
+      flex: 1;
+      padding: 20px 10px;
+      display: flex;
+      align-items: center;
+
+      a {
+        .flex();
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      h3 {
+        .animation();
+        color: @c_black;
+        font-size: @s_text_2;
+        font-family: @f_Monserat_b;
+        margin: 0 10px 0 0;
+        max-width: 80%;
+      }
+
+      svg {
+        .animation();
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
