@@ -1,3 +1,9 @@
+[[pdoMenu?
+    &parents=`[[+id]]`
+    &level=`0`
+    &tplInner=`SubmenuBlock`
+    &toPlaceholder = `submenu`
+]]
 <div class="brand_catalogs__item" data-id="[[+id]]">
     <div class="brand_catalogs__item_img">
         <a href="[[+uri]]" data-id="[[+id]]"><img src="[[+tv.CatalogImg]]" alt="[[+pagetitle]]"></a>
@@ -5,15 +11,14 @@
     <div class="brand_catalogs__item_title">
         <a href="[[+uri]]" data-id="[[+id]]">
             <h3>[[+menutitle:empty=`[[+pagetitle]]`:default=`[[+menutitle]]`]]</h3>
-            [[IncSvg? &file=`icons/toup.svg`]]
+            [[+card_type:is=`brands_card`:then=`[[+submenu:notempty=`[[IncSvg? &file=`icons/toup.svg`]]`]]`]]
         </a>
     </div>
-    <div class="brand_catalogs__item_menu">
-        [[pdoMenu?
-            &parents=`[[+id]]`
-            &level=`0`
-            &tplInner=`SubmenuBlock`
-            &where = `{"template":"5"}`
-        ]]
-    </div>
+    [[+card_type:is=`brands_card`:then=`
+        [[+submenu:notempty=`
+            <div class="brand_catalogs__item_menu">
+                [[+submenu]]
+            </div>
+        `]]
+    `]]
 </div>

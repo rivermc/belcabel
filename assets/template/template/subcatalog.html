@@ -1,0 +1,35 @@
+[[$StartPage]]
+[[$Header]]
+<main>
+    <div class="subcatalog">
+        <div class="container">
+            <div class="subcatalog_wrap g_wrap">
+                <div class="g_left">
+                    <div class="vertical_menu">
+                        [[pdoMenu?
+                        &parents = `1366`
+                        &level = `3`
+                        &includeTVs = `CatalogImg`
+                        &tplParentRow = `@INLINE <li class="submenu "><a href="[[+link]]" class="js_no_preload level_[[+level]]"><span class="js_menu_toggle menu_toggle">+</span><span class="menu_title">[[+menutitle]]</span></a>[[+wrapper]]</li>`
+                        ]]
+                    </div>
+                </div>
+                <div class="g_right">
+                    [[$Crumbs]]
+                    <h1>[[*pagetitle]]</h1>
+                    <div class="subcatalog__content js_content">
+                        [[*content]]
+                    </div>
+                    <div class="subcatalog__catalog">
+                        [[$BrandCatalogs?
+                            &card_type = `subcatalog`
+                        ]]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    [[$CallbackFollowing]]
+</main>
+[[$Footer]]
+[[$StopPage]]

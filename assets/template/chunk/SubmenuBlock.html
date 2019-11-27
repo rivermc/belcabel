@@ -1,0 +1,9 @@
+<div class="menu__nav_sub_wrap">
+    <ul class="menu__nav_sub submenu">[[+wrapper]]</ul>
+    [[!msProducts?
+        &parents=`[[+id]]`
+        &tpl=`SubmenuItem`
+        &limit=`1`
+        &sortby=`RAND()`
+    ]]
+</div>

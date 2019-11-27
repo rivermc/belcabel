@@ -16,6 +16,7 @@
                 </div>
                 <div class="g_right">
                     [[$Crumbs]]
+                    <h1>[[*pagetitle]]</h1>
                     <div class="brands_card__img">
                         <img src="[[*CatalogImg]]" alt="[[*pagetitle]]">
                     </div>
@@ -24,7 +25,9 @@
                     </div>
                     <div class="brands_card__catalog">
                         <h2>Продукция</h2>
-                        [[$BrandCatalogs]]
+                        [[$BrandCatalogs?
+                            &card_type = `brands_card`
+                        ]]
                     </div>
                 </div>
             </div>
