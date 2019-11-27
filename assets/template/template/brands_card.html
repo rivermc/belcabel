@@ -1,9 +1,9 @@
 [[$StartPage]]
 [[$Header]]
 <main>
-    <div class="brands">
+    <div class="brands_card">
         <div class="container">
-            <div class="brands_wrap g_wrap">
+            <div class="brands_card_wrap g_wrap">
                 <div class="g_left">
                     <div class="vertical_menu">
                         [[pdoMenu?
@@ -16,10 +16,16 @@
                 </div>
                 <div class="g_right">
                     [[$Crumbs]]
-                    <img src="[[*CatalogImg]]" alt="[[*pagetitle]]">
-                    [[*content]]
-                    <h2>Продукция</h2>
-                    [[$BrandCatalogs]]
+                    <div class="brands_card__img">
+                        <img src="[[*CatalogImg]]" alt="[[*pagetitle]]">
+                    </div>
+                    <div class="brands_card__content js_content">
+                        [[*content]]
+                    </div>
+                    <div class="brands_card__catalog">
+                        <h2>Продукция</h2>
+                        [[$BrandCatalogs]]
+                    </div>
                 </div>
             </div>
         </div>
