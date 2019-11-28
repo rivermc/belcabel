@@ -1,0 +1,83 @@
+[[$StartPage]]
+[[$Header]]
+[[$CatalogFilter]]
+<main>
+    <div class="msearch2 catalog" id="mse2_mfilter">
+        <div class="container">
+            <div class="g_wrap">
+                <div class="g_left">
+                    <div class="filter">
+                        <p class="title h4">Фильтр параметров</p>
+                        <form action="[[~[[*id]]]]" method="post" id="mse2_filters" class="filter__form" >
+                            [[+filter_filters]]
+                            <div id="limit" class="hidden filter__form_block limit">
+                                <select name="mse_limit" id="mse2_limit">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div id="tpls" class="hidden filter__form_block tpls">
+                                <div class="filter__form_block_items js_filter_target">
+                                    <label for="tpls_0" class="opt_tpls">
+                                        <input type="radio" name="tpl" id="tpls_0" value="0">
+                                        <p>Вид 1</p>
+                                    </label>
+                                    <label for="tpls_1" class=" opt_tpls">
+                                        <input type="radio" name="tpl" id="tpls_1" value="1">
+                                        <p>Вид 2</p>
+                                    </label>
+                                    <label for="tpls_2" class=" opt_tpls">
+                                        <input type="radio" name="tpl" id="tpls_2" value="2">
+                                        <p>Вид 3</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="button button_orange js_filter_reset">Сбросить</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="g_right">
+                    [[$Crumbs]]
+                    <h1>[[*pagetitle]]</h1>
+
+                    <div class="filter__views js_msearch_scroll_target">
+                        <div class="filter__views_sort">
+                            <p class="title">Сортировать:</p>
+                            <div id="mse2_sort" class="filter__views_sort_wrap">
+                                <a href="#" data-sort="ms|price" data-dir="[[+mse2_sort:is=`ms|price:desc`:then=`desc`]]" data-default="desc" class="sort js_no_preload">Цена<span></span></a>
+                                <a href="#" data-sort="ms_product|pagetitle" data-dir="[[+mse2_sort:is=`ms_product|pagetitle:desc`:then=`desc`]]" data-default="desc" class="sort js_no_preload">Название<span></span></a>
+                                <a href="#" data-sort="tv|HitsPage" data-dir="[[+mse2_sort:is=`tv|HitsPage:desc`:then=`desc`]]" data-default="desc" class="sort js_no_preload">Популярность<span></span></a>
+                            </div>
+                        </div>
+                        <div class="filter__views_layout">
+                            <div class="js_filter_layout filter__views_layout_button" data-layout="0">[[IncSvg? &file=`icons/layout_1.svg`]]</div>
+                            <div class="js_filter_layout filter__views_layout_button" data-layout="1">[[IncSvg? &file=`icons/layout_2.svg`]]</div>
+                        </div>
+                    </div>
+                    <div class="catalog__results js_main_catalog_target" id="mse2_results" data-id="[[*id]]">
+                        [[+filter_results]]
+                    </div>
+                    <div class="filter__pagination">
+                        <div class="limit_changer">
+                            <p>Показывать по: </p>
+                            <select name="limit_changer" class="js_limit_changer">
+                                <option value="10" selected='selected'>10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                        <div class="mse2_pagination">
+                            [[!+page.nav]]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    [[$CallbackFollowing]]
+</main>
+[[$Footer]]
+[[$StopPage]]
