@@ -73,6 +73,9 @@ $(document).ready(function() {
         FilterCatalog();
         FastBuy('.js_fastbuy_button');
         PriceLayout();
+        OptionsItem();
+        Modals();
+        basket_count();
     });
 
     $('.js_filter').click(function(){
