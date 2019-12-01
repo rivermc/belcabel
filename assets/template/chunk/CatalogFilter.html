@@ -1,11 +1,13 @@
 [[!mFilter2?
-    &parents =`[[+id:empty=`[[*id]]`:else=[[+id]]]]`
+    &parents =`[[+id:empty=`[[*id]]`:default=[[+id]]]]`
     &element =`msProducts`
-    &limit = `10`
+    &limit = `3`
     &idx = `1`
-    &includeTVs = `HitsPage, MainPrice, VisiblePrice`
+    &depth = `10`
+    &includeTVs = `HitsPage, MainPrice, VisiblePrice, PriceNotification`
     &toPlaceholders = `filter_`
-    &tpls = `ItemLayout_2,ItemLayout_0`
+    &pageLimit = `10`
+    &tpls = `ItemLayout_2, ItemLayout_0`
     &leftJoin=`{
         "msCategory": {
         "class": "msCategory",
@@ -14,6 +16,18 @@
         }
     }`
     &sortby = `msCategory.menuindex ASC, msProduct.menuindex`
+
+
+    &tplPageWrapper = `@INLINE <div class="pagination_links"><ul class="pagination_links_menu">[[+pages]]</ul><div class="pagination_links_control">[[+prev]][[+next]]</div></div>`
+    &tplPageFirst = `@INLINE <li class="control prev first"><a class="js_no_preload" href="[[+href]]">Первая</a></li>`
+    &tplPageLast = `@INLINE <li class="control next last"><a  class="js_no_preload" href="[[+href]]">Последняя</a></li>`
+    &tplPage = `@INLINE <li><a  class="js_no_preload" href="[[+href]]">[[+pageNo]]</a></li>`
+    &tplPageActive = `@INLINE <li class="active"><a  class="js_no_preload" href="[[+href]]">[[+pageNo]]</a></li>`
+    &tplPagePrev = `@INLINE <a class="js_no_preload control prev" href="[[+href]]">Вернуться назад</a>`
+    &tplPageNext = `@INLINE <a  class="js_no_preload control next" href="[[+href]]">Вперед</a>`
+    &tplPageNextEmpty = `@INLINE `
+    &tplPagePrevEmpty = `@INLINE `
+    &tplPageFirstEmpty = `@INLINE `
 
 
     &filters=`
@@ -197,18 +211,6 @@
 
     &tplFilter.outer.parent=`mFilterCheckboxOut`
     &tplFilter.row.parent=`mFilterCheckbox`
-
-
-    &tplPageWrapper = `@INLINE <div class="pagination"><ul>[[+prev]][[+pages]][[+next]]</ul></div>`
-    &tplPageFirst = `@INLINE <li class="control prev first"><a class="js_no_preload" href="[[+href]]">Первая</a></li>`
-    &tplPageLast = `@INLINE <li class="control next last"><a  class="js_no_preload" href="[[+href]]">Последняя</a></li>`
-    &tplPage = `@INLINE <li><a  class="js_no_preload" href="[[+href]]">[[+pageNo]]</a></li>`
-    &tplPageActive = `@INLINE <li class="active"><a  class="js_no_preload" href="[[+href]]">[[+pageNo]]</a></li>`
-    &tplPagePrev = `@INLINE <li class="control prev"><a class="js_no_preload" href="[[+href]]">[[IncSvg? &file=`icons/arrow.svg`]]</a></li>`
-    &tplPageNext = `@INLINE <li class="control next"><a  class="js_no_preload" href="[[+href]]">[[IncSvg? &file=`icons/arrow.svg`]]</a></li>`
-    &tplPageNextEmpty = `@INLINE `
-    &tplPagePrevEmpty = `@INLINE `
-    &tplPageFirstEmpty = `@INLINE `
 
     &tplFilter.outer.view_lamp=`mFilterCheckboxOut`
     &tplFilter.outer.wave_resist=`mFilterCheckboxOut`

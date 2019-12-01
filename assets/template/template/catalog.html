@@ -8,7 +8,7 @@
                 <div class="g_left">
                     <div class="filter">
                         <p class="title h4">Фильтр параметров</p>
-                        <form action="[[~[[*id]]]]" method="post" id="mse2_filters" class="filter__form" >
+                        <form action="[[~[[*id]]]]" method="post" id="mse2_filters" class="filter__form">
                             [[+filter_filters]]
                             <div id="limit" class="hidden filter__form_block limit">
                                 <select name="mse_limit" id="mse2_limit">
@@ -34,14 +34,13 @@
                                     </label>
                                 </div>
                             </div>
-                            <button class="button button_orange js_filter_reset">Сбросить</button>
+                            <button class="button_reset js_filter_reset">Сбросить фильтр</button>
                         </form>
                     </div>
                 </div>
                 <div class="g_right">
                     [[$Crumbs]]
                     <h1>[[*pagetitle]]</h1>
-
                     <div class="filter__views js_msearch_scroll_target">
                         <div class="filter__views_sort">
                             <p class="title">Сортировать:</p>
@@ -59,19 +58,30 @@
                     <div class="catalog__results js_main_catalog_target" id="mse2_results" data-id="[[*id]]">
                         [[+filter_results]]
                     </div>
-                    <div class="filter__pagination">
-                        <div class="limit_changer">
-                            <p>Показывать по: </p>
-                            <select name="limit_changer" class="js_limit_changer">
-                                <option value="10" selected='selected'>10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select>
-                        </div>
-                        <div class="mse2_pagination">
+                    <div class="pagination">
+                        <div class="mse2_pagination pagination_wrap">
                             [[!+page.nav]]
                         </div>
+                        [[pdoResources?
+                            &parents = `[[*id]]`
+                            &sortby=`{"menuindex":"ASC"}`
+                            &sortdir=`ASC`
+                            &where = `{"template:IN":[5,17]}`
+                            &limit = `0`
+                            &depth = `0`
+                            &tpl = `@INLINE <a href="[[+uri]]" data-id="[[+id]]">[[+menutitle:empty=`[[+pagetitle]]`:default=`[[+menutitle]]`]]</a>`
+                            &toPlaceholder = `pagination_menu`
+                        ]]
+                        [[+pagination_menu:notempty=`
+                            <div class="pagination_catalog">
+                                <p class="pagination_catalog_button js_filter_catalog_button">В категорию [[IncSvg? &file=`/icons/toup.svg`]]</p>
+                                <div class="pagination_catalog_menu">
+                                    <div class="pagination_catalog_menu_wrap">
+                                        [[+pagination_menu]]
+                                    </div>
+                                </div>
+                            </div>
+                        `]]
                     </div>
                 </div>
             </div>

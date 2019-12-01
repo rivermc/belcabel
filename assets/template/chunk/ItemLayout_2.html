@@ -1,36 +1,28 @@
 <div class="item_layout_2">
-    <div class="item_layout_2_title">
+    <div class="item_layout_2__title">
         <a href="[[+uri]]" title='[[+pagetitle]]'><h2>[[+pagetitle]]</h2></a>
     </div>
-    <div class="item_layout_2_img">
+    <div class="item_layout_2__img">
         <a href="[[+uri]]" title='[[+pagetitle]]'><img src="[[+image:default=`/assets/template/images/no_photo.jpg`]]" alt="[[+pagetitle]]" title="[[+pagetitle]]"></a>
     </div>
-    <div class="item_layout_2_properties">
-        [[msOptions?
-            &product = `[[+id]]`
-            &options=`opt_count_pallet, opt_count_m3, opt_strength_class, opt_weight_one, opt_weight_pallet`
-            &tpl=`ProductOptionsTable`
-        ]]
-    </div>
-    <div class="item_layout_2_price">
-        <form class="ms2_form product__item_form" method="post">
-            <input type="hidden" name="id" value="[[+id]]">
-
-
-            <div class="item_layout_2_price">
-                <p class="price"><span class="price_number js_price_charger_target">[[+price]]</span> <span class="price_cur">руб./шт.</span></p>
-                <div class="js_price_charger_data hidden" data-price="[[+price]]"></div>
-            </div>
-            <div class="product__item_form_buttons item_layout_2_form__buttons">
-                <a href="#fastbuy_modal" class="button js_no_preload js_fastbuy_button"  data-id="[[+id]]" data-title="[[+pagetitle]]" title='[[+pagetitle]]' >Купить в 1 клик</a>
-            </div>
-            <div class="product__item_form_count">
-                [[$CountForm?
-                    &parent_class = `.item_layout_2_price`
-                ]]
-            </div>
-            <a href="#options_modal" class="link js_no_preload js_options_button js_modal_button" data-id="[[+id]]" data-title="[[+pagetitle]]">Характеристики</a>
-            <button type="submit" class="button product__item_form_buy" name="ms2_action" value="cart/add">В корзине</button>
-        </form>
+    <form class="item_layout_2__form js_parent_price_target ms2_form js_options_target" method="post">
+        <input type="hidden" name="id" value="[[+id]]">
+        <div class="item_layout_2__form_price">
+            <p class="price">
+                <span class="price_number js_price_charger_target">[[+price]]</span>
+                <span class="price_cur">руб.</span>
+            </p>
+            <div class="js_price_charger_data hidden" data-price="[[+price]]"></div>
+            [[+PriceNotification:notempty=`<p class="price_notification">[[+PriceNotification]]</p>`]]
+        </div>
+        <a href="#fastbuy_modal" class="item_layout_2__form_fastbuy js_no_preload js_fastbuy_button"  data-id="[[+id]]" data-title="[[+pagetitle]]" title='[[+pagetitle]]' >Купить в 1 клик</a>
+        <div class="item_layout_2__form_form_count">
+            [[$CountForm? &parent_class = `.js_parent_price_target` ]]
+        </div>
+        <a href="#" class="item_layout_2__form_options js_no_preload js_options_button" data-id="[[+id]]" data-title="[[+pagetitle]]">Характеристики</a>
+        <button type="submit" class="item_layout_2__form_buy button" name="ms2_action" value="cart/add">В корзину</button>
+    </form>
+    <div class="item_layout_2__properties">
+        [[!$OptionsItem? &id=`[[+id]]`]]
     </div>
 </div>

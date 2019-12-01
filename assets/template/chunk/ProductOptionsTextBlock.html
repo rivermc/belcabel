@@ -1,0 +1,8 @@
+<div class="properties js_options_target">
+    {foreach $options as $name => $values}
+        <p class="option_opt option_{$name}">
+            <span>{$_modx->lexicon('ms2_product_' ~ $name)}:</span>
+            <span>{$values[0]}</span>
+        </p>
+    {/foreach}
+</div>

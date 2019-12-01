@@ -1,0 +1,36 @@
+.form__count {
+  .flex();
+  .cols(16);
+  max-width: 90px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+
+  button {
+    color: @c_main;
+    font-family: @f_Monserat_b;
+    padding: 0;
+    text-align: center;
+    min-width: 15px;
+    background: transparent;
+  }
+
+  input {
+    .f_col(1, 1, 1);
+    color: @c_black;
+    background: @c_gray_l;
+    border: 0;
+    border-radius: 5px;
+    padding: 6px 10px;
+    text-align: center;
+    -moz-appearance: textfield;
+    min-width: 25px;
+    max-width: 50px;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

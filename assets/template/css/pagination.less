@@ -1,0 +1,128 @@
+.pagination {
+  .flex();
+  align-items: center;
+  justify-content: space-between;
+
+  &_wrap {
+    .f_col(1,1,0);
+  }
+
+  &_links {
+    .flex();
+    .cols(16);
+    justify-content: space-between;
+    align-items: center;
+
+    &_menu {
+      .flex();
+      align-items: center;
+
+      li {
+        text-align: center;
+        margin: 0;
+
+        span {
+          font-size: @s_text_2;
+        }
+
+        a {
+          .animation();
+          color: @c_main;
+          font-size: @s_text_2;
+          border-radius: @radius;
+          font-family: @f_Monserat_b;
+          padding: 5px 8px;
+          text-align: center;
+          cursor: pointer;
+          width: 30px;
+          height: 30px;
+          display: block;
+
+          &:hover {
+            color: @c_main;
+          }
+        }
+
+        &.active {
+
+          a {
+            background: @c_submain;
+          }
+        }
+
+        &.disabled {
+          display: none;
+        }
+      }
+    }
+
+    &_control {
+      .flex();
+
+      a {
+        color: @c_black;
+        font-size: @s_text_1;
+        border-right: 1px solid @c_gray;
+        border-left: 1px solid @c_gray;
+        display: block;
+        padding: 5px 15px;
+      }
+    }
+  }
+
+  &_catalog {
+    text-align: right;
+    padding-left: 15px;
+
+    &_button {
+      font-size: @s_text_1;
+      margin: 0;
+      cursor: pointer;
+
+      &.js_active {
+
+        svg {
+          transform: none;
+        }
+      }
+
+      svg {
+        .animation();
+        transform: rotate(180deg);
+        margin-left: 10px;
+      }
+    }
+
+    &_menu {
+      position: relative;
+
+
+      &_wrap {
+        position: absolute;
+        width: 300%;
+        right: 0;
+        top: 0;
+        display: none;
+        opacity: 0;
+        padding-top: 10px;
+
+        &.js_active {
+          animation: fadeIn 0.8s ease 1 forwards;
+          display: block;
+        }
+
+        a {
+          color: @c_black;
+          font-size: @s_text_1;
+          margin: 5px;
+          display: block;
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

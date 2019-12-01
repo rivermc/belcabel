@@ -5,7 +5,7 @@
   .title {
     color: @c_main;
     font-family: @f_Monserat_b;
-    margin-top: 0;
+    margin: 0 0 20px;
   }
 
   &__form {
@@ -72,7 +72,8 @@
         }
 
         p {
-          font-weight: bold;
+          .f_col(1, 1, 15);
+          font-size: @s_text_1;
           margin: 0;
         }
 
@@ -97,7 +98,8 @@
 
           p {
             .f_col(4, 1, 14);
-            font-size: @s_text_2;
+            font-size: @s_text_1;
+            font-family: @f_Monserat_b;
             margin: 0;
             line-height: 1em;
           }
@@ -109,6 +111,14 @@
           }
         }
       }
+    }
+
+    .button_reset {
+      color: @c_main;
+      font-family: @f_Monserat_b;
+      font-size: @s_text_1;
+      margin: 10px auto;
+      display: block;
     }
   }
 
