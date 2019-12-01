@@ -98,13 +98,17 @@
 
 
       &_wrap {
+        background: @c_white;
+        box-shadow: @shadow;
         position: absolute;
         width: 300%;
         right: 0;
         top: 0;
         display: none;
         opacity: 0;
-        padding-top: 10px;
+        z-index: 100;
+        padding: 10px 20px;
+        margin-top: 10px;
 
         &.js_active {
           animation: fadeIn 0.8s ease 1 forwards;

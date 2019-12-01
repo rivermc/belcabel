@@ -1,55 +1,34 @@
 <div class="item_layout_0">
     <div class="layout_left">
-        <div class="item_layout_0_img">
+        <div class="item_layout_0__img">
             <a href="[[+uri]]" title='[[+pagetitle]]'><img src="[[+image:default=`/assets/template/images/no_photo.jpg`]]" alt="[[+pagetitle]]" title="[[+pagetitle]]"></a>
         </div>
-        <div class="item_layout_0_article">
-            <p>Код [[+article]]</p>
-        </div>
-        [[$SalesNotification?
-            &old_price = `[[+old_price]]`
-            &price = `[[+price]]`
-            &popular = `[[+popular]]`
-            &favorite = `[[+favorite]]`
-            &new = `[[+new]]`
-        ]]
     </div>
     <div class="layout_center">
-        <div class="item_layout_0_title">
+        <div class="item_layout_0__title">
             <a href="[[+uri]]" title='[[+pagetitle]]'><h2>[[+pagetitle]]</h2></a>
         </div>
-        <div class="item_layout_0_properties">
-            [[msOptions?
-                &product = `[[+id]]`
-                &options=`opt_count_pallet, opt_count_m3, opt_strength_class, opt_weight_one, opt_weight_pallet`
-                &tpl=`ProductOptionsTextBlock`
-            ]]
-            <a href="#options_modal" class="link js_no_preload js_options_button js_modal_button" data-id="[[+id]]" data-title="[[+pagetitle]]">Показать все характеристики</a>
+        <div class="item_layout_0__properties">
+            [[!$OptionsItem? &id=`[[+id]]`]]
         </div>
     </div>
     <div class="layout_right">
-        <div class="item_layout_0_price">
-            <p class="price js_price_charger_target"><span class="price_number">[[+price]]</span> <span class="price_cur">руб./шт.</span></p>
-            <div class="js_price_charger_data hidden" data-price=[[+price]] data-opt_count_pallet="[[msOptions? &product=`[[+id]]` &options=`opt_count_pallet` &tpl=`ProductOptionsText`]]" data-opt_count_m3="[[msOptions? &product=`[[+id]]` &options=`opt_count_m3` &tpl=`ProductOptionsText`]]" data-opt_count_m2="[[msOptions? &product=`[[+id]]` &options=`opt_count_m2` &tpl=`ProductOptionsText`]]"></div>
-        </div>
-        [[$PriceChanger?
-            &parent_class = `.item_layout_0`
-            &class = `item_layout_0_changer`
-            &pallet = `[[msOptions? &product=`[[+id]]` &options=`opt_count_pallet` &tpl=`ProductOptionsText`]]`
-            &m3 = `[[msOptions? &product=`[[+id]]` &options=`opt_count_m3` &tpl=`ProductOptionsText`]]`
-            &m2 = `[[msOptions? &product=`[[+id]]` &options=`opt_count_m2` &tpl=`ProductOptionsText`]]`
-        ]]
-        <form class="ms2_form product__item_form item_layout_0_form" method="post">
+        <form class="item_layout_0__form js_parent_price_target ms2_form" method="post">
             <input type="hidden" name="id" value="[[+id]]">
-            <div class=" item_layout_0_form__count">
-                [[$CountForm?
-                    &parent_class = `.item_layout_0`
-                ]]
+            <div class="item_layout_0__form_price">
+                <p class="price">
+                    <span class="price_number js_price_charger_target">[[+price]]</span>
+                    <span class="price_cur">руб.</span>
+                </p>
+                <div class="js_price_charger_data hidden" data-price="[[+price]]"></div>
+                [[+PriceNotification:notempty=`<p class="price_notification">[[+PriceNotification]]</p>`]]
             </div>
-            <div class="product__item_form_buttons item_layout_0_form__buttons">
-                <a href="#fastbuy_modal" class="button js_no_preload js_fastbuy_button"  data-id="[[+id]]" data-title="[[+pagetitle]]" title='[[+pagetitle]]' >Заказ в 1 клик</a>
-                <button type="submit" class="button product__item_form_buy" name="ms2_action" value="cart/add">[[IncSvg? &file=`icons/basket.svg`]]</button>
+            <a href="#fastbuy_modal" class="item_layout_0__form_fastbuy js_no_preload js_fastbuy_button"  data-id="[[+id]]" data-title="[[+pagetitle]]" title='[[+pagetitle]]' >Купить в 1 клик</a>
+            <div class="item_layout_0__form_form_count">
+                [[$CountForm? &parent_class = `.js_parent_price_target` ]]
             </div>
+            <a href="#" class="item_layout_0__form_options js_no_preload js_options_button" data-id="[[+id]]" data-parent=".item_layout_0" data-title="[[+pagetitle]]">Характеристики</a>
+            <button type="submit" class="item_layout_0__form_buy button" name="ms2_action" value="cart/add">В корзину</button>
         </form>
     </div>
 </div>

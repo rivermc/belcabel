@@ -1,0 +1,71 @@
+<div id="msProduct" class="product" data-id="[[*id]]">
+    <div class="card__item">
+        <div class="card__item_wrap">
+            <div class="card__item_gallery">
+                [[!msGallery?
+                    &tpl = `Fotorama`
+                ]]
+            </div>
+            <form class="ms2_form card__item_form" method="post">
+                <input type="hidden" name="id" value="[[*id]]">
+                <div class="card__item_form_price">
+                    <p class="price">
+                        <span class="price_number js_price_charger_target">[[+price]]</span>
+                        <span class="price_cur">руб.</span>
+                    </p>
+                    <div class="js_price_charger_data hidden" data-price="[[+price]]"></div>
+                    [[*PriceNotification:notempty=`<p class="price_notification">[[*PriceNotification]]</p>`]]
+                </div>
+                <div class="card__item_form_count">
+                    <p class="title">Количество</p>
+                    [[$CountForm? &parent_class = `.card__item_form` ]]
+                </div>
+                <div class="card__item_button">
+                    <button type="submit" class="button buy button_svg" name="ms2_action" value="cart/add">В корзину</button>
+                </div>
+                <a href="#fastbuy_modal" class="card__item_form_fastbuy js_no_preload js_fastbuy_button"  data-id="[[*id]]" data-title="[[*pagetitle]]" title='[[*pagetitle]]'>Купить в 1 клик</a>
+            </form>
+            <div class="card__item_info">
+                Бесплатный самовывоз
+            </div>
+        </div>
+        <div class="card__item_content" id="character">
+            <div class="tabs">
+                <div class="tabs__menu">
+                    <div class="container">
+                        <ul>
+                            <li class="js_tabs_menu js_active" data-id="1">Характеристики</li>
+                            [[*content:notempty=`
+                                <li class="js_tabs_menu" data-id="2">Описание</li>
+                            `]]
+                            [[*UseContent:notempty=`
+                                <li class="js_tabs_menu" data-id="3">Применение</li>
+                            `]]
+                        </ul>
+                    </div>
+                </div>
+                <div class="tabs__items">
+                    <div class="container">
+                        <div class="tabs__items_item js_tabs_item js_active" data-id="1">
+                            <h2>Все характеристики</h2>
+                            [[$OptionsItem? &id = `[[*id]]`]]
+                        </div>
+                        [[*content:notempty=`
+                            <div class="tabs__items_item js_tabs_item" data-id="2">
+                                <h2>Описание [[*pagetitle]]</h2>
+                                [[*content]]
+                            </div>
+                        `]]
+                        [[*UseContent:notempty=`
+                            <div class="tabs__items_item js_tabs_item" data-id="3">
+                                <h2>Применение [[*pagetitle]]</h2>
+                                [[*UseContent]]
+                            </div>
+                        `]]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,29 @@
+[[$StartPage]]
+[[$Header]]
+<main>
+    <div class="card">
+        <div class="container">
+            [[$Crumbs]]
+            <div class="card__title">
+                <h1 class="h2">[[*pagetitle]]</h1>
+            </div>
+            [[$CardItem]]
+            <div class="slick__block">
+                <div id="mse2_results">
+                    <div  class="js_slick_add_to_order slick__catalog_wrap js_slick">
+                        [[!msProducts?
+                        &parents =`[[*parent]]`
+                        &tpl =`ItemLayout_2`
+                        &limit = `12`
+                        &idx = `1`
+                        &includeTVs = `HitsPage, MainPrice, VisiblePrice`
+                        ]]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    [[$CallbackBlock]]
+</main>
+[[$Footer]]
+[[$StopPage]]

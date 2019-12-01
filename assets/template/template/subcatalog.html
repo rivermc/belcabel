@@ -17,9 +17,11 @@
                 <div class="g_right">
                     [[$Crumbs]]
                     <h1>[[*pagetitle]]</h1>
-                    <div class="subcatalog__content js_content">
-                        [[*content]]
-                    </div>
+                    [[*content:notempty=`
+                        <div class="subcatalog__content js_content">
+                            [[*content]]
+                        </div>
+                    `]]
                     <div class="subcatalog__catalog">
                         [[$BrandCatalogs?
                             &card_type = `subcatalog`

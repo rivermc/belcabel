@@ -1,0 +1,156 @@
+.item_layout_0 {
+  .cols(16);
+  .flex();
+  box-shadow: @shadow;
+  background: @c_white;
+  padding: 20px 30px;
+  margin: 15px 0;
+  justify-content: space-between;
+
+  .layout_left {
+    .cols(2.5);
+  }
+
+  .layout_center {
+    .cols(7);
+    border-right: 1px solid @c_gray;
+    border-left: 1px solid @c_gray;
+    padding: 0 20px;
+  }
+
+  .layout_right {
+    .cols(5.5);
+    min-width: 270px;
+  }
+
+
+
+  &__title {
+    margin-bottom: 20px;
+
+    a {
+
+      &:hover {
+
+        h2 {
+          color: @c_main;
+        }
+      }
+
+      h2 {
+        .animation();
+        color: @c_black;
+        font-size: @s_text_1;
+        text-transform: none;
+        margin: 0;
+      }
+    }
+  }
+
+  &__img {
+    text-align: center;
+    overflow: hidden;
+
+    img {
+      .animation();
+      margin: 0 auto;
+      max-height: 210px;
+    }
+  }
+
+  &__form {
+    .flex();
+    .animation();
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    position: relative;
+    z-index: 20;
+
+    &.js_active {
+      background: @c_submain;
+    }
+
+    &_price {
+      .f_col(1, 1, 8);
+      margin-right: 10px;
+
+      .price {
+        color: @c_main;
+        margin: 0;
+
+        &_number {
+          font-family: @f_Monserat_b;
+        }
+
+        &_cur {
+          font-size: @s_text_1;
+        }
+
+        &_notification {
+          color: @c_gray_d;
+          font-size: 8pt;
+          margin: 0;
+        }
+      }
+    }
+
+    &_fastbuy {
+      color: @c_main;
+      font-size: @s_text_0;
+      text-decoration: underline;
+    }
+
+    &_form_count {
+      .f_col(1, 1, 8);
+      margin: 10px 10px 10px 0;
+    }
+
+    &_options {
+      font-size: @s_text_0;
+      color: @c_gray_d;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &_buy {
+      font-size: @s_text_1;
+      margin: 0 auto;
+    }
+  }
+
+  &__properties {
+    position: relative;
+
+    .properties {
+      .cols(16);
+      background: @c_submain;
+      position: absolute;
+      z-index: 9;
+      left: 0;
+      opacity: 0;
+      top: 0;
+      padding: 10px;
+      display: none;
+
+      &.js_active {
+        box-shadow: 0 5px 15px -12px @c_black;
+        animation: fadeIn 0.8s ease 1 forwards;
+        display: block;
+      }
+
+      .option_opt {
+        font-size: 8pt;
+
+        span {
+
+          &:last-child {
+            font-family: @f_Monserat_b;
+          }
+        }
+      }
+    }
+  }
+}
