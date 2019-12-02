@@ -69,14 +69,14 @@
                             &where = `{"template:IN":[5,17]}`
                             &limit = `0`
                             &depth = `0`
-                            &tpl = `@INLINE <a href="[[+uri]]" data-id="[[+id]]">[[+menutitle:empty=`[[+pagetitle]]`:default=`[[+menutitle]]`]]</a>`
+                            &tpl = `@INLINE <a href="[[+uri]]"  data-id="[[+id]]">[[+menutitle:empty=`[[+pagetitle]]`:default=`[[+menutitle]]`]]</a>`
                             &toPlaceholder = `pagination_menu`
                         ]]
                         [[+pagination_menu:notempty=`
-                            <div class="pagination_catalog">
-                                <p class="pagination_catalog_button js_filter_catalog_button">В категорию [[IncSvg? &file=`/icons/toup.svg`]]</p>
-                                <div class="pagination_catalog_menu">
-                                    <div class="pagination_catalog_menu_wrap">
+                            <div class="filter__catalog">
+                                <p class="filter__catalog_button js_filter_catalog_button">В категорию [[IncSvg? &file=`/icons/toup.svg`]]</p>
+                                <div class="filter__catalog_menu">
+                                    <div class="filter__catalog_menu_wrap js_filter_catalog">
                                         [[+pagination_menu]]
                                     </div>
                                 </div>

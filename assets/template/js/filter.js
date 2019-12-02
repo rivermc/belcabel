@@ -5,11 +5,11 @@ function getUrlParam(param) {
 }
 
 function FilterCatalog() {
-    $('.js_filter_catalog').toggleClass('js_visible', false);
+    $('.js_filter_catalog a').toggleClass('js_visible', false);
     $('.js_filter_target.parent input:not([disabled])').each((index, item) => {
         var id = parseInt($(item).val());
         var checked = $(item).is(':checked');
-        var category_item = $('.js_filter_catalog[data-id='+ id +']');
+        var category_item = $('.js_filter_catalog a[data-id='+ id +']');
         category_item.toggleClass('js_visible', true).toggleClass('js_active', checked);
     });
 }
@@ -87,6 +87,13 @@ $(document).ready(function() {
         }
         $(this).toggleClass('js_active');
     });
+
+    /*$('.js_filter_catalog a').click( function(e) {
+        e.preventDefault();
+        let id = $(this).data('id');
+        $('.parent input[value=' + id + ']').trigger('click');
+        FilterCatalog();
+    });*/
 
 
     $('.js_filter_layout').click(function(){
