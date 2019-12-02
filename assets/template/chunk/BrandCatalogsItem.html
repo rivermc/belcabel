@@ -5,9 +5,22 @@
     &toPlaceholder = `submenu`
     &where = `{"template:IN":[5,17]}`
 ]]
+[[msProducts?
+    &parents=`[[+id]]`
+    &depth = `5`
+    &limit = `4`
+    &tpl=`@INLINE <img src="[[+image]]" alt="[[+pagetitle]]">`
+    &where = `{"template:NOT IN":[5,17]}`
+    &toPlaceholder = `images`
+    &sortby = `RAND()`
+]]
 <div class="brand_catalogs__item" data-id="[[+id]]">
     <div class="brand_catalogs__item_img">
-        <a href="[[+uri]]" data-id="[[+id]]"><img src="[[+tv.CatalogImg]]" alt="[[+pagetitle]]"></a>
+        [[+card_type:is=`brands_card`:then=`
+            <a href="[[+uri]]"data-id="[[+id]]"><img src="[[+tv.CatalogImg]]" alt="[[+pagetitle]]"></a>
+        `:else=`
+            <a href="[[+uri]]" class="product_images"  data-id="[[+id]]">[[+images]]</a>
+        `]]
     </div>
     <div class="brand_catalogs__item_title">
         <a href="[[+uri]]" data-id="[[+id]]">

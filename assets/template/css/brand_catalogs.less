@@ -66,6 +66,18 @@
 
       a {
         line-height: 0;
+
+        &.product_images {
+          .flex(nowrap);
+          align-items: center;
+          justify-content: center;
+
+          img {
+            .cols(3.5);
+            .colsOf(0.25);
+            .colsOfR(0.25);
+          }
+        }
       }
     }
 
