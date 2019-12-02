@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     $('.js_slick').on('init', function(event, slick, currentSlide, nextSlide) {
+        OptionsItem();
         FastBuy('.js_fastbuy_button');
     });
 
@@ -11,7 +12,7 @@ $(document).ready(function() {
         slidesToShow: 4,
         slidesToScroll: 4,
         adaptiveHeight: false,
-        speed: 300,
+        speed: 400,
         prevArrow:"<div class='slick-prev slick-arrow'></div>",
         nextArrow:"<div class='slick-next slick-arrow'></div>",
 
@@ -39,7 +40,7 @@ $(document).ready(function() {
             }
         ]
     }).on('breakpoint', function(event, slick, currentSlide, nextSlide) {
-        priceChanger.events();
+        OptionsItem();
         FastBuy('.js_fastbuy_button');
     });
 });

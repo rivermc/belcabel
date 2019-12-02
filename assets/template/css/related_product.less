@@ -1,0 +1,38 @@
+.related_product {
+	margin: 40px 0;
+
+	.h4 {
+		color: @c_main;
+		font-family: @f_Monserat_b;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+}
+
+.slick__block {
+
+	& .slick__catalog_wrap {
+
+		.slick-track {
+			display: flex !important;
+		}
+
+		.item_slick_wrap {
+			padding: 15px;
+		}
+
+		.slick-slide {
+			height: inherit !important;
+
+			& > div {
+				height: 100%;
+
+				.item_layout_1 {
+					display: flex !important;
+					height: 100%;
+				}
+			}
+		}
+	}
+}

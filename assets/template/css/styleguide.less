@@ -189,31 +189,6 @@ button {
     }
   }
 
-  &_filter {
-    font-size: @s_text_2;
-    color: @c_black;
-    border: 1px solid @c_main;
-    background: transparent;
-    margin: 0 10px 10px 0;
-    position: relative;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 2px;
-      right: 2px;
-      width: 6px;
-      height: 6px;
-      background: url('./../images/icons/close.svg');
-      background-size: 100%;
-      background-repeat: no-repeat;
-    }
-
-    &:hover {
-      border: 1px solid @c_black;
-    }
-  }
-
   &_svg {
     display: inline-flex;
     align-items: center;
@@ -239,6 +214,10 @@ button {
 
   &:hover {
     background: @c_main_l;
+  }
+
+  &:active {
+    background: @c_main;
   }
 }
 

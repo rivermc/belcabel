@@ -23,6 +23,9 @@ $(document).ready(function() {
     $content.after(more_link);
   }
 
+  $('.js_tabs_menu').eq(0).addClass('js_active');
+  $('.js_tabs_item').eq(0).addClass('js_active');
+
   $('.js_tabs_menu').click( function() {
     var tab_id = $(this).attr('data-id');
     $(this).addClass('js_active').siblings().toggleClass('js_active', false);

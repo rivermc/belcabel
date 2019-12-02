@@ -1,0 +1,8 @@
+{foreach $options as $name => $values}
+    {foreach $values as $value}
+        <p class="option_{$name}">
+            <span>{$_modx->lexicon('ms2_product_' ~ $name)}:</span>
+            <span>{$values[0]}</span>
+        </p>
+    {/foreach}
+{/foreach}
