@@ -2,13 +2,14 @@
 $count = 0;
 $parent = isset($parent) ? (integer) $parent : 0;
 if ($parent > 0) {
-    $criteria = array(
-        'parent' => $parent,
+
+    $childIds = $modx->getChildIds($parent,6,array(
         'deleted' => false,
         'published' => true,
-        'template' => $template
-    );
-    $count = $modx->getCount('modResource', $criteria);
+        'template' => $template,
+        'context' => 'web'
+        ));
+
 }
-return (string) $count;
+return (string) count($childIds);
 ?>
