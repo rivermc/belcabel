@@ -15,7 +15,7 @@ function basket_count() {
         var product_price = $('.js_price_charger_data', $price_parent).data('price');
         var $price_target = $('.js_price_charger_target', $price_parent);
         var input_val = parseInt($input.val());
-        $price_target.html(product_price * input_val);
+        $price_target.html((product_price * input_val).toFixed(1));
 
     });
 
@@ -39,7 +39,7 @@ function basket_count() {
         }
 
         input_val = parseInt($input.val());
-        $price_target.html(product_price * input_val);
+        $price_target.html((product_price * input_val).toFixed(1));
     });
 }
 
