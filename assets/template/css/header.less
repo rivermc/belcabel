@@ -97,10 +97,15 @@ header {
             margin: 0;
 
             a {
+              .animation();
               color: @c_black;
               font-size: @s_text_2;
               font-family: @f_Monserat_b;
               text-transform: uppercase;
+
+              &:hover {
+                color: @c_main;
+              }
             }
           }
         }

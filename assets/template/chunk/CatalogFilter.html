@@ -1,5 +1,5 @@
 [[!mFilter2?
-    &parents =`[[+id:empty=`[[*id]]`:default=[[+id]]]]`
+    &parents =`[[*id:is=`2`:then=`0`:else=`[[*id]]`]]`
     &element =`msProducts`
     &limit = `12`
     &idx = `1`
@@ -31,6 +31,8 @@
 
 
     &filters=`
+        msoption|opt_vendor,
+        msoption|opt_seria,
         msoption|opt_view_lamp,
         msoption|opt_wave_resist,
         msoption|opt_voltage,
@@ -119,6 +121,8 @@
     `
 
     &aliases=`
+        msoption|opt_vendor==vendor,
+        msoption|opt_seria==seria,
         msoption|opt_view_lamp==view_lamp,
         msoption|opt_wave_resist==wave_resist,
         msoption|opt_voltage==voltage,
@@ -212,6 +216,8 @@
     &tplFilter.outer.parent=`mFilterCheckboxOut`
     &tplFilter.row.parent=`mFilterCheckbox`
 
+    &tplFilter.outer.vendor=`mFilterCheckboxOut`
+    &tplFilter.outer.seria=`mFilterCheckboxOut`
     &tplFilter.outer.view_lamp=`mFilterCheckboxOut`
     &tplFilter.outer.wave_resist=`mFilterCheckboxOut`
     &tplFilter.outer.voltage=`mFilterCheckboxOut`
@@ -296,6 +302,8 @@
     &tplFilter.outer.kind_lamp=`mFilterCheckboxOut`
     &tplFilter.outer.section=`mFilterCheckboxOut`
 
+    &tplFilter.row.vendor=`mFilterCheckbox`
+    &tplFilter.row.seria=`mFilterCheckbox`
     &tplFilter.row.view_lamp=`mFilterCheckbox`
     &tplFilter.row.wave_resist=`mFilterCheckbox`
     &tplFilter.row.voltage=`mFilterCheckbox`
