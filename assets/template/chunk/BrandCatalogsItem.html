@@ -2,6 +2,7 @@
     &parents=`[[+id]]`
     &level=`0`
     &tplInner=`SubmenuBlock`
+    &tpl = `@INLINE <li [[+classes]]><a href="/[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
     &toPlaceholder = `submenu`
     &where = `{"template:IN":[5,17,16]}`
 ]]
@@ -9,7 +10,7 @@
     &parents=`[[+id]]`
     &depth = `5`
     &limit = `4`
-    &tpl=`@INLINE <img src="[[+image]]" alt="[[+pagetitle]]">`
+    &tpl=`@INLINE <img src="/[[+image]]" alt="[[+pagetitle]]">`
     &where = `{"template:NOT IN":[5,17,16]}`
     &toPlaceholder = `images`
     &sortby = `RAND()`
