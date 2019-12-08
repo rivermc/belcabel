@@ -2032,6 +2032,9 @@ footer .footer_right__social a svg path {
 .brands_block_wrap a {
   margin: 0 20px;
 }
+.brands_block_wrap a img {
+  min-width: 160px;
+}
 .brands_block .button {
   margin: 0 auto;
 }
