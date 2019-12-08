@@ -1,0 +1,19 @@
+[[$StartPage]]
+[[$Header]]
+<main>
+    <div id="content" class="cart">
+        [[!msCart?
+            tpl=`Basket`
+        ]]
+
+        [[!msOrderCustom?
+            tpl=`Order`
+        ]]
+    
+        [[!msGetOrder?
+            tpl=`GetOrder`
+        ]]
+    </div>
+</main>
+[[$Footer]]
+[[$StopPage]]

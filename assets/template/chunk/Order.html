@@ -1,0 +1,142 @@
+<div class="msOrder">
+    <div class="container">
+        <form class="form-horizontal ms2_form" id="msOrder" method="post">
+            <div class="msOrder_forms">
+                <div class="msOrder_forms__wrap">
+                    <div class="msOrder_forms__col">
+                        <div class="msOrder_forms__title">
+                            <h2 class="h3">{'ms2_frontend_credentials' | lexicon}</h2>
+                        </div>
+                        <div class="msOrder_forms__form">
+                            {foreach ['receiver','phone', 'email'] as $field}
+                            <div class="form__basket input-parent">
+                                <label for="{$field}" class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}<span class="required-star">*</span></label>
+                                <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
+                            </div>
+                            {/foreach}
+                            <div class="form__basket">
+                                <label for="comment_text" class="form__group_label">Комментарий</label>
+                                <textarea id="comment_text" type="text" name="text" class="form_input"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="msOrder_forms__col">
+                        <div class="msOrder_forms__title">
+                            <h2 class="h3">{'ms2_frontend_deliveries' | lexicon}</h2>
+                        </div>
+                        <div class="msOrder_forms__delivery">
+                            {var $i = 0}
+                            {foreach $deliveries as $delivery index=$index}
+                            {var $checked = !$order.delivery && $index == 0 || $delivery.id == $order.delivery}
+                            <div class="checkbox">
+                                <label class="delivery input_parent">
+                                    <input  type="radio"
+                                            name="delivery"
+                                            value="{$delivery.id}"
+                                            id="delivery_{$delivery.id}"
+                                            data-payments="{$delivery.payments | json_encode}"
+                                            class=""
+                                            {if $i == '0'}
+                                    checked="checked"
+                                    {/if}>
+                                    {set $i = $i + 1}
+                                    {if $delivery.logo?}
+                                    {$delivery.name}
+                                    <img src="{$delivery.logo}" alt="{$delivery.name}" title="{$delivery.name}"/>
+                                    {else}
+                                    <p class="delivery_title">{$delivery.name}</p>
+                                    {/if}
+                                    {if $delivery.description?}
+                                    <p class="small">
+                                        {$delivery.description}
+                                    </p>
+                                    {/if}
+                                </label>
+                            </div>
+                            {/foreach}
+                        </div>
+                    </div>
+                    <div class="msOrder_forms__col msOrder_forms__col_shipping">
+                        <div class="msOrder_forms__form_block">
+                            <div class="msOrder_forms__title">
+                                <h2 class="h3">{'ms2_frontend_address' | lexicon}</h2>
+                            </div>
+                            <div class="msOrder_forms__form">
+                                {foreach ['nameShipping', 'phoneShipping'] as $field}
+                                <div class="form__basket">
+                                    <label for="{$field}" class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
+                                    <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
+                                </div>
+                                {/foreach}
+                                <div class="form__basket">
+                                    <label for="addressShipping" class="form__group_label">{('ms2_frontend_addressShipping') | lexicon}</label>
+                                    <textarea type="text" id="addressShipping" name="addressShipping" value="" class="form_input"></textarea>
+                                </div>
+                            </div>
+                            <div class="msOrder_forms__title">
+                                <h2 class="h3">Дата доставки</h2>
+                            </div>
+                            <div class="msOrder_forms__form">
+                                <div class="form__basket date_shipping">
+                                    [[!ShippingDay]]
+                                </div>
+                                <p>Точная стоимость будет рассчитана и согласована с вами при подтверждении заказа.</p>
+                            </div>
+                        </div>
+                        <div class="msOrder_forms__map_block">
+                            <div class="msOrder_forms__title">
+                                <h2 class="h3">Укажите на карте</h2>
+                            </div>
+                            <div id="shipmap"></div>
+                        </div>
+                    </div>
+                    <div class="msOrder_forms__col">
+                        <div class="msOrder_forms__title">
+                            <h2 class="h3">{'ms2_frontend_payments' | lexicon}</h2>
+                        </div>
+                        <div class="msOrder_forms__payment">
+                            {foreach $payments as $payment index=$index}
+                            {var $checked = !$order.payment && $index == 0 || $payment.id == $order.payment}
+                            <div class="checkbox">
+                                <label class="payment input_parent">
+                                    <input type="radio" name="payment" value="{$payment.id}" id="payment_{$payment.id}"
+                                           {$checked ? 'checked' : ''}>
+                                    {if $payment.logo?}
+                                    <img src="{$payment.logo}" alt="{$payment.name}" title="{$payment.name}"/>
+                                    {else}
+                                    <p class="payment_title">
+                                        {$payment.name}
+                                    </p>
+                                    {/if}
+                                    {if $payment.description?}
+                                    <p class="small">
+                                        {$payment.description}
+                                    </p>
+                                    {/if}
+                                </label>
+                            </div>
+                            {/foreach}
+                        </div>
+                    </div>
+                    <div class="msOrder_forms__col msOrder_forms__col_last">
+                        <div class="msOrder_forms__total">
+                            <div class="msOrder_forms__total_wrap">
+                                <div class="msOrder_forms__total_price">
+                                    <p>Итого:  <span id="ms2_order_cost">{$order.cost ?: 0}</span> <span class="rub">Р</span></p>
+                                </div>
+                                <button type="submit" name="ms2_action" value="order/submit" class="button">
+                                    {'ms2_frontend_order_submit' | lexicon}
+                                </button>
+                                <p class="subtitle">В ближайшее время наш менеджер свяжется с Вами для уточнения условий доставки заказа.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=c5003c7f-b996-400e-ae37-865113e667bf&lang=ru_RU"></script>
+<script src="/assets/template/js/shipping_map.js"></script>

@@ -9,10 +9,9 @@
         <input type="hidden" name="id" value="[[+id]]">
         <div class="item_layout_2__form_price">
             <p class="price">
-                <span class="price_number js_price_charger_target">[[+price]]</span>
+                <span class="price_number js_price_charger_target" data-price="[[+price]]">[[+price]]</span>
                 <span class="price_cur">руб.</span>
             </p>
-            <div class="js_price_charger_data hidden" data-price="[[+price]]"></div>
             [[+PriceNotification:notempty=`<p class="price_notification">[[+PriceNotification]]</p>`]]
         </div>
         <a href="#fastbuy_modal" class="item_layout_2__form_fastbuy js_no_preload js_fastbuy_button"  data-id="[[+id]]" data-title="[[+pagetitle]]" title='[[+pagetitle]]' >Купить в 1 клик</a>

@@ -1,0 +1,154 @@
+#msCart {
+
+  .getorder__empty_cont {
+    margin: 100px 0;
+
+    p {
+      color: @c_black;
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+
+  .container {
+
+    .getorder__cont {
+      .flex();
+      justify-content: space-between;
+
+      .getorder__title {
+        .cols(16);
+        
+        h1 {
+         color: @c_main;
+         text-align: center;
+        }
+        
+        p {
+          text-align: center;
+        }
+      }
+
+      .getorder__image {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .getorder__product {
+        .flex();
+        .cols(16);
+        justify-content: space-between;
+        border-bottom: 1px solid @c_gray_d;
+
+        .getorder__product_cont {
+          .flex();
+          .cols(7.5);
+          align-items: center;
+          margin-bottom: 20px;
+          
+          @media @sm, @xs{
+            .cols(16);
+            margin: 0 0 20px 0;
+          }
+
+          .getorder__product_image {
+            .cols(6);
+            .colsOfR(0.5);
+
+            img {
+              max-height: 200px;
+            }
+          }
+
+          .getorder__product_text {
+            .cols(9.5);
+
+            .getorder__product_title {
+
+              a {
+                color: @c_black;
+              }
+
+              p {
+                color: @c_black;
+                font-size: 9.5pt;
+              }
+            }
+
+            .getorder__product_allprice {
+
+              p {
+                margin-bottom: 4px;
+              }
+            }
+          }
+        }
+      }
+      
+      .getorder__total {
+        .cols(8);
+        border-bottom: 1px dashed @c_gray_d;
+        padding-bottom: 20px;
+        
+        @media @sm, @xs{
+          .cols(16);
+        }
+
+        .getorder__total_cont {
+
+          h2 {
+            text-align: right;
+
+            @media @sm, @xs{
+              text-align: left;
+            }
+          }
+
+          p {
+            color: @c_black;
+            font-size: @s_text_2;
+            text-align: right;
+            
+            @media @sm, @xs{
+              text-align: left;
+            }
+
+            span {
+              color: @c_black;
+              font-size: 26pt;
+
+              @media @sm,@xs{
+                font-size: 18pt;
+              }
+            }
+          }
+        }
+      }
+      
+      .getorder__info {
+        .cols(8);
+        
+        @media @sm, @xs{
+          .cols(16);
+        }
+
+        .getorder__info_cont {
+
+          .getorder__info_block {
+
+
+            p {
+              color: @c_black;
+              font-size: 14pt;
+              
+              @media @sm,@xs{
+                font-size: 9pt;
+              }
+            }
+          }
+        }
+      } 
+    }
+  }
+}

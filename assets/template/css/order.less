@@ -1,0 +1,381 @@
+.msOrder {
+
+  &_forms {
+
+    &__wrap {
+      .flex();
+
+    }
+
+    &__col {
+      .cols(8);
+      border-bottom: 1px dashed @c_gray_d;
+      padding: 15px;
+
+      @media @sm, @xs{
+        .cols(16);
+        padding: 15px 15px 20px;
+      }
+
+      &_shipping {
+        .cols(16);
+        .flex();
+        .animation();
+        justify-content: space-between;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+
+        &.js_active {
+          visibility: visible;
+          opacity: 1;
+          height: 640px;
+
+          @media @smMinus {
+            height: 900px;
+          }
+        }
+      }
+
+      &_last {
+        .cols(6);
+        margin: 0 auto;
+        text-align: center;
+        border: 0;
+        padding: 10px 0;
+
+        @media @md, @sm, @xs{
+          .cols(16);
+        }
+      }
+    }
+
+    &__title {
+
+    }
+
+    &__form {
+      .cols(16);
+
+      @media @lg {
+        .cols(12);
+      }
+      @media @md{
+        .cols(16);
+      }
+      @media @sm, @xs{
+        .cols(16);
+      }
+
+      .form__basket {
+        position: relative;
+
+        label.form__group_label {
+          font-size: @s_text_2;
+          display: block;
+          margin: 0;
+        }
+
+        &.focused {
+
+          .form__group_label {
+            color: @c_main;
+            font-size: @s_text_2;
+          }
+        }
+
+        input.form_input, textarea.form_input {
+          .animation();
+          border: 1px solid @c_black;
+          font-size: @s_text_2;
+          margin: 10px 0;
+          padding: 5px 10px;
+          width: 100%;
+          border-radius: 3px;
+          max-width: 340px;
+          resize: none;
+
+          &:-internal-autofill-selected {
+            background: @c_white;
+          }
+        }
+
+        textarea.form_input {
+          height: 7em;
+          font-size: @sizeSx;
+        }
+      }
+    }
+
+    &__delivery,
+    &__payment {
+      .flex();
+
+      .checkbox {
+        .cols(16);
+        margin: 10px;
+
+        @media @md{
+          .cols(16);
+        }
+        @media @sm, @xs{
+          .cols(16);
+        }
+
+        & > label {
+          .flex();
+          color: @c_black;
+          font-size: @s_text_2;
+          height: 100%;
+          width: 100%;
+          cursor: pointer;
+          align-items: center;
+
+          input {
+
+            &[type = radio] {
+              display: none;
+
+              &:checked + p {
+
+                &:before {
+                  background: @c_main;
+                  border: 1px solid @c_main;
+                }
+              }
+            }
+          }
+
+          .delivery_title, .payment_title {
+            display: inline-block;
+            width: 90%;
+            margin: 0;
+            position: relative;
+            padding-left: 15px;
+
+            @media @lg {
+              width: 80%;
+              font-size: @sizeM;
+            }
+            @media @md, @sm, @xs{
+              width: 80%;
+              font-size: @s_text_1;
+            }
+
+            &:before {
+              .animation();
+              border: 1px solid @c_gray_d;
+              content: '';
+              position: absolute;
+              left: 0;
+              width: 8px;
+              height: 8px;
+              top: 6px;
+              background: transparent;
+              border-radius: 50%;
+
+              @media @lg {
+                top: 4px;
+              }
+              @media @md, @sm, @xs{
+                top: 2px;
+              }
+            }
+          }
+
+          .small {
+            .cols(16);
+            font-weight: 100;
+            font-size: @s_text_1;
+            margin-bottom: 0;
+            padding-left: 15px;
+          }
+        }
+      }
+    }
+
+    &__delivery {
+      .cols(16);
+
+      .order_form_address {
+
+        label {
+          display: block;
+          margin: 10px 0;
+          cursor: pointer;
+
+          input {
+            &[type = radio] {
+              display: none;
+
+              &:checked + p {
+
+                &:before {
+                  background: @c_main;
+                  border: 1px solid @c_main;
+                }
+              }
+            }
+          }
+
+          .delivery_title {
+            display: inline-block;
+            width: 90%;
+            margin: 0;
+            position: relative;
+            padding-left: 15px;
+            font-size: @s_text_2;
+
+            &:before {
+              .animation();
+              border: 1px solid @c_gray_d;
+              content: '';
+              position: absolute;
+              left: 0;
+              width: 8px;
+              height: 8px;
+              top: 6px;
+              background: transparent;
+              border-radius: 50%;
+
+              @media @lg {
+                top: 4px;
+              }
+              @media @md, @sm, @xs{
+                top: 2px;
+              }
+            }
+
+            @media @lg {
+              width: 80%;
+              font-size: @sizeM;
+            }
+            @media @md, @sm, @xs{
+              width: 80%;
+              font-size: @s_text_2;
+            }
+          }
+
+          &.focused {
+
+            .form__group_label {
+              color: @c_main;
+              font-size: 11pt;
+            }
+          }
+        }
+      }
+    }
+
+    &__form_block {
+      .cols(7.5);
+
+      @media @smMinus {
+        .cols(16);
+      }
+
+      .date_shipping {
+        .flex();
+        justify-content: space-between;
+
+        & > label {
+          .cols(16);
+        }
+
+        &_wrap {
+          .cols(5);
+          box-shadow: @shadow;
+          margin: 1.25% 0;
+
+          @media @xs {
+            .cols(7.5);
+          }
+
+          label {
+            .animation();
+            position: relative;
+            display: block;
+            padding: 10px;
+            margin: 0;
+            cursor: pointer;
+            text-align: center;
+
+            p {
+              .animation();
+
+              &.day {
+                color: @c_main;
+                font-size: @sizeBxx;
+                font-family: @f_Monserat_b;
+              }
+            }
+          }
+
+          input[type=radio]:checked + label {
+            background: @c_main;
+
+            p {
+              color: @c_white;
+            }
+          }
+
+          input {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__map_block {
+      .cols(8);
+
+      @media @smMinus {
+        .cols(16);
+      }
+
+      #shipmap {
+        height: 500px;
+
+        @media @smMinus {
+          height: 250px;
+        }
+      }
+    }
+
+
+    &__total {
+
+      p {
+        font-size: @sizeM;
+
+        &.subtitle {
+          margin-top: 10px;
+        }
+
+        @media @lg {
+          font-size: 11pt;
+        }
+        @media @md, @sm, @xs {
+          font-size: @s_text_2;
+        }
+      }
+
+      button {
+        margin: 0 auto;
+      }
+
+      &_price {
+
+        p {
+          font-size: 1rem;
+          color: @c_black;
+
+          span {
+            color: @c_black;
+            font-size: 2.6rem;
+          }
+        }
+      }
+    }
+  }
+}

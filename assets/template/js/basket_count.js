@@ -12,8 +12,8 @@ function basket_count() {
     input.on('change', function() {
         var $input = $(this);
         var $price_parent = $input.parents($input.data('parent'));
-        var product_price = $('.js_price_charger_data', $price_parent).data('price');
         var $price_target = $('.js_price_charger_target', $price_parent);
+        var product_price = $price_target.data('price');
         var input_val = parseInt($input.val());
         $price_target.html((product_price * input_val).toFixed(1));
 
@@ -24,8 +24,8 @@ function basket_count() {
         var $input = $current_button.siblings('input');
         var $price_parent = $current_button.parents($current_button.data('parent'));
         var input_val = parseInt($input.val());
-        var product_price = $('.js_price_charger_data', $price_parent).data('price');
         var $price_target = $('.js_price_charger_target', $price_parent);
+        var product_price = $price_target.data('price');
 
         if ($(this).hasClass('js_plus')) {
             $input.val(input_val + 1);

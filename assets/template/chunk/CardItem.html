@@ -19,10 +19,9 @@
                     <input type="hidden" name="id" value="[[*id]]">
                     <div class="card__item_form_price">
                         <p class="price">
-                            <span class="price_number js_price_charger_target">[[+price]]</span>
+                            <span class="price_number js_price_charger_target" data-price="[[+price]]" >[[+price]]</span>
                             <span class="price_cur">руб.</span>
                         </p>
-                        <div class="js_price_charger_data hidden" data-price="[[+price]]"></div>
                         [[*PriceNotification:notempty=`<p class="price_notification">[[*PriceNotification]]</p>`]]
                     </div>
                     <div class="card__item_form_count">

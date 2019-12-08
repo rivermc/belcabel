@@ -25,6 +25,18 @@ $(document).ready(function() {
         $(this).next().children().toggleClass('js_active');
     });
 
+
+
+
+    $('.msOrder_forms__delivery input').click(function() {
+        if ($(this).is('#delivery_2')) {
+            $('.msOrder_forms__col_shipping').toggleClass('js_active', true);
+        }
+        else {
+            $('.msOrder_forms__col_shipping').toggleClass('js_active', false);
+        }
+    });
+
 });
 
   

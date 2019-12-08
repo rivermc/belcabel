@@ -8,10 +8,9 @@
     <div class="g_flex g_flex_j_between g_flex_a_end">
         <div class="item_layout_1__price">
             <p class="price">
-                <span class="price_number js_price_charger_target">[[+price]]</span>
+                <span class="price_number js_price_charger_target" data-price="[[+price]]">[[+price]]</span>
                 <span class="price_cur">руб.</span>
             </p>
-            <div class="js_price_charger_data hidden" data-price="[[+price]]"></div>
             [[+PriceNotification:notempty=`<p class="price_notification">[[+PriceNotification]]</p>`]]
         </div>
         <div class="item_layout_1__link">

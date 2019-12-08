@@ -1,0 +1,15 @@
+html {
+  height: 101%;
+}
+.preloader {
+  transition: all 0.4s;
+  position: fixed;
+  z-index: 99999;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #eee7ee url(/assets/template/images/logo.svg) center center no-repeat;
+  background-size: 300px;
+}
