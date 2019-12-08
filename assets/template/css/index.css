@@ -2094,6 +2094,11 @@ footer .footer_right__social a svg path {
 }
 .slider_wrap {
   width: 50%;
+  margin-top: auto;
+}
+.slider_button {
+  width: 100%;
+  margin-bottom: auto;
 }
 .slider_item .title,
 .slider_item .text {
