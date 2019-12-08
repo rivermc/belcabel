@@ -1,0 +1,49 @@
+        <div class="main">
+            <div class="container">
+                <div class="g_wrap g_flex g_flex_j_between">
+                    <div class="main__left js_menu_target_left">
+                        <div class="menu">
+                            <div class="menu__button">
+                                <button class="button js_menu_button">Фильтр<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.9 6.52502C11.9 6.82502 11.8 7.02502 11.6 7.22502C11.2 7.62502 10.6 7.62502 10.2 7.22502L6.30001 3.32502L2.40001 7.22502C2.00001 7.52502 1.40001 7.52502 1.00001 7.22502C0.600012 6.82502 0.600012 6.22502 1.00001 5.82502L5.60001 1.22502C5.70001 1.02502 6.00001 0.925024 6.30001 0.925024C6.60001 0.925024 6.80001 1.02502 7.00001 1.22502L11.6 5.82502C11.8 6.02502 11.9 6.32502 11.9 6.52502Z" fill="#D05638"></path>
+                                </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <form action="[[~[[*id]]]]" method="post" id="mse2_filters" class="js_menu_target_close">
+                            [[+filters]]
+                        </form>
+                    </div>
+                    <div class="main__right js_menu_target_right">
+                        [[$SearchForms]]
+                        <div class="main__right_catalog">
+                            [[pdoResources?
+                                &parents = `[[*id]]`
+                                &sortBy = `{"menuindex":"ASC"}`
+                                &tpl = `MainCatalog`
+                                &where = `{"template":"5"}`
+                                &depth = `0`
+                                &limit = `0`
+                                &includeTVs = `CatalogImg`
+                            ]]
+                        </div>
+
+                        <div id="mse2_sort" class=" filter_sort">
+                            <a href="#" data-sort="ms|price" data-dir="[[+mse2_sort:is=`ms|price:desc`:then=`desc`]]" data-default="desc" class="sort js_no_preload">Цена<span></span></a>
+                            <a href="#" data-sort="ms_product|pagetitle" data-dir="[[+mse2_sort:is=`ms_product|pagetitle:desc`:then=`desc`]]" data-default="desc" class="sort js_no_preload">Названию<span></span></a>
+                            <a href="#" data-sort="tv|HitsPage" data-dir="[[+mse2_sort:is=`tv|HitsPage:desc`:then=`desc`]]" data-default="desc" class="sort js_no_preload">Популярность<span></span></a>
+                            <a href="#" data-sort="tv|HitsPage" data-dir="[[+mse2_sort:is=`tv|HitsPage:desc`:then=`desc`]]" data-default="desc" class="sort js_no_preload">Популярность<span></span></a>
+                        </div>
+                        <div id="mse2_results">
+                            [[+results]]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="mse2_pagination">
+        [[!+page.nav]]
+    </div>
+
+
+

@@ -1,0 +1,14 @@
+<div class="msearch2" id="mse2_mfilter">
+    <div class="filter">
+        <form action="[[~[[*id]]]]" method="post" id="mse2_filters">
+            [[+filters]]
+            <div id="mse2_sort" class=" filter_sort">
+                <a href="#" data-sort="ms|price" data-dir="[[+mse2_sort:is=`ms|price:desc`:then=`desc`]]" data-default="desc" class="sort js_no_preload">Цена<span></span></a>
+                <a href="#" data-sort="tv|HitsPage" data-dir="[[+mse2_sort:is=`tv|HitsPage:desc`:then=`desc`]]" data-default="desc" class="sort js_no_preload">Популярность<span></span></a>
+            </div>
+        </form>
+    </div>
+    <div class="mse2_pagination">
+        [[!+page.nav]]
+    </div>
+</div>
