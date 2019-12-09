@@ -77,12 +77,17 @@ h1, .h1 {
   margin: 0 0 20px;
   text-transform: uppercase;
 
-  @media @md {
+  @media @lg {
     font-size: @s_title_2;
   }
-
-  @media @smMinus {
+  @media @md {
     font-size: @s_title_3;
+  }
+  @media @sm {
+    font-size: @s_title_4;
+  }
+  @media @xs {
+    font-size: @s_text_4;
   }
 }
 
@@ -93,11 +98,17 @@ h2, .h2 {
   margin: 20px 0 10px;
   text-transform: uppercase;
 
-  @media @sm {
+  @media @lg {
     font-size: @s_title_3;
   }
-  @media @xs {
+  @media @md {
     font-size: @s_title_4;
+  }
+  @media @sm {
+    font-size: @s_text_4;
+  }
+  @media @xs {
+    font-size: @s_text_3;
   }
 }
 
@@ -105,14 +116,36 @@ h3, .h3 {
   font-size: @s_title_3;
   margin: 20px 0 10px;
 
-  @media @smMinus {
+  @media @lg {
     font-size: @s_title_4;
+  }
+  @media @md {
+    font-size: @s_text_4;
+  }
+  @media @sm {
+    font-size: @s_text_3;
+  }
+  @media @xs {
+    font-size: @s_text_2;
   }
 }
 
 h4, .h4 {
   font-size: @s_title_4;
   margin: 20px 0 10px;
+
+  @media @lg {
+    font-size: @s_text_4;
+  }
+  @media @md {
+    font-size: @s_text_3;
+  }
+  @media @sm {
+    font-size: @s_text_2;
+  }
+  @media @xs {
+    font-size: @s_text_1;
+  }
 }
 
 
@@ -120,6 +153,13 @@ p,
 label {
   font-size: @s_text_2;
   margin: 0 0 10px;
+
+  @media @mdMinus {
+    font-size: @s_text_1;
+  }
+  @media @xs {
+    font-size: @s_text_0;
+  }
 }
 
 ymaps p {
@@ -171,8 +211,11 @@ button {
   display: table;
   line-height: 1em;
 
-  @media @smMinus {
-    font-size: @sizeSx;
+  @media @mdMinus {
+    font-size: @s_text_1;
+  }
+  @media @xs {
+    font-size: @s_text_0;
   }
 
   &_white {
@@ -286,11 +329,11 @@ button {
   padding: 0 15px;
 
   @media @smPlus {
-    padding: 0 ~'calc(50% - 270px)';
+    padding: 0 ~'calc(50% - 260px)';
   }
 
   @media @mdPlus {
-    padding: 0 ~'calc(50% - 360px)';
+    padding: 0 ~'calc(50% - 370px)';
   }
 
   @media @lgPlus {

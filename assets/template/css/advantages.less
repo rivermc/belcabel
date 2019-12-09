@@ -11,11 +11,36 @@
 
   &_item {
     .cols(5);
-    padding: 20px 50px;
+    padding: 20px 30px;
+
+    @media @lg {
+      .cols(5.25);
+      padding: 20px 10px;
+    }
+    @media @mdMinus {
+      .cols(7.5);
+      padding: 10px 0;
+    }
+    @media @xs {
+      .cols(16);
+      .flex();
+      align-items: center;
+      padding: 10px 0;
+    }
 
     svg {
-      height: 150px;
-      margin-bottom: 20px
+      height: 80px;
+      margin-bottom: 20px;
+
+      @media @mdMinus {
+        height: 70px;
+        margin-bottom: 10px;
+      }
+      @media @xs {
+        width: 60px;
+        height: 35px;
+        margin: 0 10px 10px 0;
+      }
     }
 
     .title {
@@ -23,6 +48,25 @@
       font-size: @s_text_4;
       font-family: @f_Monserat_b;
       min-height: 3em;
+
+      @media @mdMinus {
+        font-size: @s_text_3;
+        min-height: 1em;
+      }
+      @media @sm {
+        font-size: @s_text_2;
+      }
+      @media @xs {
+        font-size: @s_text_1;
+        flex: 1;
+      }
+    }
+
+    .text {
+
+      @media @xs {
+        .cols(16);
+      }
     }
   }
 }

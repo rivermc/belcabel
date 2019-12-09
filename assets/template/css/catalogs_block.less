@@ -9,8 +9,19 @@
     .flex();
     align-items: center;
 
+    @media @mdMinus {
+      .cols(7.95);
+    }
+    @media @xs {
+      .cols(16);
+    }
+
     &_wrap {
       padding: 0 20%;
+
+      @media @lgMinus {
+        padding: 0 5%;
+      }
 
       h2 {
         color: @c_main;
@@ -39,14 +50,11 @@
     border: 2px solid transparent;
     border-bottom: 0;
 
-    @media @lgMinus {
-      .cols(3.75);
-    }
-    @media @sm {
-      .cols(5);
+    @media @mdMinus {
+      .cols(7.95);
     }
     @media @xs {
-      .cols(8);
+      .cols(16);
     }
 
     &:hover {
@@ -113,7 +121,11 @@
           a {
             .animation();
             color: @c_black;
-            font-size: @sizeM;
+            font-size: @s_text_1;
+
+            @media @smMinus {
+              font-size: @s_text_0;
+            }
 
             &:hover {
               color: @c_main;
@@ -146,6 +158,10 @@
         color: @c_black;
         font-size: @s_text_2;
         margin: 0;
+
+        @media @mdMinus {
+          font-size: @s_text_1;
+        }
       }
 
       .count {

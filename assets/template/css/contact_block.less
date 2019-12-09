@@ -6,6 +6,11 @@
   padding-top: 50px;
   position: relative;
 
+  @media @smMinus {
+    padding-top: 0;
+    border-left: 10px solid @c_main;
+  }
+
   &.full_map {
     padding-top: 0;
 
@@ -26,11 +31,18 @@
     @media @smMinus {
       .cols(16);
       order: 1;
+      border: 0;
     }
 
     #map {
-      height: 700px;
+      height: 600px;
 
+      @media @lg {
+        height: 500px;
+      }
+      @media @md {
+        height: 400px;
+      }
       @media @smMinus {
         height: 300px;
       }
@@ -54,6 +66,9 @@
 
       @media @smMinus {
         transform: none;
+        position: relative;
+        left: 0;
+        bottom: 0;
       }
     }
 
@@ -72,18 +87,27 @@
 
       h2 {
         color: @c_main;
-        margin: 0 0 100px;
-      }
+        margin: 0 0 70px;
 
-      p {
-        font-size: @s_text_2;
+        @media @lg {
+          margin: 0 0 50px;
+        }
+        @media @md {
+          margin: 0 0 30px;
+        }
+        @media @smMinus {
+          margin: 0 0 20px;
+        }
       }
 
       .phone_block {
         margin: 30px 0 50px;
 
+        @media @lgMinus {
+          margin: 20px 0;
+        }
         @media @smMinus {
-          margin: 10px 0 20px;
+          margin: 10px 0;
         }
 
         a {
@@ -92,6 +116,11 @@
           font-family: @f_Monserat_b;
           display: block;
           margin-bottom: 10px;
+
+          @media @smMinus {
+            font-size: @s_text_1;
+            margin-bottom: 5px;
+          }
         }
       }
 

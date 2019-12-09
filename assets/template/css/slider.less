@@ -1,13 +1,27 @@
 .slider {
 	.flex();
+	.g_padding(10px, 10px);
 	min-height: 590px;
 	background: url('/assets/template/images/bg/slider.jpg');
+	background-position: center;
 	align-items: center;
 	position: relative;
+
+	@media @mdMinus {
+		background-position: left;
+		min-height: 450px;
+	}
+	@media @smMinus {
+		min-height: 350px;
+	}
 
 	&_wrap {
 		.cols(8);
 		margin-top: auto;
+
+		@media @mdMinus {
+			.cols(16);
+		}
 	}
 
 	&_button {
@@ -24,6 +38,10 @@
 
 		.text {
 			margin: 20px 0 40px;
+
+			@media @smMinus {
+				margin: 20px 0;
+			}
 		}
 	}
 
@@ -31,6 +49,13 @@
 		position: absolute;
 		left: 52%;
 		bottom: 30px;
+
+		@media @smMinus {
+			position: relative;
+			left: 0;
+			bottom: 0;
+			margin: 10px auto 0;
+		}
 
 		ul {
 			.flex();
@@ -52,6 +77,7 @@
 					height: 14px;
 					display: block;
 					border-radius: 10px;
+					cursor: pointer;
 				}
 			}
 		}

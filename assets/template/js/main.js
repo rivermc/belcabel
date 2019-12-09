@@ -37,6 +37,17 @@ $(document).ready(function() {
         }
     });
 
+    $(window).scroll(function () {
+        var scroll = $(document).scrollTop();
+        var target = $('.js_scroll_target');
+        if (scroll >= 150 && !target.hasClass('js_active')) {
+            target.addClass('js_active');
+        }
+        else if (scroll < 150 && target.hasClass('js_active')) {
+            target.removeClass('js_active');
+        }
+    });
+
 });
 
   

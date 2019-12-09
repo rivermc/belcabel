@@ -1,7 +1,15 @@
 .callback_block {
   .flex();
-  margin-top: 40px;
+  margin: 40px 0 0;
   align-items: flex-start;
+
+  @media @sm {
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  @media @xs {
+    margin: 20px 0;
+  }
 
   &__content {
     .cols(8);
@@ -10,6 +18,17 @@
     padding: 40px;
     position: relative;
     z-index: 1;
+
+    @media @sm {
+      .cols(11.5);
+      .colsOf(0);
+      margin-bottom: 20px;
+    }
+    @media @xs {
+      .cols(16);
+      .colsOf(0);
+      padding: 10px;
+    }
 
     &:before {
       border-top: 2px solid @c_main;
@@ -22,6 +41,10 @@
       transform: rotate(45deg);
       right: -38px;
       top: 200px;
+
+      @media @xs {
+        display: none;
+      }
     }
 
     .title {
@@ -44,6 +67,13 @@
 
   &__img {
     .cols(7);
+
+    @media @sm {
+      .cols(4);
+    }
+    @media @xs {
+      display: none;
+    }
 
     img {
       position: relative;

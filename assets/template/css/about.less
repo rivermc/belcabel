@@ -1,14 +1,25 @@
 .about {
 	background: url("./../images/bg/about.jpg");
 	background-size: cover;
+	background-position: center;
 	background-repeat: no-repeat;
 	padding: 100px 0;
-	min-height: 500px;
 	display: flex;
 	align-items: center;
 
+	@media @lg {
+		padding: 70px 0;
+	}
+	@media @mdMinus {
+		padding: 30px 0;
+	}
+
 	&__wrap {
 		.cols(6);
+
+		@media @smMinus {
+			.cols(16);
+		}
 
 		h2 {
 			color: @c_main;

@@ -5,23 +5,39 @@
   align-items: center;
   justify-content: space-between;
 
+  @media @smMinus {
+    justify-content: center;
+  }
+
   .title {
-    .cols(8);
-    font-size: @s_text_2;
     font-family: @f_Monserat_b;
     margin: 0;
+    flex: 1;
+
+    @media @smMinus {
+      .cols(16);
+      margin: 0 0 10px;
+      text-align: center;
+    }
   }
 
   .follow {
-    .cols(7);
 
     form {
       .flex();
       justify-content: flex-end;
 
+      @media @xs {
+        justify-content: center;
+      }
+
       .form_group {
         margin: 0 20px 0 0;
         min-width: 255px;
+
+        @media @xs {
+          margin: 0 0 10px;
+        }
       }
     }
   }
