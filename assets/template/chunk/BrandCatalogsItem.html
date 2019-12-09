@@ -9,14 +9,19 @@
     &parents=`[[+id]]`
     &depth = `5`
     &limit = `4`
-    &tpl=`@INLINE <img src="[[+image]]" alt="[[+pagetitle]]">`
+    &tpl=`@INLINE  [[+image]]`
     &where = `{"template:NOT IN":[5,17,16]}`
-    &toPlaceholder = `images`
+    &toSeparatePlaceholders = `images`
     &sortby = `RAND()`
 ]]
 <div class="brand_catalogs__item" data-id="[[+id]]">
     <div class="brand_catalogs__item_img">
-        <a href="/[[+uri]]" class="product_images"  data-id="[[+id]]">[[+images]]</a>
+        <a href="/[[+uri]]" class="product_images"  data-id="[[+id]]">
+            [[+images0:notempty=`<img src="[[+images0:phpthumbon=`w=70&h=70&zc=1`]]" alt="[[+pagetitle]]" class="lazyload">`]]
+            [[+images1:notempty=`<img src="[[+images1:phpthumbon=`w=70&h=70&zc=1`]]" alt="[[+pagetitle]]" class="lazyload">`]]
+            [[+images2:notempty=`<img src="[[+images2:phpthumbon=`w=70&h=70&zc=1`]]" alt="[[+pagetitle]]" class="lazyload">`]]
+            [[+images3:notempty=`<img src="[[+images3:phpthumbon=`w=70&h=70&zc=1`]]" alt="[[+pagetitle]]" class="lazyload">`]]
+        </a>
     </div>
     <div class="brand_catalogs__item_title">
         <a href="/[[+uri]]" data-id="[[+id]]">
