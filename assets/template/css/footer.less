@@ -9,6 +9,15 @@ footer {
     &_left {
       .cols(6);
 
+      @media @sm {
+        .cols(9);
+        order: 1;
+      }
+      @media @xs {
+        .cols(16);
+        order: 1;
+      }
+
       &__logo {
 
         a {
@@ -33,6 +42,14 @@ footer {
         padding-left: 75px;
         margin: 50px 0 80px;
 
+        @media @lg {
+          margin: 20px 0 50px;
+        }
+        @media @mdMinus {
+          margin: 20px 0;
+          padding-left: 0;
+        }
+
         p {
           color: @c_white;
         }
@@ -40,6 +57,10 @@ footer {
 
       &__copyright {
         padding-left: 75px;
+
+        @media @mdMinus {
+          padding-left: 0;
+        }
 
         p {
           color: @c_white;
@@ -52,7 +73,18 @@ footer {
 
     &_center {
       .cols(3);
-      padding-top: 20px;
+      padding: 20px 0 0;
+
+      @media @lg {
+        .cols(4);
+      }
+      @media @md {
+        .cols(4.5);
+      }
+      @media @smMinus {
+        .cols(16);
+        padding: 0 0 20px;
+      }
 
       &__menu {
         height: 100%;
@@ -63,14 +95,37 @@ footer {
           justify-content: space-between;
           height: 100%;
 
+          @media @smMinus {
+            flex-direction: row;
+          }
+          @media @xs {
+            justify-content: center;
+          }
+
           li {
             margin: 0 0 5px;
 
+            @media @xs {
+              margin: 0 10px 5px;
+            }
+
             a {
+              .animation();
               font-size: @s_text_2;
               color: @c_white;
               font-family: @f_Monserat_b;
               text-transform: uppercase;
+
+              &:hover {
+                color: @c_main_l;
+              }
+
+              @media @md {
+                font-size: @s_text_1;
+              }
+              @media @smMinus {
+                font-size: @s_text_0;
+              }
             }
           }
         }
@@ -84,22 +139,44 @@ footer {
       justify-content: space-between;
       padding-top: 20px;
 
+      @media @md {
+        .cols(4);
+      }
+      @media @sm {
+        .cols(5);
+        order: 1;
+        padding: 0;
+      }
+      @media @xs {
+        .cols(16);
+        padding: 0 0 20px;
+      }
+
       &__contact {
         text-align: right;
 
-        .phone_link {
-          color: @c_white;
-          font-size: @s_text_3;
-          font-family: @f_Monserat_b;
-          display: block;
+        @media @xs {
+          text-align: center;
         }
 
-        .email_link {
-          color: @c_main_l;
-          font-size: @s_text_1;
+        a {
+          .animation();
+          color: @c_white;
           font-family: @f_Monserat_b;
           display: block;
-          margin-top: 25px;
+
+          &:hover {
+            color: @c_main_l;
+          }
+
+          &.phone_link {
+            font-size: @s_text_3;
+          }
+
+          &.email_link {
+            font-size: @s_text_1;
+            margin-top: 25px;
+          }
         }
       }
 
@@ -108,11 +185,19 @@ footer {
         justify-content: flex-end;
         align-items: center;
 
+        @media @xs {
+          justify-content: center;
+        }
+
         p {
           .cols(16);
           color: @c_white;
           font-size: @s_text_1;
           text-align: right;
+
+          @media @xs {
+            text-align: center;
+          }
         }
 
         svg {
@@ -125,6 +210,10 @@ footer {
         justify-content: flex-end;
         align-items: center;
         margin-bottom: 5px;
+
+        @media @xs {
+          justify-content: center;
+        }
 
         a {
           margin-left: 30px;
