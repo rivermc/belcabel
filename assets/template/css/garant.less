@@ -12,8 +12,19 @@
     align-items: center;
     justify-content: space-between;
 
+    @media @xs {
+      .cols(16);
+      justify-content: center;
+      margin: 20px auto;
+    }
+
     svg {
       .cols(2);
+
+      @media @xs {
+        .cols(6);
+        margin-bottom: 10px;
+      }
     }
 
     p {
@@ -21,6 +32,18 @@
       font-size: @s_text_4;
       color: @c_main;
       font-family: @f_Monserat_b;
+
+      @media @lgMinus {
+        font-size: @s_text_2;
+      }
+      @media @sm {
+        font-size: @s_text_1;
+      }
+      @media @xs {
+        .cols(16);
+        font-size: @s_text_0;
+        text-align: center;
+      }
     }
   }
 
@@ -29,19 +52,36 @@
     justify-content: space-between;
     margin: 40px 0;
 
+    @media @xs {
+      margin: 20px auto;
+    }
+
     h2 {
       .cols(16);
       color: @c_main;
       text-align: center;
       text-transform: none;
       margin-bottom: 80px;
+
+      @media @xs {
+        margin-bottom: 50px;
+      }
     }
 
     &__item {
       .cols(5.15);
       box-shadow: @shadow;
-      padding: 80px 30px 50px 30px;
+      padding: 80px 30px 50px;
       position: relative;
+
+      @media @md {
+        padding: 80px 10px 50px;
+      }
+      @media @smMinus {
+        .cols(16);
+        padding: 50px 10px 30px;
+        margin-bottom: 20px;
+      }
 
       .count {
         border-radius: @radius;
@@ -68,15 +108,27 @@
     border: 2px solid @c_main;
     margin-bottom: 60px;
 
+    @media @xs {
+      margin-bottom: 30px;
+    }
+
     .broken__wrap {
       .cols(14);
       margin: 40px auto;
+
+      @media @xs {
+        margin: 20px auto;
+      }
 
       h3 {
         color: @c_main;
         font-family: @f_Monserat_b;
         text-transform: uppercase;
         margin-bottom: 30px;
+
+        @media @xs {
+          margin-bottom: 20px;
+        }
       }
 
       .form {
@@ -86,18 +138,33 @@
         &_left {
           .cols(7.5);
 
+          @media @smMinus {
+            .cols(16);
+          }
+
           textarea {
             height: 170px;
             resize: none;
             border-radius: 20px;
+
+            @media @sm {
+              height: 140px;
+            }
+            @media @xs {
+              height: 120px;
+            }
           }
         }
 
         &_right {
           .cols(7.5);
 
+          @media @smMinus {
+            .cols(16);
+          }
+
           button {
-            min-width: 260px;
+            min-width: 250px;
           }
         }
       }

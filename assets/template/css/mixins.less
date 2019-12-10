@@ -2,30 +2,18 @@
 	font-family: @name;
 	src: url('../fonts/@{file}.eot');
 	src:
-					url('../fonts/@{file}.woff') format('woff'),
-					url('../fonts/@{file}.ttf') format('truetype'),
-					url('../fonts/@{file}.eot?#iefix') format('embedded-opentype');
+			url('../fonts/@{file}.woff') format('woff'),
+			url('../fonts/@{file}.ttf') format('truetype'),
+			url('../fonts/@{file}.eot?#iefix') format('embedded-opentype');
 	font-weight: normal;
 	font-style: normal;
 }
 
-.flex (@wrap: wrap) {
-	display: flex;
-	flex-wrap: @wrap;
+.animation (@animation: 0.4s, @prop: all, @ease: linear) {
+	transition: @prop @animation @ease;
 }
-
-.cols(@numb) {
-	width: 6.25% * @numb;
-}
-.colsOf(@numb) {
-	margin-left: 6.25% * @numb;
-}
-.colsOfR(@numb) {
-	margin-right: 6.25% * @numb;
-}
-
-.f_col(@size, @resize, @col) {
-	flex: @size @resize (6.25% * @col);
+.animationKey (@key, @time, @ease, @count) {
+	animation:@key @time @ease @count;
 }
 
 .g_padding(@top, @bottom) {
@@ -33,20 +21,22 @@
 	padding-bottom: @bottom;
 }
 
-.animation (@animation: 0.4s, @prop: all, @ease: linear) {
-   transition: @prop @animation @ease;
+.flex (@wrap: wrap) {
+	display: flex;
+	flex-wrap: @wrap;
 }
 
-.animationKey (@key, @time, @ease, @count) {
-	animation:@key @time @ease @count;
+@col_size: 6.25%;
+.f_col(@size, @resize, @col) {
+	flex: @size @resize (@col_size * @col);
 }
-
-.makeRandom(@min: 0, @max: @min+1, @int: 0) { 
-  .checkInt() {
-    @getNum: `Math.random() * (@{max} - @{min} + @{int})`;
-    @base: unit(`@{int} == 1 ? Math.floor(@{getNum}) : @{getNum}`);
-  }
-  .checkInt();
-  @randNum: @base + @min;
+.cols(@numb) {
+	width: @col_size * @numb;
+}
+.colsOf(@numb) {
+	margin-left: @col_size * @numb;
+}
+.colsOfR(@numb) {
+	margin-right: @col_size * @numb;
 }
 

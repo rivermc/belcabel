@@ -1,12 +1,68 @@
 .vertical_menu {
 
+  &.g_cols_2 {
+
+    ul {
+
+      li {
+        @media @mdMinus {
+          .cols(7.5);
+        }
+        @media @xs {
+          .cols(14);
+        }
+        ul {
+          li {
+            .cols(16);
+            ul {
+              li {
+                .cols(16);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.g_cols_3 {
+
+    ul {
+
+      li {
+        @media @md {
+          .cols(5.25);
+        }
+        @media @sm {
+          .cols(7.5);
+        }
+        @media @xs {
+          .cols(14);
+        }
+        ul {
+          li {
+            .cols(16);
+            ul {
+              li {
+                .cols(16);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   ul {
     background: @c_submain;
+
+    @media @mdMinus {
+      .flex();
+    }
 
     li {
       position: relative;
       margin: 0;
-
 
       a {
         .animation();
@@ -16,6 +72,16 @@
         padding: 10px 10px 10px 30px;
         text-transform: uppercase;
         position: relative;
+
+        @media @lgMinus {
+          font-size: @s_text_1;
+        }
+        @media @mdMinus {
+          padding: 5px 10px 5px 30px;
+        }
+        @media @smMinus {
+          font-size: @s_text_0;
+        }
 
         .menu_toggle {
           .flex();
@@ -36,6 +102,7 @@
         z-index: 100;
 
         li {
+          .cols(16);
 
           a {
             font-size: @s_text_0;
@@ -47,12 +114,18 @@
             border: 0;
 
             li {
+              .cols(16);
 
               a {
                 color: @c_black;
                 font-size: @s_text_0;
                 font-family: @f_Monserat_b;
                 padding-left: 40px;
+
+                @media @smMinus {
+                  font-family: @f_Monserat;
+                  padding-left: 10px;
+                }
               }
             }
           }

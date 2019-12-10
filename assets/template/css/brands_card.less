@@ -17,6 +17,13 @@
     font-family: @f_Monserat_b;
     font-size: @s_text_2;
     text-decoration: underline;
+
+    @media @mdMinus {
+      font-size: @s_text_1;
+    }
+    @media @xs {
+      font-size: @s_text_0;
+    }
   }
 
   &__catalog {

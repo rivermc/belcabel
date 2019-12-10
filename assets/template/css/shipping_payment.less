@@ -11,14 +11,26 @@
     .g_padding(0, 60px);
     justify-content: space-between;
 
+    @media @xs {
+      .g_padding(0, 30px);
+    }
+
     .advantages_item {
       padding: 20px 10px;
+
+      @media @xs {
+        padding: 10px;
+      }
     }
   }
 
   .payment_block {
     .g_padding(60px, 60px);
     background: @c_submain;
+
+    @media @xs {
+      .g_padding(30px, 30px);
+    }
   }
 }
 

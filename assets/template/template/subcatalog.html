@@ -4,8 +4,8 @@
     <div class="subcatalog">
         <div class="container">
             <div class="subcatalog_wrap g_wrap">
-                <div class="g_left">
-                    <div class="vertical_menu">
+                <div class="g_left js_left_toggle_target">
+                    <div class="vertical_menu g_cols_3">
                         [[pdoMenu?
                             &parents = `1366`
                             &level = `3`
@@ -15,6 +15,10 @@
                             &tpl = `@INLINE <li [[+classes]]><a href="/[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
                         ]]
                     </div>
+                </div>
+                <div class="g_left_toggle js_left_toggle">
+                    <p>Меню</p>
+                    [[IncSvg? &file=`icons/toup.svg`]]
                 </div>
                 <div class="g_right">
                     [[$Crumbs]]

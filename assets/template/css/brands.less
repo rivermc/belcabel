@@ -9,11 +9,22 @@
     .flex();
     justify-content: space-between;
 
+    @media @mdMinus {
+      margin-top: 45px;
+    }
+
     &_item {
       .cols(3);
       .animation();
       padding: 10px;
       text-align: center;
+
+      @media @sm {
+        .cols(5.25);
+      }
+      @media @xs {
+        .cols(7.75);
+      }
 
       a {
         color: @c_black;
@@ -23,6 +34,10 @@
 
         p {
           font-size: @s_text_1;
+
+          @media @mdMinus {
+            font-size: @s_text_0;
+          }
         }
       }
 

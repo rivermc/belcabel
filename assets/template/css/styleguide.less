@@ -48,10 +48,6 @@ body {
 
 
 //-------------------------------------------------------------------------//
-// Typograph //
-//-------------------------------------------------------------------------//
-
-//-------------------------------------------------------------------------//
 // Fonts //
 //-------------------------------------------------------------------------//
 
@@ -69,6 +65,10 @@ body {
 .rub {
   font-family: 'rub' !important;
 }
+
+//-------------------------------------------------------------------------//
+// Typograph //
+//-------------------------------------------------------------------------//
 
 h1, .h1 {
   font-size: @s_title_1;
@@ -169,7 +169,6 @@ ymaps p {
 
 ul,
 ol {
-
   li {
     font-size: @s_text_2;
     margin: 0 0 10px;
@@ -379,13 +378,72 @@ button {
   }
 }
 
+
+
 .g_wrap {
   .flex();
   justify-content: space-between;
+  position: relative;
 }
+
+
 .g_left {
   .cols(4);
+
+  @media @mdMinus {
+    .cols(16);
+  }
 }
 .g_right {
-  .cols(11.5);
+  flex: 1;
+  padding-left: 20px;
+
+  @media @mdMinus {
+    .cols(16);
+    padding-left: 0;
+    flex: none;
+  }
+}
+
+.g_left_toggle {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  padding: 10px 15px;
+
+  @media @mdMinus {
+    .flex();
+    align-items: center;
+  }
+
+  svg {
+    .animation();
+  }
+
+  &.js_active {
+    .animation(0.4s, background);
+    justify-content: center;
+    padding: 10px 20px;
+
+    svg {
+      transform: rotate(180deg);
+
+      path {
+        fill: @c_white;
+      }
+    }
+
+    p {
+      display: block;
+      animation: fadeIn 0.8s ease 1 forwards;
+    }
+  }
+
+  p {
+    display: none;
+    margin: 0 5px 0;
+    opacity: 0;
+  }
 }

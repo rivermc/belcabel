@@ -18,15 +18,26 @@
       font-family: @f_Monserat_b;
       color: @c_main;
       margin-bottom: 20px;
+      text-transform: none;
     }
 
     &.contact {
 
+      @media @sm {
+        .cols(8);
+      }
+      @media @xs {
+        .cols(16);
+      }
+
       .phone_block {
         margin: 30px 0 50px;
 
-        @media @smMinus {
+        @media @sm {
           margin: 10px 0 20px;
+        }
+        @media @xs {
+          margin: 10px 0;
         }
 
         a {
@@ -41,6 +52,34 @@
 
     &.ur_info {
 
+      @media @sm {
+        .cols(8);
+      }
+      @media @xs {
+        .cols(16);
+      }
+
+      p {
+
+        &:nth-child(2) {
+
+          strong {
+            margin-top: 0;
+          }
+        }
+
+        strong {
+          display: block;
+          margin-top: 2em;
+        }
+      }
+    }
+
+    &.dops_info {
+
+      @media @smMinus {
+        .cols(16);
+      }
     }
   }
 }

@@ -5,7 +5,7 @@
     <div class="msearch2 catalog" id="mse2_mfilter">
         <div class="container">
             <div class="g_wrap">
-                <div class="g_left">
+                <div class="g_left js_left_toggle_target">
                     <div class="filter">
                         <p class="title h4">Фильтр параметров</p>
                         <form action="/[[~[[*id]]]]" method="post" id="mse2_filters" class="filter__form">
@@ -37,6 +37,10 @@
                             <button class="button_reset js_filter_reset">Сбросить фильтр</button>
                         </form>
                     </div>
+                </div>
+                <div class="g_left_toggle js_left_toggle">
+                    <p>Фильтр</p>
+                    [[IncSvg? &file=`icons/toup.svg`]]
                 </div>
                 <div class="g_right">
                     [[$Crumbs]]

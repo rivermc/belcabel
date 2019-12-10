@@ -48,6 +48,23 @@ $(document).ready(function() {
         }
     });
 
+
+    $('.js_left_toggle').click(function() {
+        if ($(this).hasClass('js_active')) {
+            $(this).toggleClass('js_active button button_svg');
+            $('.js_left_toggle_target').slideDown();
+        }
+        else {
+            $('.js_left_toggle_target').slideUp(() => {
+                $(this).toggleClass('js_active button button_svg');
+            });
+        }
+    });
+
+    if (window.innerWidth <= 768) {
+        $('.js_left_toggle').trigger('click');
+    }
+
 });
 
   
