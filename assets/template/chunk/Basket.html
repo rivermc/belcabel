@@ -33,8 +33,6 @@
                     <div class="basket__product_allprice">
                         <p>Общая стоимость</p>
                     </div>
-                    <div class="basket__product_remove">
-                    </div>
                 </div>
                 {foreach $products as $product}
                     <div class="basket__product_wrap basket__product_item" id="{$product.key}">
@@ -43,7 +41,7 @@
                         </div>
                         <div class="basket__product_title">
                             <a href="{$product.id | url}">{$product.pagetitle}</a>
-                            <p><b>Артикул</b>: {$product.article}</p>
+                            <p class="article"><b>Артикул</b>: {$product.article}</p>
                             {foreach $product.options as $name => $value}
                                 <p><b>{('ms2_product_' ~ $name) | lexicon}</b>: {$value}</p>
                             {/foreach}
@@ -62,7 +60,7 @@
                             </form>
                         </div>
                         <div class="basket__product_allprice">
-                            <p class="price">
+                            <p class="price h4">
                                 <span class="product_price js_price_charger_target" data-id="{$product.key}" data-price="{$product.price}">{$product.count * $product.price}</span>
                                 <span class="rub">Р</span>
                             </p>
@@ -85,8 +83,8 @@
                 <div class="basket__total_wrap">
                     <div class="basket__total_block">
                         <div class="basket__total_block_count">
-                            <p>Товаров в корзине: <span class="ms2_total_count">{$total.count}</span> шт.</p>
-                            <p>На сумму: <span class="ms2_total_cost">{$total.cost}</span> <span class="rub">Р</span></p>
+                            <p>Товаров в корзине: <span class="ms2_total_count h3">{$total.count}</span> шт.</p>
+                            <p>На сумму: <span class="ms2_total_cost h3">{$total.cost}</span> <span class="rub h3">Р</span></p>
                         </div>
                     </div>
                 </div>

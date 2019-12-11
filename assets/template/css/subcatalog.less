@@ -21,6 +21,13 @@
     font-family: @f_Monserat_b;
     font-size: @s_text_2;
     text-decoration: underline;
+
+    @media @md {
+      font-size: @s_text_1;
+    }
+    @media @smMinus {
+      font-size: @s_text_0;
+    }
   }
 
   &__catalog {
@@ -29,6 +36,13 @@
 
       &__item {
         .cols(5);
+
+        @media @sm {
+          .cols(7.75);
+        }
+        @media @xs {
+          .cols(16);
+        }
 
         &_title {
 

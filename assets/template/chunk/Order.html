@@ -90,7 +90,7 @@
                             <div id="shipmap"></div>
                         </div>
                     </div>
-                    <div class="msOrder_forms__col">
+                    <div class="msOrder_forms__col msOrder_forms__col_payment">
                         <div class="msOrder_forms__title">
                             <h2 class="h3">{'ms2_frontend_payments' | lexicon}</h2>
                         </div>
@@ -118,11 +118,11 @@
                             {/foreach}
                         </div>
                     </div>
-                    <div class="msOrder_forms__col msOrder_forms__col_last">
+                    <div class="msOrder_forms__col msOrder_forms__col_total">
                         <div class="msOrder_forms__total">
                             <div class="msOrder_forms__total_wrap">
                                 <div class="msOrder_forms__total_price">
-                                    <p>Итого:  <span id="ms2_order_cost">{$order.cost ?: 0}</span> <span class="rub">Р</span></p>
+                                    <p class="h2">Итого:  <span id="ms2_order_cost">{$order.cost ?: 0}</span> <span class="rub">Р</span></p>
                                 </div>
                                 <button type="submit" name="ms2_action" value="order/submit" class="button">
                                     {'ms2_frontend_order_submit' | lexicon}

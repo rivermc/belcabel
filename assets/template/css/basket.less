@@ -25,26 +25,53 @@
   }
 
   &__product {
-    margin: 40px 0;
+    margin: 40px 0 0;
+
+    @media @sm {
+      .flex();
+      justify-content: space-between;
+    }
 
     &_wrap {
       .flex();
       align-items: center;
 
-      @media @sm, @xs{
+      @media @sm {
+        .cols(7.75);
+        position: relative;
+      }
+      @media @smMinus {
         border-bottom: 1px solid @c_gray_d;
         margin: 10px 0 20px 0;
         justify-content: space-between;
         padding-bottom: 10px;
       }
+      @media @xs {
+        margin: 10px 0;
+        padding-bottom: 20px;
+      }
 
       &.basket__product_cont {
-        margin-bottom: 20px;
+        margin-bottom: 5px;
+
+        @media @smMinus {
+          display: none;
+        }
 
         p {
-          font-size: @s_text_2;
           font-family: @f_Monserat_b;
           margin: 0;
+        }
+
+        .basket__product_allprice {
+          .cols(3.2);
+
+          @media @lg {
+            .cols(4.2);
+          }
+          @media @md {
+            .cols(4.2);
+          }
         }
       }
     }
@@ -52,52 +79,64 @@
     &_image {
       .cols(2);
 
-      @media @sm, @xs{
+      @media @smMinus {
         .cols(16);
         text-align: center;
       }
 
       & img {
 
-        @media @sm, @xs{
+        @media @smMinus {
           width: 100%;
         }
       }
-
     }
 
     &_title {
       .cols(6.8);
       padding-left: 10px;
 
-      @media @sm, @xs{
+      @media @lg {
+        .cols(5.5);
+      }
+      @media @md {
+        .cols(5);
+      }
+      @media @smMinus {
         .cols(16);
         margin-bottom: 20px;
         padding-left: 0;
       }
-      @media @xs{
+      @media @xs {
         margin-bottom: 0;
       }
 
       a {
         color: @c_black;
-        font-size: 13pt;
-        display: inline-block;
-        margin-bottom: 10px;
-        width: 90%;
+        font-size: @s_text_2;
 
-        @media @md{
-          font-size: 13pt;
+        @media @lgMinus {
+          font-size: @s_text_1;
         }
-        @media @sm, @xs{
+        @media @smMinus {
           width: 100%;
           margin-bottom: 0;
+        }
+        @media @xs {
+          font-size: @s_text_0;
         }
       }
 
       p {
-        font-size: 9.5pt;
         color: @c_black;
+
+        &.article {
+          font-size: @s_text_1;
+
+          @media @mdMinus {
+            font-size: @s_text_0;
+          }
+        }
       }
     }
 
@@ -106,16 +145,15 @@
       text-align: right;
 
       @media @sm {
-        .cols(5);
+        .cols(7.75);
         text-align: center;
       }
-      @media @xs{
-        .cols(5);
+      @media @xs {
+        .cols(3);
       }
 
       p {
         color: @c_black;
-        font-size: 14pt;
         margin: 0;
       }
     }
@@ -124,11 +162,17 @@
       .cols(2);
       text-align: right;
 
-      @media @sm {
-        display: table;
+      @media @lg {
+        .cols(2.3);
       }
-      @media @xs{
-        .cols(3);
+      @media @md {
+        .cols(2.8);
+      }
+      @media @sm {
+        .cols(7.75);
+      }
+      @media @xs {
+        .cols(5);
         text-align: center;
       }
 
@@ -141,17 +185,22 @@
       .cols(2.5);
       text-align: right;
 
+      @media @lg {
+        .cols(3.5);
+      }
+      @media @md {
+        .cols(3.5);
+      }
       @media @sm {
-        .cols(6.5);
-        padding-right: 5px;
+        .cols(16);
+        text-align: center;
       }
       @media @xs{
-        .cols(5.5);
+        .cols(4.5);
       }
 
       p {
         color: @c_black;
-        font-size: 1.4rem;
         margin: 0;
       }
     }
@@ -160,7 +209,12 @@
       .cols(0.5);
       .colsOf(0.2);
 
-      @media @sm, @xs{
+      @media @sm {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      @media @smMinus {
         .cols(1.5);
       }
 
@@ -174,8 +228,9 @@
           cursor: pointer;
           border: 0;
           padding: 4px;
+          margin: 0 0 0 auto;
 
-          @media @sm, @xs{
+          @media @smMinus {
             margin-left: 0;
           }
 
@@ -196,6 +251,10 @@
     border-bottom: 1px dashed @c_gray_d;
     padding-bottom: 20px;
 
+    @media @xs {
+      padding-bottom: 0;
+    }
+
     &_wrap {
       .flex();
       .cols(8);
@@ -203,7 +262,7 @@
       justify-content: flex-end;
       align-items: flex-end;
 
-      @media @sm, @xs {
+      @media @smMinus  {
         .cols(16);
         .colsOf(0);
       }
@@ -216,13 +275,10 @@
       &_count {
 
         p {
-          font-size: 1rem;
           color: @c_black;
 
           span {
-
             color: @c_black;
-            font-size: 2.6rem;
           }
         }
       }
@@ -230,13 +286,11 @@
       &_delivery {
 
         p {
-          font-size: 1rem;
           color: @c_black;
 
           span {
 
             color: @c_black;
-            font-size: 2.6rem;
           }
         }
       }
@@ -244,12 +298,10 @@
       &_price {
 
         p {
-          font-size: 1rem;
           color: @c_black;
 
           span {
             color: @c_black;
-            font-size: 2.6rem;
           }
         }
       }

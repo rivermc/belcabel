@@ -1,10 +1,24 @@
-ul.breadcrumb {
+.breadcrumb {
   .flex();
   margin: 10px 0 20px;
 
+  &.short {
+    @media @mdMinus {
+      width: ~'calc(100% - 115px)';
+    }
+    @media @xs {
+      width: ~'calc(100% - 100px)';
+    }
+  }
+
+
   li {
-    font-size: @sizeSx;
+    font-size: @s_text_0;
     margin: 0;
+
+    @media @smMinus {
+      font-size: 7.4pt;
+    }
 
     a {
       .animation();
@@ -17,6 +31,10 @@ ul.breadcrumb {
 
     &.wrapper {
      margin: 0 5px;
+
+      &:last-child {
+        display: none;
+      }
     }
   }
 

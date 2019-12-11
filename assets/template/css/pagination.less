@@ -3,8 +3,16 @@
   align-items: center;
   justify-content: space-between;
 
+  @media @smMinus {
+    align-items: flex-start;
+  }
+
   &_wrap {
     .f_col(1,1,0);
+
+    @media @xs {
+      order: 1;
+    }
   }
 
   &_links {
@@ -16,6 +24,13 @@
     &_menu {
       .flex();
       align-items: center;
+
+      @media @sm {
+        .cols(16);
+      }
+      @media @xs {
+        margin: 0 auto;
+      }
 
       li {
         text-align: center;
@@ -58,6 +73,10 @@
 
     &_control {
       .flex();
+
+      @media @xs {
+        margin: 0 auto;
+      }
 
       a {
         color: @c_black;

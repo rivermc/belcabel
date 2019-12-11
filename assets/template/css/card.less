@@ -3,6 +3,10 @@
   &__title {
     .cols(11.25);
 
+    @media @mdMinus {
+      .cols(16);
+    }
+
     h1 {
       text-transform: none;
       margin-bottom: 20px;
@@ -24,11 +28,22 @@
       .flex();
       justify-content: space-between;
       margin-bottom: 40px;
+
+      @media @mdMinus {
+        margin-bottom: 0;
+      }
     }
 
     &_gallery {
       .cols(5);
       border: 1px solid @c_submain;
+
+      @media @md {
+        .cols(7.75);
+      }
+      @media @smMinus {
+        .cols(16);
+      }
     }
 
     &_center {
@@ -38,6 +53,14 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 40px;
+
+      @media @md {
+        .cols(7.75);
+      }
+      @media @smMinus {
+        .cols(16);
+        padding: 15px;
+      }
     }
 
     &_characters {
@@ -47,7 +70,6 @@
         margin: 0;
 
         span {
-          font-size: @s_text_1;
 
           &:last-child {
             font-family: @f_Monserat_b;
@@ -116,10 +138,26 @@
       flex-direction: column;
       justify-content: space-around;
 
+      @media @mdMinus {
+        .cols(16);
+        .colsOf(0);
+        flex-direction: row;
+        justify-content: center;
+      }
+
       &_block {
         .flex();
         align-items: center;
         justify-content: space-between;
+
+        @media @mdMinus {
+          .cols(7.75);
+          margin: 5px 0;
+          padding: 5px 10px;
+        }
+        @media @xs {
+          .cols(16);
+        }
 
         svg {
           .cols(3);
@@ -208,8 +246,13 @@
                   span {
                     font-size: @s_text_1;
 
+                    @media @smMinus {
+                      font-size: @s_text_0;
+                    }
+
                     &:first-child {
                       min-width: 40%;
+                      margin-right: 10px;
                     }
 
                     &:last-child {

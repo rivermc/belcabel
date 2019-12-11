@@ -84,10 +84,10 @@ h1, .h1 {
     font-size: @s_title_3;
   }
   @media @sm {
-    font-size: @s_title_4;
+    font-size: @s_text_3;
   }
   @media @xs {
-    font-size: @s_text_4;
+    font-size: @s_text_2;
   }
 }
 
@@ -172,6 +172,13 @@ ol {
   li {
     font-size: @s_text_2;
     margin: 0 0 10px;
+
+    @media @mdMinus {
+      font-size: @s_text_1;
+    }
+    @media @xs {
+      font-size: @s_text_0;
+    }
   }
 }
 
@@ -409,7 +416,7 @@ button {
   display: none;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 5px;
   cursor: pointer;
   padding: 10px 15px;
 
@@ -425,7 +432,7 @@ button {
   &.js_active {
     .animation(0.4s, background);
     justify-content: center;
-    padding: 10px 20px;
+    padding: 4px 10px;
 
     svg {
       transform: rotate(180deg);
