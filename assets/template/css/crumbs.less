@@ -3,7 +3,7 @@
   margin: 10px 0 20px;
 
   &.short {
-    @media @mdMinus {
+    @media @md_m {
       width: ~'calc(100% - 115px)';
     }
     @media @xs {
@@ -13,10 +13,14 @@
 
 
   li {
-    font-size: @s_text_0;
+    font-size: @s_text_1;
     margin: 0;
 
-    @media @smMinus {
+    @media @md_m {
+      font-size: @s_text_0;
+    }
+
+    @media @sm_m {
       font-size: 7.4pt;
     }
 

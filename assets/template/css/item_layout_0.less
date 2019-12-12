@@ -18,11 +18,25 @@
     border-right: 1px solid @c_gray;
     border-left: 1px solid @c_gray;
     padding: 0 20px;
+
+    @media @lg {
+      .cols(13);
+    }
+    @media @sm {
+      .cols(13);
+    }
   }
 
   .layout_right {
     .cols(5.5);
     min-width: 270px;
+
+    @media @lg {
+      .cols(16);
+    }
+    @media @sm {
+      .cols(16);
+    }
   }
 
 
@@ -121,12 +135,31 @@
       font-size: @s_text_1;
       margin: 0 auto;
     }
+
+    &_button_wrap {
+      .cols(16);
+    }
   }
 
   &__properties {
     position: relative;
 
-    .properties {
+    .option_opt {
+      font-size: 8pt;
+
+      span {
+
+        &:last-child {
+          font-family: @f_Monserat_b;
+        }
+      }
+    }
+
+    .properties_visible {
+      padding: 10px;
+    }
+
+    & > .properties {
       .cols(16);
       background: @c_submain;
       position: absolute;
@@ -141,17 +174,6 @@
         box-shadow: 0 5px 15px -12px @c_black;
         animation: fadeIn 0.8s ease 1 forwards;
         display: block;
-      }
-
-      .option_opt {
-        font-size: 8pt;
-
-        span {
-
-          &:last-child {
-            font-family: @f_Monserat_b;
-          }
-        }
       }
     }
   }

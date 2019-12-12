@@ -3,7 +3,7 @@
         <a href="/[[+uri]]" title='[[+pagetitle]]'><h2>[[+pagetitle]]</h2></a>
     </div>
     <div class="item_layout_2__img">
-        <a href="/[[+uri]]" title='[[+pagetitle]]'><img src="[[+image:phpthumbof=`w=210&h=210&far=C&q=90`]]" alt="[[+pagetitle]]" title="[[+pagetitle]]" class="lazyload"></a>
+        <a href="/[[+uri]]" title='[[+pagetitle]]'><img data-src="[[+image:phpthumbof=`w=210&h=210&far=C&q=90`]]" alt="[[+pagetitle]]" title="[[+pagetitle]]" class="lazyload"></a>
     </div>
     <form class="item_layout_2__form js_parent_price_target ms2_form js_options_target" method="post">
         <input type="hidden" name="id" value="[[+id]]">
@@ -14,7 +14,7 @@
             </p>
             [[+PriceNotification:notempty=`<p class="price_notification">[[+PriceNotification]]</p>`]]
         </div>
-        <a href="#fastbuy_modal" class="item_layout_2__form_fastbuy js_no_preload js_fastbuy_button"  data-id="[[+id]]" data-title="[[+pagetitle]]" title='[[+pagetitle]]' >Купить в 1 клик</a>
+        <a href="#fastbuy_modal" class="item_layout_2__form_fastbuy js_no_preload js_fastbuy_button"  data-id="[[+id]]" data-title="[[+pagetitle]]" title="[[+pagetitle]]">Купить в 1 клик</a>
         <div class="item_layout_2__form_form_count">
             [[$CountForm? &parent_class = `.js_parent_price_target` ]]
         </div>
@@ -24,6 +24,6 @@
         </div>
     </form>
     <div class="item_layout_2__properties">
-        [[!$OptionsItem? &id=`[[+id]]`]]
+        [[!$OptionsItem? &id=`[[+id]]` &limit=`100`]]
     </div>
 </div>

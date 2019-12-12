@@ -1,7 +1,7 @@
 <div class="item_layout_0">
     <div class="layout_left">
         <div class="item_layout_0__img">
-            <a href="/[[+uri]]" title='[[+pagetitle]]'><img src="[[+image:phpthumbof=`w=120&h=120&far=C&q=90`]]" alt="[[+pagetitle]]" title="[[+pagetitle]]" class="lazyload"></a>
+            <a href="/[[+uri]]" title='[[+pagetitle]]'><img data-src="[[+image:phpthumbof=`w=120&h=120&far=C&q=90`]]" alt="[[+pagetitle]]" title="[[+pagetitle]]" class="lazyload"></a>
         </div>
     </div>
     <div class="layout_center">
@@ -9,7 +9,10 @@
             <a href="/[[+uri]]" title='[[+pagetitle]]'><h2>[[+pagetitle]]</h2></a>
         </div>
         <div class="item_layout_0__properties">
-            [[!$OptionsItem? &id=`[[+id]]`]]
+            [[$OptionsItem? &id=`[[+id]]` &limit=`100`]]
+            <div class="properties_visible">
+                [[!$OptionsItem? &id=`[[+id]]` &limit=`5`]]
+            </div>
         </div>
     </div>
     <div class="layout_right">
@@ -27,7 +30,9 @@
                 [[$CountForm? &parent_class = `.js_parent_price_target` ]]
             </div>
             <a href="#" class="item_layout_0__form_options js_no_preload js_options_button" data-id="[[+id]]" data-parent=".item_layout_0" data-title="[[+pagetitle]]">Характеристики</a>
-            <button type="submit" class="item_layout_0__form_buy button" name="ms2_action" value="cart/add">В корзину</button>
+            <div class="item_layout_0__form_button_wrap">
+                <button type="submit" class="item_layout_0__form_buy button" name="ms2_action" value="cart/add">В корзину</button>
+            </div>
         </form>
     </div>
 </div>
