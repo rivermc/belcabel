@@ -72,7 +72,6 @@ $(document).ready(function() {
     $(document).on('mse2_load', function(e, data) {
         FilterCatalog();
         FastBuy('.js_fastbuy_button');
-        PriceLayout();
         OptionsItem();
         Modals();
         basket_count();
@@ -96,7 +95,9 @@ $(document).ready(function() {
     });*/
 
 
-    $('.js_filter_layout').click(function(){
+    $('.js_filter_layout').click(function() {
+        $('.js_filter_layout').removeClass('js_active');
+        $(this).addClass('js_active');
         var layout = $(this).data('layout');
         $('#tpls input[value='+ layout +']').trigger('click');
     });

@@ -1228,20 +1228,24 @@ footer .footer_right__social a svg path {
 .fastbuy_modal .fastbuy_product {
   width: 43.75%;
   border-right: 1px solid #1a1a1a;
+  padding-right: 10px;
+  margin-right: 10px;
 }
 @media (max-width: 575.98px) {
   .fastbuy_modal .fastbuy_product {
     width: 100%;
     border: none;
     text-align: center;
+    margin: 0;
+    padding: 0;
   }
 }
 .fastbuy_modal .fastbuy_product_image img {
   max-height: 130px;
 }
-.fastbuy_modal .fastbuy_product_title .h3 {
+.fastbuy_modal .fastbuy_product_title p {
+  font-size: 10.4pt;
   margin: 10px 0 0;
-  font-weight: normal;
 }
 .fastbuy_modal .fastbuy_form-wrap {
   width: 40.625%;
@@ -1263,11 +1267,7 @@ footer .footer_right__social a svg path {
 .fastbuy_modal .fastbuy_form-wrap .h3 {
   width: 100%;
   margin: 0 0 20px;
-}
-@media (max-width: 575.98px) {
-  .fastbuy_modal .fastbuy_form-wrap .h3 {
-    text-align: center;
-  }
+  text-align: center;
 }
 .fastbuy_modal .fastbuy_form {
   display: flex;
@@ -1283,6 +1283,9 @@ footer .footer_right__social a svg path {
 }
 .fastbuy_modal .fastbuy_form .form_group {
   width: 100%;
+}
+.fastbuy_modal .fastbuy_form .button {
+  margin: 0 auto;
 }
 .error_404__content {
   display: flex;
@@ -2087,11 +2090,6 @@ footer .footer_right__social a svg path {
   padding: 10px;
   margin: 0;
   border-radius: 0;
-}
-.jGrowl.top-right {
-  left: 0;
-  top: auto;
-  bottom: 0 !important;
 }
 .jGrowl-notification {
   background-color: #000;
@@ -5149,7 +5147,8 @@ footer .footer_right__social a svg path {
   margin: 0 5px;
   cursor: pointer;
 }
-.filter__views_layout_button:hover svg path {
+.filter__views_layout_button:hover svg path,
+.filter__views_layout_button.js_active svg path {
   fill: #4f4fa3;
 }
 .filter__catalog {

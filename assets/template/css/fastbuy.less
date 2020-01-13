@@ -1,0 +1,85 @@
+.fastbuy_modal {
+  padding: 0 !important;
+
+  & .fastbuy {
+    .flex();
+    justify-content: space-between;
+    padding: 30px 50px;
+
+    @media @xs {
+      padding: 10px;
+    }
+
+    &_product {
+      .cols(7);
+      border-right: 1px solid @c_black;
+      padding-right: 10px;
+      margin-right: 10px;
+
+      @media @xs {
+        .cols(16);
+        border: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+
+      &_image {
+
+        & img {
+          max-height: 130px;
+        }
+      }
+
+      &_title {
+
+        p {
+          font-size: @s_text_1;
+          margin: 10px 0 0;
+        }
+      }
+    }
+
+    &_form-wrap {
+      .cols(6.5);
+
+      @media @sm {
+        .cols(8);
+      }
+      @media @xs{
+        .cols(16);
+        padding: 20px;
+      }
+
+      .text {
+        text-align: center;
+      }
+
+      .h3 {
+        width: 100%;
+        margin: 0 0 20px;
+        text-align: center;
+      }
+    }
+
+    &_form {
+      .flex();
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+
+      @media @xs {
+        margin: 0 auto 20px;
+      }
+
+      .form_group {
+        width: 100%;
+      }
+
+      .button {
+        margin: 0 auto;
+      }
+    }
+  }
+}
