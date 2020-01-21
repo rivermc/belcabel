@@ -1,0 +1,24 @@
+.error_404 {
+
+  &__content {
+    .flex();
+    align-items: center;
+    justify-content: space-between;
+    margin: 100px 0 200px;
+
+    &_text {
+      .cols(7);
+      @media @sm_m {
+        .cols(16);
+      }
+    }
+
+    &_img {
+      .cols(9);
+      text-align: center;
+      @media @sm_m {
+        .cols(16);
+      }
+    }
+  }
+}

@@ -1297,9 +1297,19 @@ footer .footer_right__social a svg path {
 .error_404__content_text {
   width: 43.75%;
 }
+@media (max-width: 767.98px) {
+  .error_404__content_text {
+    width: 100%;
+  }
+}
 .error_404__content_img {
   width: 56.25%;
   text-align: center;
+}
+@media (max-width: 767.98px) {
+  .error_404__content_img {
+    width: 100%;
+  }
 }
 .cart {
   padding: 0 0 50px;
