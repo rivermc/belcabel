@@ -16,6 +16,9 @@ function getModule(action, module, params, cb, delimiter = ',') {
     });
 }
 
+function animation_shake(element) {
+    element.addClass('shake').delay(800).queue(function(next){ element.removeClass('shake');  next(); });
+}
 
 $(document).ready(function() {
 
