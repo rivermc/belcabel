@@ -11,5 +11,6 @@ $(document).ready(function() {
   includeCSS('/assets/template/css/index.css');
   includeCSS('/assets/template/css/magnific-popup.css');
   includeCSS('/assets/template/css/minishop.css');
+  includeCSS('/assets/template/css/msearch.css');
 
 });

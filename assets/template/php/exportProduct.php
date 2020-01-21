@@ -1,5 +1,6 @@
 <?php
 ini_set('max_execution_time', 300);
+ini_set('memory_limit','512M');
 set_time_limit(300);
 
 
@@ -18,14 +19,13 @@ $modx->log(1, print_r($params, 1));
 
 $output = $modx->runSnippet('msProducts', array(
     'parents' => 0,
-    'includeTVs' => 'Characters',
     'limit' => 0,
     'where' => '{"class_key":"msProduct"}',
-    'tpl' => '@INLINE "[[+id]]";"[[+Characters]]";'
+    'tpl' => '@INLINE "[[+id]]";"[[+parent]]";'
 ));
 
 //var_dump($output);
-$file = dirname(dirname(dirname(dirname(__FILE__)))) . '/export.csv';
+$file = dirname(dirname(dirname(dirname(__FILE__)))) . '/id_parent.csv';
 // Открываем файл для получения существующего содержимого
 $current = file_get_contents($file);
 // Добавляем нового человека в файл

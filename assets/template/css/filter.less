@@ -5,12 +5,14 @@
   .title {
     color: @c_main;
     font-family: @f_Monserat_b;
+    font-size: @s_text_3;
     margin: 0 0 20px;
   }
 
   &__form {
 
     &_block {
+      border-bottom: 1px solid @c_gray;
       margin-bottom: 10px;
 
       &.filter_price {
@@ -58,7 +60,6 @@
       &_title {
         .flex();
         .cols(16);
-        border-bottom: 1px solid @c_gray;
         align-items: center;
         text-align: left;
         padding: 0 0 10px;
@@ -89,14 +90,22 @@
       }
 
       &_items {
-        margin: 20px 0;
+        margin: 5px 0 0;
 
-        label {
+        label { 
           .flex();
           align-items: center;
           cursor: pointer;
           margin: 0;
           padding-bottom: 10px;
+
+          &.disabled {
+
+            p {
+              font-family: @f_Monserat;
+              color: #8a8a8a;
+            }
+          }
 
           p {
             .f_col(4, 1, 14);
@@ -106,10 +115,19 @@
             line-height: 1em;
           }
 
-          input[type=checkbox],
-          input[type=radio] {
-            .f_col(1, 0, 1);
-            margin-right: 10px;
+          input {
+            &[type=checkbox],
+            &[type=radio] {
+              .f_col(1, 0, 1);
+              margin-right: 10px;
+            }
+            &:disabled {
+
+              & + p {
+                font-family: @f_Monserat;
+                color: #8a8a8a;
+              }
+            }
           }
         }
       }

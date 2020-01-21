@@ -7,7 +7,7 @@
             <div class="g_wrap">
                 <div class="g_left js_left_toggle_target">
                     <div class="filter">
-                        <p class="title h4">Фильтр параметров</p>
+                        <p class="title">Фильтр параметров</p>
                         <form action="/[[~[[*id]]]]" method="post" id="mse2_filters" class="filter__form">
                             [[+filter_filters]]
                             <div id="limit" class="hidden filter__form_block limit">
@@ -44,7 +44,7 @@
                 </div>
                 <div class="g_right">
                     [[$Crumbs? &class=`short`]]
-                    <h1>[[*pagetitle]]</h1>
+                    <h1 class="h2">[[*pagetitle]]</h1>
                     <div class="filter__views js_msearch_scroll_target">
                         <div class="filter__views_sort">
                             <p class="title">Сортировать:</p>
@@ -70,11 +70,11 @@
                             &parents = `[[*id]]`
                             &sortby=`{"menuindex":"ASC"}`
                             &sortdir=`ASC`
-                            &where = `{"template:IN":[5,17,16]}`
+                            &where = `{"template:IN":[5,17,16,0]}`
                             &limit = `0`
                             &depth = `0`
                             &tpl = `@INLINE <a href="/[[+uri]]"  data-id="[[+id]]">[[+menutitle:empty=`[[+pagetitle]]`:default=`[[+menutitle]]`]]</a>`
-                            &toPlaceholder = `pagination_menu`
+                            &toPlaceholder = `pagination_menu` 
                         ]]
                         [[+pagination_menu:notempty=`
                             <div class="filter__catalog">
