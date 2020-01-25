@@ -15,26 +15,25 @@ setTimeout(function() {
 
 $(document).ready(function() {
     var preloader = $('.preloader');
+    preloader.removeClass('active');
 
     setTimeout(() => {
-        preloader.css({'opacity': '0', 'visibility' : 'hidden'}).removeClass('active');
+        preloader.css({'opacity': '0', 'visibility' : 'hidden'});
     }, 400);
 
 
     preloader.click(function() {
-        preloader.css({'opacity': '0', 'visibility' : 'hidden'}).removeClass('active');
+        preloader.css({'opacity': '0', 'visibility' : 'hidden'});
     });
 
 
-    $('a').click(function(e) {
-        if (!$(this).hasClass('js_no_preload')) {
-            e.preventDefault();
-            var href = $(this).attr('href');
-            preloader.css({'opacity': '1', 'visibility' : 'visible'});
-            setTimeout(() => {
-                window.location.href = href;
-            },400);
-        }
+    $('a:not(".js_no_preload")').click(function(e) {
+        e.preventDefault();
+        var href = $(this).attr('href');
+        preloader.css({'opacity': '1', 'visibility' : 'visible'});
+        setTimeout(() => {
+            window.location.href = href;
+        },200);
     });
 });
     
