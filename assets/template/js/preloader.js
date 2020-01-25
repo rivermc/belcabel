@@ -1,15 +1,11 @@
-
 /* ----------------------------------------------------------------------- */
 /* Preloader Disable Hook */
 /* ----------------------------------------------------------------------- */
 
 setTimeout(function() {
-    let preloader = $('.preloader');
+    var preloader = $('.preloader');
     if (preloader.hasClass('active')) {
-        preloader.css('opacity', '0').delay(500).queue( (next) => {
-            preloader.css('display', 'none').removeClass('active');
-            next();
-        });
+        preloader.css({'opacity': '0', 'visibility' : 'hidden'}).removeClass('active');
     }
 } , 2000);
 
@@ -18,32 +14,26 @@ setTimeout(function() {
 /* ----------------------------------------------------------------------- */
 
 $(document).ready(function() {
-
-
-    let preloader = $('.preloader');
+    var preloader = $('.preloader');
 
     setTimeout(() => {
-        preloader.css('opacity', '0').delay(400).queue( (next) => {
-            preloader.css('display', 'none').removeClass('active');
-            next();
-        });
+        preloader.css({'opacity': '0', 'visibility' : 'hidden'}).removeClass('active');
     }, 400);
 
 
     preloader.click(function() {
-        $(this).css('display', 'none').removeClass('active');
+        preloader.css({'opacity': '0', 'visibility' : 'hidden'}).removeClass('active');
     });
 
 
     $('a').click(function(e) {
         if (!$(this).hasClass('js_no_preload')) {
             e.preventDefault();
-            let href = $(this).attr('href');
-            setTimeout(() => { window.location.href = href; },400);
-            preloader.css('display', 'block').delay(100).queue((next) => {
-                preloader.css('opacity', '1');
-                next();
-            });
+            var href = $(this).attr('href');
+            preloader.css({'opacity': '1', 'visibility' : 'visible'});
+            setTimeout(() => {
+                window.location.href = href;
+            },400);
         }
     });
 });
