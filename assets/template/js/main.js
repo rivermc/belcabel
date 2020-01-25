@@ -68,6 +68,13 @@ $(document).ready(function() {
         $('.js_left_toggle').trigger('click');
     }
 
+    $('.js_header_menu_closer').click(function(){
+        $('.js_header_menu_target').slideUp(400);
+    });
+    $('.js_header_menu_opener').click(function(){
+        $('.js_header_menu_target').slideDown(400);
+    });
+
 });
 
   

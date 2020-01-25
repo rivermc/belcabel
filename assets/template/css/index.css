@@ -842,7 +842,7 @@ header .header_bottom__logo {
 }
 @media (max-width: 575.98px) {
   header .header_bottom__logo {
-    width: 62.5%;
+    width: 43.75%;
     max-width: 180px;
   }
 }
@@ -857,11 +857,22 @@ header .header_bottom__menu {
     margin-left: 0%;
     margin-right: 0%;
     order: 1;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  header .header_bottom__menu {
     margin: 10px 0 0;
   }
 }
 @media (max-width: 575.98px) {
   header .header_bottom__menu {
+    background: #383878d9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 10px;
+    overflow: hidden;
     display: none;
   }
 }
@@ -873,6 +884,11 @@ header .header_bottom__menu ul {
 }
 header .header_bottom__menu ul li {
   margin: 0;
+}
+@media (max-width: 575.98px) {
+  header .header_bottom__menu ul li {
+    width: 100%;
+  }
 }
 header .header_bottom__menu ul li a {
   transition: all 0.4s linear;
@@ -891,8 +907,49 @@ header .header_bottom__menu ul li a {
     font-size: 8pt;
   }
 }
+@media (max-width: 575.98px) {
+  header .header_bottom__menu ul li a {
+    color: #ffffff;
+    padding: 10px;
+    display: block;
+    font-size: 10pt;
+  }
+}
 header .header_bottom__menu ul li a:hover {
   color: #383878;
+}
+@media (max-width: 575.98px) {
+  header .header_bottom__menu ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+header .header_bottom__menu_opener {
+  display: none;
+}
+@media (max-width: 575.98px) {
+  header .header_bottom__menu_opener {
+    display: block;
+    width: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+header .header_bottom__menu_closer {
+  display: none;
+}
+@media (max-width: 575.98px) {
+  header .header_bottom__menu_closer {
+    color: #ffffff;
+    font-size: 15pt;
+    font-family: 'Montserrat-Bold', sans-serif;
+    display: block;
+    text-align: center;
+    margin: 0 0 0 auto;
+    width: 30px;
+    line-height: 1.4em;
+    cursor: pointer;
+  }
 }
 header .header_bottom__social {
   width: 9.375%;
@@ -908,7 +965,7 @@ header .header_bottom__social {
 }
 @media (max-width: 575.98px) {
   header .header_bottom__social {
-    width: 25%;
+    width: 37.5%;
   }
 }
 footer {

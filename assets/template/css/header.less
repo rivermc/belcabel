@@ -166,7 +166,7 @@ header {
           .cols(5);
         }
         @media @xs {
-          .cols(10);
+          .cols(7);
           max-width: 180px;
         }
       }
@@ -181,9 +181,19 @@ header {
           .colsOf(0);
           .colsOfR(0);
           order: 1;
+        }
+        @media @md {
           margin: 10px 0 0;
         }
+
         @media @xs {
+          background: #383878d9;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 10;
+          padding: 10px;
+          overflow: hidden;
           display: none;
         }
 
@@ -194,6 +204,10 @@ header {
 
           li {
             margin: 0;
+
+            @media @xs {
+              width: 100%;
+            }
 
             a {
               .animation();
@@ -208,11 +222,49 @@ header {
               @media @md_m {
                 font-size: 8pt;
               }
+              @media @xs {
+                color: @c_white;
+                padding: 10px;
+                display: block;
+                font-size: 10pt;
+              }
 
               &:hover {
                 color: @c_main;
+
+                @media @xs {
+                  color: @c_white;
+                  text-decoration: underline;
+                }
               }
             }
+          }
+        }
+
+        &_opener {
+          display: none;
+
+          @media @xs {
+            display: block;
+            width: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+          }
+        }
+
+        &_closer {
+          display: none;
+
+          @media @xs {
+            color: @c_white;
+            font-size: @s_text_4;
+            font-family: @f_Monserat_b;
+            display: block;
+            text-align: center;
+            margin: 0 0 0 auto;
+            width: 30px;
+            line-height: 1.4em;
+            cursor: pointer;
           }
         }
       }
@@ -227,7 +279,7 @@ header {
           .cols(2.5);
         }
         @media @xs {
-          .cols(4);
+          .cols(6);
         }
       }
     }

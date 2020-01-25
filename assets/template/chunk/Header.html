@@ -31,15 +31,19 @@
             <div class="header_bottom__logo">
                 <a href="/">[[IncSvg? &file=`logo.svg`]]</a>
             </div>
-            <nav class="header_bottom__menu">
+            <nav class="header_bottom__menu js_header_menu_target">
                 [[pdoMenu?
                     &parents=`0`
                     &resources=`1366,1367,154,155,156,157`
                     &tpl = `@INLINE <li [[+classes]]><a href="/[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
                 ]]
+                <div class="js_header_menu_closer header_bottom__menu_closer">x</div>
             </nav>
             <div class="header_bottom__social">
                 [[$SocialBlock]]
+                <div class="js_header_menu_opener header_bottom__menu_opener">
+                    [[IncSvg? &file=`icons/burger.svg`]]
+                </div>
             </div>
         </div>
 
