@@ -877,18 +877,18 @@ header .header_bottom__menu ul li {
 header .header_bottom__menu ul li a {
   transition: all 0.4s linear;
   color: #1a1a1a;
-  font-size: 12pt;
+  font-size: 10.4pt;
   font-family: 'Montserrat-Bold', sans-serif;
   text-transform: uppercase;
 }
 @media (max-width: 1199.98px) {
   header .header_bottom__menu ul li a {
-    font-size: 10.4pt;
+    font-size: 9pt;
   }
 }
 @media (max-width: 991.98px) {
   header .header_bottom__menu ul li a {
-    font-size: 9pt;
+    font-size: 8pt;
   }
 }
 header .header_bottom__menu ul li a:hover {
