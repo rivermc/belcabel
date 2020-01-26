@@ -41,10 +41,9 @@
                         </div>
                         <div class="basket__product_title">
                             <a href="{$product.id | url}">{$product.pagetitle}</a>
-                            <p class="article"><b>Артикул</b>: {$product.article}</p>
-                            {foreach $product.options as $name => $value}
-                                <p><b>{('ms2_product_' ~ $name) | lexicon}</b>: {$value}</p>
-                            {/foreach}
+                            [[#{$product.id}.PriceNotification:notempty=`<p class="price_notification">[[#{$product.id}.PriceNotification]]</p>`]]
+                            <p class="article"><span>Артикул:</span> <span>{$product.article}</span></p>
+                            [[$OptionsItem? &id=`{$product.id}`]]
                         </div>
                         <div class="basket__product_price">
                             <p>{$product.price} <span class="rub">Р</span></p>

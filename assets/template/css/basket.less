@@ -31,20 +31,25 @@
       .flex();
       justify-content: space-between;
     }
+    @media @xs {
+      margin: 20px 0 0;
+    }
 
     &_wrap {
       .flex();
+      box-shadow: @shadow;
       align-items: center;
+      margin: 10px 0;
+      padding: 20px 10px;
 
       @media @sm {
         .cols(7.75);
-        position: relative;
       }
       @media @sm_m {
-        border-bottom: 1px solid @c_gray_d;
         margin: 10px 0 20px 0;
         justify-content: space-between;
         padding-bottom: 10px;
+        position: relative;
       }
       @media @xs {
         margin: 10px 0;
@@ -52,7 +57,9 @@
       }
 
       &.basket__product_cont {
-        margin-bottom: 5px;
+        box-shadow: none;
+        padding: 10px;
+        margin: 0;
 
         @media @sm_m {
           display: none;
@@ -60,7 +67,12 @@
 
         p {
           font-family: @f_Monserat_b;
+          font-size: @s_text_2;
           margin: 0;
+
+          @media @md_m {
+            font-size: @s_text_1;
+          }
         }
 
         .basket__product_allprice {
@@ -107,35 +119,38 @@
         margin-bottom: 20px;
         padding-left: 0;
       }
-      @media @xs {
-        margin-bottom: 0;
-      }
 
       a {
         color: @c_black;
         font-size: @s_text_2;
+        display: block;
 
         @media @lg_m {
           font-size: @s_text_1;
         }
         @media @sm_m {
           width: 100%;
-          margin-bottom: 0;
-        }
-        @media @xs {
-          font-size: @s_text_0;
         }
       }
 
       p {
         color: @c_black;
+        font-size: @s_text_0;
+        margin: 0;
 
-        &.article {
-          font-size: @s_text_1;
+        span {
 
-          @media @md_m {
-            font-size: @s_text_0;
+          &:first-child {
+            font-family: @f_Monserat_b;
           }
+          &:last-child {
+
+          }
+        }
+
+        &.price_notification {
+          color: @c_main;
+          margin-bottom: 10px;
         }
       }
     }
@@ -191,12 +206,9 @@
       @media @md {
         .cols(3.5);
       }
-      @media @sm {
+      @media @sm_m {
         .cols(16);
         text-align: center;
-      }
-      @media @xs{
-        .cols(4.5);
       }
 
       p {
@@ -209,13 +221,11 @@
       .cols(0.5);
       .colsOf(0.2);
 
-      @media @sm {
+      @media @sm_m {
+        width: auto;
         position: absolute;
         top: 10px;
         right: 10px;
-      }
-      @media @sm_m {
-        .cols(1.5);
       }
 
       form {
