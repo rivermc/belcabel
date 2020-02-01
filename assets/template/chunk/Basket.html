@@ -50,12 +50,16 @@
                         </div>
                         <div class="basket__product_count">
                             <form method="post" class="ms2_form form-inline" role="form">
+                                [[$CountForm?
+                                    &parent_class = `.basket__product_item`
+                                    &PriceUnit=`[[#{$product.id}.PriceUnit]]`
+                                    &PriceCount=`[[#{$product.id}.PriceCount]]`
+                                    &PriceCountSet=`{$product.count}`
+                                    &AttributesButton=`data-id="{$product.key}" type="submit" name="ms2_action" value="cart/change"`
+                                    &AttributesInput=`data-id="{$product.key}"`
+                                    &buttonType=`submit`
+                                ]]
                                 <input type="hidden" name="key" value="{$product.key}"/>
-                                <div class="form__count">
-                                    <button class="button button_white  js_count_button form__count_button  js_minus" data-id="{$product.key}" type="submit" name="ms2_action" value="cart/change" data-parent=".basket__product_item">-</button>
-                                    <input type="number" name="count" value="{$product.count}" class="js_form_count_input" data-id="{$product.key}" data-parent=".basket__product_item">
-                                    <button class="button button_white js_count_button form__count_button  js_plus" data-id="{$product.key}" type="submit" name="ms2_action" value="cart/change" data-parent=".basket__product_item">+</button>
-                                </div>
                             </form>
                         </div>
                         <div class="basket__product_allprice">

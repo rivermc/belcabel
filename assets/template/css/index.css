@@ -4003,6 +4003,11 @@ footer .footer_right__social a svg path {
   font-size: 9pt;
   color: #4d4d4d;
 }
+@media (max-width: 991.98px) {
+  .item_layout_2__form_options {
+    font-size: 8pt;
+  }
+}
 .item_layout_2__form_options:hover {
   text-decoration: underline;
 }
@@ -4987,7 +4992,7 @@ footer .footer_right__social a svg path {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 90px;
+  max-width: 110px;
   justify-content: space-between;
   align-items: center;
   margin: 10px 0;
@@ -5001,21 +5006,30 @@ footer .footer_right__social a svg path {
   background: transparent;
 }
 .form__count input {
-  flex: 1 1 6.25%;
+  flex: 2 1 6.25%;
   color: #1a1a1a;
   background: #f9f9f9;
   border: 0;
-  border-radius: 5px;
-  padding: 6px 10px;
-  text-align: center;
+  border-radius: 5px 0 0 5px;
+  padding: 6px 0 6px 10px;
   -moz-appearance: textfield;
   min-width: 25px;
   max-width: 50px;
+  text-align: right;
 }
 .form__count input::-webkit-inner-spin-button,
 .form__count input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.form__count span {
+  flex: 1 1 18.75%;
+  color: #1a1a1a;
+  background: #f9f9f9;
+  border: 0;
+  padding: 6px 5px 6px 0;
+  text-align: center;
+  line-height: 15px;
 }
 .add_to_order {
   margin: 20px 0;

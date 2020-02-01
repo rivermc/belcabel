@@ -1,51 +1,66 @@
 /* ----------------------------------------------------------------------- */
 // Basket count
 /* ----------------------------------------------------------------------- */
+function round_to_precision(x, precision) {
+    var y = +x + (precision === undefined ? 0.5 : precision/2);
+    return y - (y % (precision === undefined ? 1 : +precision));
+}
 
-function basket_count() {
-    let button = $('.js_count_button');
-    let input = $('.js_form_count_input');
 
-    button.unbind('click');
-    input.unbind('change');
+function countBasket(event) {
+    var $_this = $(event.currentTarget);
+    if (event.type === 'click') {
+        var direction = $_this.data('direction');
+        $_this = $_this.siblings('input');
+    }
 
-    input.on('change', function() {
-        var $input = $(this);
-        var $price_parent = $input.parents($input.data('parent'));
-        var $price_target = $('.js_price_charger_target', $price_parent);
-        var product_price = $price_target.data('price');
-        var input_val = parseInt($input.val());
-        $price_target.html((product_price * input_val).toFixed(1));
+    var $price_parent = $_this.parents($_this.data('parent'));
+    var $price_target = $('.js_price_charger_target', $price_parent);
+    var product_price = $price_target.data('price');
+    var price_count = $_this.data('price-count');
+    var input_val = parseInt($_this.val());
 
-    });
+    if (!price_count) {
+        price_count = 1;
+    }
 
-    button.on('click', function() {
-        var $current_button = $(this);
-        var $input = $current_button.siblings('input');
-        var $price_parent = $current_button.parents($current_button.data('parent'));
-        var input_val = parseInt($input.val());
-        var $price_target = $('.js_price_charger_target', $price_parent);
-        var product_price = $price_target.data('price');
+    input_val = round_to_precision(input_val, price_count);
 
-        if ($(this).hasClass('js_plus')) {
-            $input.val(input_val + 1);
+    if (event.type === 'click') {
+        if (direction === '+') {
+            input_val += price_count;
         }
         else {
-            input_val = input_val - 1;
-            if (input_val < 1) {
-                input_val = 1;
-            }
-            $input.val(input_val);
+            input_val -= price_count;
         }
+    }
 
-        input_val = parseInt($input.val());
-        $price_target.html((product_price * input_val).toFixed(1));
+    if (input_val < price_count) {
+        input_val = price_count;
+    }
+    $_this.val(input_val);
+    $price_target.html((product_price * input_val).toFixed(1));
+}
+
+
+
+function basket_count() {
+    var $button = $('.js_count_button');
+    var $input = $('.js_form_count_input');
+
+    $button.unbind('click');
+    $input.unbind('change');
+
+    $input.on('change', function(event) {
+        countBasket(event);
+    });
+
+    $button.on('click', function(event) {
+        countBasket(event);
     });
 }
 
 
 $(document).ready(function() {
-
     basket_count();
-
 });

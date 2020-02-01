@@ -9,14 +9,14 @@
         <input type="hidden" name="id" value="[[+id]]">
         <div class="item_layout_2__form_price">
             <p class="price">
-                <span class="price_number js_price_charger_target" data-price="[[+price]]">[[+price]]</span>
+                <span class="price_number js_price_charger_target" data-price="[[+price]]">[[+price:mpy=`[[+PriceCount:strip]]`]]</span>
                 <span class="price_cur">руб.</span>
             </p>
             [[+PriceNotification:notempty=`<p class="price_notification">[[+PriceNotification]]</p>`]]
         </div>
         <a href="#fastbuy_modal" class="item_layout_2__form_fastbuy js_no_preload js_fastbuy_button"  data-id="[[+id]]" data-title="[[+pagetitle]]" title="[[+pagetitle]]">Купить в 1 клик</a>
         <div class="item_layout_2__form_form_count">
-            [[$CountForm? &parent_class = `.js_parent_price_target` ]]
+            [[$CountForm? &parent_class = `.js_parent_price_target` &PriceUnit=`[[+PriceUnit]]` &PriceCount=`[[+PriceCount]]`]]
         </div>
         <a href="#" class="item_layout_2__form_options js_no_preload js_options_button" data-parent=".item_layout_2" data-id="[[+id]]" data-title="[[+pagetitle]]">Характеристики</a>
         <div class="item_layout_2__form_button_wrap">
@@ -24,6 +24,6 @@
         </div>
     </form>
     <div class="item_layout_2__properties">
-        [[!$OptionsItem? &id=`[[+id]]` &limit_opt=`100`]]
+        [[$OptionsItem? &id=`[[+id]]`]]
     </div>
 </div>
