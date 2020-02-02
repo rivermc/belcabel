@@ -6,6 +6,12 @@ $(document).ready(function() {
     style.href = aFile;
     style.rel = aRel || 'stylesheet';
     head.appendChild(style);
+    var preloader = $('.preloader');
+
+    setTimeout(() => {
+      preloader.css({'opacity': '0', 'visibility' : 'hidden'});
+    }, 400);
+
   }
 
   includeCSS('/assets/template/css/index.css');

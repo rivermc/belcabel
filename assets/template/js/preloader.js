@@ -17,10 +17,6 @@ $(document).ready(function() {
     var preloader = $('.preloader');
     preloader.removeClass('active');
 
-    setTimeout(() => {
-        preloader.css({'opacity': '0', 'visibility' : 'hidden'});
-    }, 400);
-
 
     preloader.click(function() {
         preloader.css({'opacity': '0', 'visibility' : 'hidden'});
