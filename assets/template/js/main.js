@@ -75,6 +75,20 @@ $(document).ready(function() {
         $('.js_header_menu_target').slideDown(400);
     });
 
+
+    miniShop2.Callbacks.Cart.change.response.success = function(response) {
+        $('.cart_count').text(response.data.total_count);
+    };
+
+    miniShop2.Callbacks.Cart.add.response.success = function(response) {
+        $('.cart_count').text(response.data.total_count);
+    };
+    miniShop2.Callbacks.Cart.remove.response.success = function(response) {
+        $('.cart_count').text(response.data.total_count);
+    };
+
+
+
 });
 
   
