@@ -1256,6 +1256,19 @@ footer .footer_right__social a svg path {
 .callback {
   position: relative;
 }
+.callback.pop {
+  text-align: center;
+}
+.callback.pop .h3 {
+  margin-bottom: 20px;
+}
+.callback.pop .pop__wrap {
+  display: table;
+  margin: 20px auto;
+}
+.callback.pop button {
+  margin: 0 auto;
+}
 .callback__error p {
   color: #383878;
   font-size: 12pt;
@@ -1267,6 +1280,9 @@ footer .footer_right__social a svg path {
 }
 .mfp-container {
   height: 101%;
+}
+.callback_modal {
+  text-align: center;
 }
 .fastbuy_modal {
   padding: 0 !important;

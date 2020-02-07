@@ -1,0 +1,44 @@
+.callback {
+	position: relative;
+
+	&__wrap {
+
+	}
+
+	&.pop {
+		text-align: center;
+
+		.h3 {
+			margin-bottom: 20px;
+		}
+
+		.pop__wrap {
+			display: table;
+			margin: 20px auto;
+		}
+
+		button {
+			margin: 0 auto;
+		}
+	}
+
+	&__error {
+
+		& p {
+			color: @c_main;
+			font-size: @s_text_2;
+
+			@media @sm_m {
+				font-size: @s_text_2;
+			}
+		}
+	}
+}
+
+.mfp-container {
+	height: 101%;
+}
+
+.callback_modal {
+	text-align: center;
+}
