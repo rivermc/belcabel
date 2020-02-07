@@ -99,14 +99,21 @@
           font-family: @f_Monserat_b;
           color: @c_main;
           font-size: @s_title_2;
+          margin: 0;
 
           &_cur {
             font-size: @s_title_4;
           }
 
-          &_notification {
+          &_notification,
+          &_total {
             color: @c_gray_d;
             font-size: @s_text_0;
+          }
+
+          &_total {
+            font-family: @f_Monserat_b;
+            margin: 0;
           }
         }
       }

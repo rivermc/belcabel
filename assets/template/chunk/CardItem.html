@@ -18,10 +18,15 @@
                 <form class="ms2_form card__item_form" method="post">
                     <input type="hidden" name="id" value="[[*id]]">
                     <div class="card__item_form_price">
-                        <p class="price">
-                            <span class="price_number js_price_charger_target" data-price="[[+price]]" >[[+price]]</span>
-                            <span class="price_cur">руб.</span>
-                        </p>
+                        <div class="price_wrap">
+                            <p class="price">
+                                <span class="price_number">[[+price]]</span>
+                                <span class="price_cur">руб.</span>
+                            </p>
+                            <p class="price_total">
+                                <span>Итого: <span class="price_total js_price_charger_target" data-price="[[+price]]">[[+price:mpy=`[[+PriceCount:strip]]`]]</span> руб.</span>
+                            </p>
+                        </div>
                         [[*PriceNotification:notempty=`<p class="price_notification">[[*PriceNotification]]</p>`]]
                     </div>
                     <div class="card__item_form_count">
