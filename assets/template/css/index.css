@@ -3787,6 +3787,12 @@ footer .footer_right__social a svg path {
 .item_layout_0__form_price .price_cur {
   font-size: 10.4pt;
 }
+.item_layout_0__form_price .price_total {
+  font-family: 'Montserrat-Bold', sans-serif;
+  color: #4d4d4d;
+  font-size: 9pt;
+  margin: 0;
+}
 .item_layout_0__form_price .price_notification {
   color: #4d4d4d;
   font-size: 8pt;
@@ -3979,6 +3985,12 @@ footer .footer_right__social a svg path {
 }
 .item_layout_2__form_price .price_cur {
   font-size: 10.4pt;
+}
+.item_layout_2__form_price .price_total {
+  font-family: 'Montserrat-Bold', sans-serif;
+  color: #4d4d4d;
+  font-size: 9pt;
+  margin: 0;
 }
 .item_layout_2__form_price .price_notification {
   color: #4d4d4d;
