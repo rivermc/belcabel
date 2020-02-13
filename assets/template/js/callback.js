@@ -99,13 +99,14 @@ class Callback {
     var buttons = $('.callback button');
     buttons.off('click');
     buttons.on('click', function(e) {
+      e.preventDefault();
       self_this.startSend(e);
     });
   }
 }
 
-var callbacks = new Callback();
 
 $(document).ready(function() {
+  var callbacks = new Callback();
   $('input[name=phone], input[name=phoneShipping]').usPhoneFormat({format: 'x-xxx-xxx-xxxx'});
 });
