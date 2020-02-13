@@ -1291,6 +1291,7 @@ footer .footer_right__social a svg path {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   padding: 30px 50px;
 }
 @media (max-width: 575.98px) {
@@ -1318,7 +1319,10 @@ footer .footer_right__social a svg path {
 }
 .fastbuy_modal .fastbuy_product_title p {
   font-size: 10.4pt;
-  margin: 10px 0 0;
+  margin: 10px 0;
+}
+.fastbuy_modal .fastbuy_product_title p.p_small {
+  font-size: 9pt;
 }
 .fastbuy_modal .fastbuy_form-wrap {
   width: 40.625%;
@@ -1334,7 +1338,28 @@ footer .footer_right__social a svg path {
     padding: 20px;
   }
 }
-.fastbuy_modal .fastbuy_form-wrap .text {
+.fastbuy_modal .fastbuy_form-wrap .price {
+  width: 100%;
+  color: #383878;
+  margin: 0;
+  text-align: center;
+}
+.fastbuy_modal .fastbuy_form-wrap .price_number {
+  font-family: 'Montserrat-Bold', sans-serif;
+}
+.fastbuy_modal .fastbuy_form-wrap .price_cur {
+  font-size: 10.4pt;
+}
+.fastbuy_modal .fastbuy_form-wrap .price_total {
+  width: 100%;
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-size: 9pt;
+  color: #4d4d4d;
+  margin: 0;
+  text-align: center;
+}
+.fastbuy_modal .fastbuy_form-wrap p.text {
+  font-size: 9pt;
   text-align: center;
 }
 .fastbuy_modal .fastbuy_form-wrap .h3 {
@@ -1342,12 +1367,15 @@ footer .footer_right__social a svg path {
   margin: 0 0 20px;
   text-align: center;
 }
+.fastbuy_modal .fastbuy_form-wrap .form__count {
+  margin: 10px auto;
+}
 .fastbuy_modal .fastbuy_form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 @media (max-width: 575.98px) {
   .fastbuy_modal .fastbuy_form {
@@ -1356,6 +1384,7 @@ footer .footer_right__social a svg path {
 }
 .fastbuy_modal .fastbuy_form .form_group {
   width: 100%;
+  margin: 10px 0;
 }
 .fastbuy_modal .fastbuy_form .button {
   margin: 0 auto;

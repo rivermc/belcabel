@@ -11,15 +11,18 @@ function FastBuy(elem) {
 
         callbacks:  {
             beforeOpen: function() {
-                var productID = $(this.st.el).data('id');
-                var productPagetitle = $(this.st.el).data('title');
+                delete $(this.st.el).data().magnificPopup;
+                delete $(this.st.el).data().__proto__;
+                var params = $(this.st.el).data();
+                console.log(params);
+                params = JSON.stringify(params);
+                console.log(params);
 
-                getModule('Chunk', 'FastBuy', 'id => ' + productID + ', pagetitle => ' + productPagetitle, function (data) {
+
+                getModule('Chunk', 'FastBuy', params, function (data) {
                     $('.fastbuy_modal').html(data);
 
                     $('input[name=phone], input[name=phoneShipping]').usPhoneFormat({format: 'x-xxx-xxx-xxxx'});
-
-
 
                     $('.fastbuy_form').submit(function(e){
                         e.preventDefault();
@@ -55,6 +58,10 @@ function FastBuy(elem) {
 
             },
             open: function() {
+
+                setTimeout( () => {
+                    basket_count();
+                }, 1000);
             },
             close: function() {
             }

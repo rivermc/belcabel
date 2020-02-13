@@ -4,6 +4,7 @@
   & .fastbuy {
     .flex();
     justify-content: space-between;
+    align-items: center;
     padding: 30px 50px;
 
     @media @xs {
@@ -36,7 +37,11 @@
 
         p {
           font-size: @s_text_1;
-          margin: 10px 0 0;
+          margin: 10px 0;
+
+          &.p_small {
+            font-size: @s_text_0;
+          }
         }
       }
     }
@@ -52,8 +57,36 @@
         padding: 20px;
       }
 
-      .text {
+      .price {
+        .cols(16);
+        color: @c_main;
+        margin: 0;
         text-align: center;
+
+        &_number {
+          font-family: @f_Monserat_b;
+        }
+
+        &_cur {
+          font-size: @s_text_1;
+        }
+
+        &_total  {
+          .cols(16);
+          font-family: @f_Monserat_b;
+          font-size: @s_text_0;
+          color: @c_gray_d;
+          margin: 0;
+          text-align: center;
+        }
+      }
+
+      p {
+
+        &.text {
+          font-size: @s_text_0;
+          text-align: center;
+        }
       }
 
       .h3 {
@@ -61,13 +94,17 @@
         margin: 0 0 20px;
         text-align: center;
       }
+
+      .form__count {
+        margin: 10px auto;
+      }
     }
 
     &_form {
       .flex();
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
 
       @media @xs {
         margin: 0 auto 20px;
@@ -75,6 +112,7 @@
 
       .form_group {
         width: 100%;
+        margin: 10px 0;
       }
 
       .button {

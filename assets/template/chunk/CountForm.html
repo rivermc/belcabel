@@ -1,5 +1,5 @@
 <div class="form__count">
-    <button type="[[+buttonType:notempty=`[[+buttonType]]`:default=`button`]]"  class="button button_white  js_count_button form__count_button" data-direction="-" [[+AttributesButton]]>-</button>
+    <button type="[[+buttonType:notempty=`[[+buttonType]]`:default=`button`]]"  class="button button_white js_count_button form__count_button" data-direction="-" [[+AttributesButton]]>-</button>
     <input type="number" name="count" class="js_form_count_input"
            value="[[+PriceCountSet:notempty=`[[+PriceCountSet]]`:default=`[[+PriceCount:notempty=`[[+PriceCount]]`:default=`[[*PriceCount:notempty=`[[*PriceCount]]`:default=`1`]]`]]`]]"
            data-price-count="[[+PriceCount:notempty=`[[+PriceCount]]`:default=`[[*PriceCount]]`]]"

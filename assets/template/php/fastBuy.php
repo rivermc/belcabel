@@ -56,10 +56,13 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
         	// чистим корзину
         	$miniShop2->cart->clean();
         	// добавляем товар в корзину
-        	$arr = json_decode($miniShop2->cart->add($_REQUEST["id"],1,$option), true);
+        	$product_count = $_REQUEST["count"];
+        	if (empty($product_count)){
+        	    $product_count = 1;
+        	}
 
-        	// логируем каждый шаг
-        	$modx->log(E_ERROR, print_r($arr,1));
+        	$arr = json_decode($miniShop2->cart->add($_REQUEST["id"],$product_count,$option), true);
+
         	// формируем заказ
         	$miniShop2->order->add('receiver', $_REQUEST['name']);
         	//$miniShop2->order->add('email', $_REQUEST["email"]);
@@ -82,8 +85,6 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
 
         	$arr = json_decode($orderfeed,true);
 
-        	// логируем каждый шаг
-        	$modx->log(E_ERROR, print_r($arr,1));
 
 	        if($arr['success'] == true && $arr["data"]["msorder"]){
 	            $output["order"] = $arr["data"]["msorder"];
@@ -91,7 +92,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
 
             $output['success'] = true;
             $output['message'] = "Ваш заказ оформлен";
-        	$modx->log(E_ERROR, print_r($output,1));
+        	//$modx->log(E_ERROR, print_r($output,1));
         }
     }
     else{
