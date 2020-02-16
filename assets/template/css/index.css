@@ -1713,126 +1713,104 @@ footer .footer_right__social a svg path {
 .basket__total_block_price p span {
   color: #1a1a1a;
 }
-#msCart .getorder__empty_cont {
-  margin: 100px 0;
-}
-#msCart .getorder__empty_cont p {
-  color: #1a1a1a;
-  font-size: 2rem;
-  text-align: center;
-}
-#msCart .container .getorder__cont {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-#msCart .container .getorder__cont .getorder__title {
+#msCart .getorder__title {
   width: 100%;
-}
-#msCart .container .getorder__cont .getorder__title h1 {
-  color: #383878;
   text-align: center;
 }
-#msCart .container .getorder__cont .getorder__title p {
-  text-align: center;
-}
-#msCart .container .getorder__cont .getorder__image {
+#msCart .getorder__image {
   text-align: center;
   width: 100%;
   margin-bottom: 10px;
+  max-height: 100px;
 }
-#msCart .container .getorder__cont .getorder__product {
+#msCart .getorder__image svg {
+  height: 100%;
+}
+#msCart .getorder__product {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
   border-bottom: 1px solid #4d4d4d;
 }
-#msCart .container .getorder__cont .getorder__product .getorder__product_cont {
-  display: flex;
-  flex-wrap: wrap;
-  width: 46.875%;
-  align-items: center;
-  margin-bottom: 20px;
-}
-@media (max-width: 767.98px) {
-  #msCart .container .getorder__cont .getorder__product .getorder__product_cont {
-    width: 100%;
-    margin: 0 0 20px 0;
-  }
-}
-#msCart .container .getorder__cont .getorder__product .getorder__product_cont .getorder__product_image {
+#msCart .getorder__product_image {
   width: 37.5%;
   margin-right: 3.125%;
 }
-#msCart .container .getorder__cont .getorder__product .getorder__product_cont .getorder__product_image img {
+#msCart .getorder__product_image img {
   max-height: 200px;
 }
-#msCart .container .getorder__cont .getorder__product .getorder__product_cont .getorder__product_text {
-  width: 59.375%;
+#msCart .getorder__product_text {
+  width: 100%;
 }
-#msCart .container .getorder__cont .getorder__product .getorder__product_cont .getorder__product_text .getorder__product_title a {
+#msCart .getorder__product_text .article {
   color: #1a1a1a;
+  font-size: 9pt;
 }
-#msCart .container .getorder__cont .getorder__product .getorder__product_cont .getorder__product_text .getorder__product_title p {
-  color: #1a1a1a;
-  font-size: 9.5pt;
+#msCart .getorder__product_text .article span:first-child {
+  font-family: 'Montserrat-Bold', sans-serif;
 }
-#msCart .container .getorder__cont .getorder__product .getorder__product_cont .getorder__product_text .getorder__product_allprice p {
+#msCart .getorder__product_text .allprice {
+  margin-bottom: 20px;
+}
+#msCart .getorder__product_text .allprice p {
+  color: #383878;
+  font-size: 10.4pt;
   margin-bottom: 4px;
 }
-#msCart .container .getorder__cont .getorder__total {
+#msCart .getorder__product_text .allprice p span:first-child {
+  font-family: 'Montserrat-Bold', sans-serif;
+}
+#msCart .getorder__info {
+  width: 50%;
+  border-bottom: 1px dashed #4d4d4d;
+}
+@media (max-width: 767.98px) {
+  #msCart .getorder__info {
+    width: 100%;
+  }
+}
+#msCart .getorder__info p {
+  color: #1a1a1a;
+}
+@media (max-width: 767.98px) {
+  #msCart .getorder__info p {
+    font-size: 9pt;
+  }
+}
+#msCart .getorder__total {
   width: 50%;
   border-bottom: 1px dashed #4d4d4d;
   padding-bottom: 20px;
 }
 @media (max-width: 767.98px) {
-  #msCart .container .getorder__cont .getorder__total {
+  #msCart .getorder__total {
     width: 100%;
   }
 }
-#msCart .container .getorder__cont .getorder__total .getorder__total_cont h2 {
+#msCart .getorder__total h2 {
   text-align: right;
 }
 @media (max-width: 767.98px) {
-  #msCart .container .getorder__cont .getorder__total .getorder__total_cont h2 {
+  #msCart .getorder__total h2 {
     text-align: left;
   }
 }
-#msCart .container .getorder__cont .getorder__total .getorder__total_cont p {
-  color: #1a1a1a;
-  font-size: 12pt;
+#msCart .getorder__total p {
   text-align: right;
 }
 @media (max-width: 767.98px) {
-  #msCart .container .getorder__cont .getorder__total .getorder__total_cont p {
+  #msCart .getorder__total p {
     text-align: left;
   }
 }
-#msCart .container .getorder__cont .getorder__total .getorder__total_cont p span {
+#msCart .getorder__total p span {
   color: #1a1a1a;
-  font-size: 26pt;
-}
-@media (min-width: 576px) and (max-width: 767.98px), (max-width: 575.98px) {
-  #msCart .container .getorder__cont .getorder__total .getorder__total_cont p span {
-    font-size: 18pt;
-  }
-}
-#msCart .container .getorder__cont .getorder__info {
-  width: 50%;
+  font-size: 24pt;
 }
 @media (max-width: 767.98px) {
-  #msCart .container .getorder__cont .getorder__info {
-    width: 100%;
-  }
-}
-#msCart .container .getorder__cont .getorder__info .getorder__info_cont .getorder__info_block p {
-  color: #1a1a1a;
-  font-size: 14pt;
-}
-@media (min-width: 576px) and (max-width: 767.98px), (max-width: 575.98px) {
-  #msCart .container .getorder__cont .getorder__info .getorder__info_cont .getorder__info_block p {
-    font-size: 9pt;
+  #msCart .getorder__total p span {
+    font-size: 16pt;
   }
 }
 #msOrder {

@@ -1,154 +1,122 @@
 #msCart {
 
-  .getorder__empty_cont {
-    margin: 100px 0;
+  .getorder {
 
-    p {
-      color: @c_black;
-      font-size: 2rem;
+    &__title {
+      .cols(16);
       text-align: center;
     }
-  }
 
-  .container {
+    &__image {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 10px;
+      max-height: 100px;
 
-    .getorder__cont {
+      svg {
+        height: 100%;
+      }
+    }
+
+    &__product {
       .flex();
+      .cols(16);
       justify-content: space-between;
+      border-bottom: 1px solid @c_gray_d;
 
-      .getorder__title {
-        .cols(16);
-        
-        h1 {
-         color: @c_main;
-         text-align: center;
-        }
-        
-        p {
-          text-align: center;
+      &_image {
+        .cols(6);
+        .colsOfR(0.5);
+
+        img {
+          max-height: 200px;
         }
       }
 
-      .getorder__image {
-        text-align: center;
-        width: 100%;
-        margin-bottom: 10px;
-      }
-
-      .getorder__product {
-        .flex();
+      &_text {
         .cols(16);
-        justify-content: space-between;
-        border-bottom: 1px solid @c_gray_d;
 
-        .getorder__product_cont {
-          .flex();
-          .cols(7.5);
-          align-items: center;
+
+        .article {
+          color: @c_black;
+          font-size: @s_text_0;
+
+          span:first-child {
+            font-family: @f_Monserat_b;
+          }
+        }
+
+        .allprice {
           margin-bottom: 20px;
-          
-          @media @sm_m {
-            .cols(16);
-            margin: 0 0 20px 0;
-          }
-
-          .getorder__product_image {
-            .cols(6);
-            .colsOfR(0.5);
-
-            img {
-              max-height: 200px;
-            }
-          }
-
-          .getorder__product_text {
-            .cols(9.5);
-
-            .getorder__product_title {
-
-              a {
-                color: @c_black;
-              }
-
-              p {
-                color: @c_black;
-                font-size: 9.5pt;
-              }
-            }
-
-            .getorder__product_allprice {
-
-              p {
-                margin-bottom: 4px;
-              }
-            }
-          }
-        }
-      }
-      
-      .getorder__total {
-        .cols(8);
-        border-bottom: 1px dashed @c_gray_d;
-        padding-bottom: 20px;
-        
-        @media @sm_m {
-          .cols(16);
-        }
-
-        .getorder__total_cont {
-
-          h2 {
-            text-align: right;
-
-            @media @sm_m {
-              text-align: left;
-            }
-          }
 
           p {
-            color: @c_black;
-            font-size: @s_text_2;
-            text-align: right;
-            
-            @media @sm_m {
-              text-align: left;
-            }
+            color: @c_main;
+            font-size: @s_text_1;
+            margin-bottom: 4px;
 
-            span {
-              color: @c_black;
-              font-size: 26pt;
-
-              @media @sm,@xs{
-                font-size: 18pt;
-              }
+            span:first-child {
+              font-family: @f_Monserat_b;
             }
           }
         }
       }
-      
-      .getorder__info {
-        .cols(8);
-        
+    }
+
+    &__info {
+      .cols(8);
+      border-bottom: 1px dashed @c_gray_d;
+
+      @media @sm_m {
+        .cols(16);
+      }
+
+      p {
+        color: @c_black;
+
         @media @sm_m {
-          .cols(16);
+          font-size: @s_text_0;
+        }
+      }
+    }
+
+    &__total {
+      .cols(8);
+      border-bottom: 1px dashed @c_gray_d;
+      padding-bottom: 20px;
+
+      @media @sm_m {
+        .cols(16);
+      }
+
+      h2 {
+        text-align: right;
+
+        @media @sm_m {
+          text-align: left;
+        }
+      }
+
+      p {
+        text-align: right;
+
+        @media @sm_m {
+          text-align: left;
         }
 
-        .getorder__info_cont {
+        span {
+          color: @c_black;
+          font-size: @s_title_2;
 
-          .getorder__info_block {
-
-
-            p {
-              color: @c_black;
-              font-size: 14pt;
-              
-              @media @sm,@xs{
-                font-size: 9pt;
-              }
-            }
+          @media @sm_m {
+            font-size: @s_title_4;
           }
         }
-      } 
+      }
     }
+
+
+
+
+
   }
 }
