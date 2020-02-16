@@ -386,7 +386,33 @@ button {
 }
 
 
+.g {
 
+  &_d {
+
+    @media @sm_m {
+      display: none;
+    }
+  }
+
+  &_sm {
+    @media @md_p {
+      display: none;
+    }
+    @media @xs {
+      display: none;
+    }
+  }
+
+  &_not {
+
+    &_sm {
+      @media @sm {
+        display: none;
+      }
+    }
+  }
+}
 .g_wrap {
   .flex();
   justify-content: space-between;

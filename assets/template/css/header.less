@@ -15,10 +15,7 @@ header {
         @media @lg {
           .cols(3);
         }
-        @media @sm_m {
-          .cols(3.5);
-        }
-        @media @xs {
+        @media @md_m {
           display: none;
         }
 
@@ -60,7 +57,7 @@ header {
           .cols(6.5);
         }
         @media @md {
-          justify-content: center;
+          .cols(8);
         }
         @media @sm {
           .cols(11);
@@ -76,10 +73,6 @@ header {
           .flex();
           align-items: center;
           justify-content: space-between;
-
-          @media @md {
-            margin-bottom: 5px;
-          }
 
           .phone_link {
             color: @c_black;
@@ -162,9 +155,11 @@ header {
       &__logo {
         .cols(3);
 
-        @media @md_m {
-          .cols(5);
+        a {
+          display: block;
+          line-height: 0;
         }
+
         @media @xs {
           .cols(7);
           max-width: 180px;
@@ -172,18 +167,13 @@ header {
       }
 
       &__menu {
-        .cols(10);
+        .cols(12.5);
         .colsOf(0.5);
-        .colsOfR(0.5);
 
-        @media @md_m {
+        @media @sm_m {
           .cols(16);
           .colsOf(0);
           .colsOfR(0);
-          order: 1;
-        }
-        @media @md {
-          margin: 10px 0 0;
         }
 
         @media @xs {
@@ -212,12 +202,12 @@ header {
             a {
               .animation();
               color: @c_black;
-              font-size: @s_text_1;
+              font-size: @s_text_2;
               font-family: @f_Monserat_b;
               text-transform: uppercase;
 
               @media @lg_m {
-                font-size: @s_text_0;
+                font-size: @s_text_1;
               }
               @media @md_m {
                 font-size: 8pt;
@@ -266,20 +256,6 @@ header {
             line-height: 1.4em;
             cursor: pointer;
           }
-        }
-      }
-
-      &__social {
-        .cols(1.5);
-        .flex();
-        align-items: center;
-        justify-content: space-between;
-
-        @media @md_m {
-          .cols(2.5);
-        }
-        @media @xs {
-          .cols(6);
         }
       }
     }
