@@ -1246,6 +1246,12 @@ footer .footer_right__social a svg path {
 .callback {
   position: relative;
 }
+.callback input {
+  transition: all 0.4s linear;
+}
+.callback input:focus {
+  border-radius: 3px !important;
+}
 .callback.pop {
   text-align: center;
 }
@@ -1375,6 +1381,12 @@ footer .footer_right__social a svg path {
 .fastbuy_modal .fastbuy_form .form_group {
   width: 100%;
   margin: 10px 0;
+}
+.fastbuy_modal .fastbuy_form .form_group input {
+  transition: all 0.4s linear;
+}
+.fastbuy_modal .fastbuy_form .form_group input:focus {
+  border-radius: 3px !important;
 }
 .fastbuy_modal .fastbuy_form .button {
   margin: 0 auto;
