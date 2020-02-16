@@ -94,6 +94,7 @@
         position: relative;
 
         label.form__group_label {
+          font-size: @s_text_1;
           display: block;
           margin: 0;
         }
@@ -109,13 +110,17 @@
         input.form_input, textarea.form_input {
           .animation();
           .cols(16);
-          border: 1px solid @c_black;
-          font-size: @s_text_2;
+          border: 1px solid @c_gray;
+          border-radius: @radius;
+          display: table;
+          max-width: 340px;
           margin: 5px 0 15px;
           padding: 5px 10px;
-          border-radius: 3px;
-          max-width: 340px;
           resize: none;
+
+          &:focus {
+            border-radius: 3px;
+          }
 
           &:-internal-autofill-selected {
             background: @c_white;
@@ -124,6 +129,7 @@
 
         textarea.form_input {
           height: 7em;
+          border-radius: 3px;
           font-size: @s_text_2;
         }
       }
@@ -168,20 +174,12 @@
           }
 
           .delivery_title, .payment_title {
+            font-size: @s_text_1;
             display: inline-block;
             width: 90%;
             margin: 0;
             position: relative;
             padding-left: 15px;
-
-            @media @lg {
-              width: 80%;
-              font-size: @s_text_2;
-            }
-            @media @md_m {
-              width: 80%;
-              font-size: @s_text_1;
-            }
 
             &:before {
               .animation();
@@ -191,13 +189,10 @@
               left: 0;
               width: 8px;
               height: 8px;
-              top: 6px;
+              top: 50%;
+              transform: translateY(-50%);
               background: transparent;
               border-radius: 50%;
-
-              @media @md_m {
-                top: 4px;
-              }
             }
           }
 

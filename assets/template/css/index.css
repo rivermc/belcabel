@@ -1929,6 +1929,7 @@ footer .footer .planb img {
   position: relative;
 }
 .msOrder_forms__form .form__basket label.form__group_label {
+  font-size: 10.4pt;
   display: block;
   margin: 0;
 }
@@ -1940,13 +1941,17 @@ footer .footer .planb img {
 .msOrder_forms__form .form__basket textarea.form_input {
   transition: all 0.4s linear;
   width: 100%;
-  border: 1px solid #1a1a1a;
-  font-size: 12pt;
+  border: 1px solid #cccccc;
+  border-radius: 50px;
+  display: table;
+  max-width: 340px;
   margin: 5px 0 15px;
   padding: 5px 10px;
-  border-radius: 3px;
-  max-width: 340px;
   resize: none;
+}
+.msOrder_forms__form .form__basket input.form_input:focus,
+.msOrder_forms__form .form__basket textarea.form_input:focus {
+  border-radius: 3px;
 }
 .msOrder_forms__form .form__basket input.form_input:-internal-autofill-selected,
 .msOrder_forms__form .form__basket textarea.form_input:-internal-autofill-selected {
@@ -1954,6 +1959,7 @@ footer .footer .planb img {
 }
 .msOrder_forms__form .form__basket textarea.form_input {
   height: 7em;
+  border-radius: 3px;
   font-size: 12pt;
 }
 .msOrder_forms__delivery,
@@ -2001,29 +2007,12 @@ footer .footer .planb img {
 .msOrder_forms__payment .checkbox > label .delivery_title,
 .msOrder_forms__delivery .checkbox > label .payment_title,
 .msOrder_forms__payment .checkbox > label .payment_title {
+  font-size: 10.4pt;
   display: inline-block;
   width: 90%;
   margin: 0;
   position: relative;
   padding-left: 15px;
-}
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .msOrder_forms__delivery .checkbox > label .delivery_title,
-  .msOrder_forms__payment .checkbox > label .delivery_title,
-  .msOrder_forms__delivery .checkbox > label .payment_title,
-  .msOrder_forms__payment .checkbox > label .payment_title {
-    width: 80%;
-    font-size: 12pt;
-  }
-}
-@media (max-width: 991.98px) {
-  .msOrder_forms__delivery .checkbox > label .delivery_title,
-  .msOrder_forms__payment .checkbox > label .delivery_title,
-  .msOrder_forms__delivery .checkbox > label .payment_title,
-  .msOrder_forms__payment .checkbox > label .payment_title {
-    width: 80%;
-    font-size: 10.4pt;
-  }
 }
 .msOrder_forms__delivery .checkbox > label .delivery_title:before,
 .msOrder_forms__payment .checkbox > label .delivery_title:before,
@@ -2036,17 +2025,10 @@ footer .footer .planb img {
   left: 0;
   width: 8px;
   height: 8px;
-  top: 6px;
+  top: 50%;
+  transform: translateY(-50%);
   background: transparent;
   border-radius: 50%;
-}
-@media (max-width: 991.98px) {
-  .msOrder_forms__delivery .checkbox > label .delivery_title:before,
-  .msOrder_forms__payment .checkbox > label .delivery_title:before,
-  .msOrder_forms__delivery .checkbox > label .payment_title:before,
-  .msOrder_forms__payment .checkbox > label .payment_title:before {
-    top: 4px;
-  }
 }
 .msOrder_forms__delivery .checkbox > label .small,
 .msOrder_forms__payment .checkbox > label .small {
@@ -2192,13 +2174,13 @@ footer .footer .planb img {
 .msOrder_forms__total button {
   margin: 0 auto;
 }
-.jGrowl-notification .jGrowl-close {
-  padding: 0 10px;
-}
-.jGrowl-closer {
-  padding: 10px;
-  margin: 0;
-  border-radius: 0;
+.jGrowl {
+  z-index: 9999;
+  color: #fff;
+  font-size: 12px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 .jGrowl-notification {
   background-color: #000;
@@ -2212,10 +2194,29 @@ footer .footer .planb img {
   min-height: 20px;
   padding: 0;
 }
+.jGrowl-close {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  z-index: 99;
+  float: right;
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+}
 .jGrowl-closer {
   font-size: 9pt;
   width: 100%;
   padding: 5px 0;
+  margin: 0;
+  border-radius: 0;
+  background-color: #000;
+  opacity: 0.9;
+  zoom: 1;
+  display: none;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
 }
 .jGrowl-message {
   font-size: 9pt;
@@ -2230,17 +2231,22 @@ footer .footer .planb img {
   position: absolute;
   right: 0;
 }
-.message-success {
+.jGrowl .message-success {
   background-color: #669933 !important;
 }
-.message-system {
+.jGrowl .message-system {
   background-color: #005192 !important;
 }
-.message-error {
+.jGrowl .message-error {
   background-color: #383878;
 }
-.ms2-message-error {
+.jGrowl .ms2-message-error {
   background-color: #383878;
+}
+.jGrowl .jGrowl.top-right {
+  left: 0;
+  top: auto !important;
+  bottom: 0 !important;
 }
 .toUp {
   transition: all 0.4s linear;

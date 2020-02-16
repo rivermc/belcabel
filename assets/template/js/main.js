@@ -86,9 +86,16 @@ $(document).ready(function() {
     miniShop2.Callbacks.Cart.remove.response.success = function(response) {
         $('.cart_count').text(response.data.total_count);
     };
-
-
-
+    miniShop2.Callbacks.Order.submit.response.error = function(response) {
+        var error_array = response.data;
+        error_array.forEach(function(item) {
+            $('html, body').animate({
+                scrollTop: $(".msOrder_forms__title").offset().top
+            }, 400, function () {
+                animation_shake($('input[name='+ item +']'));
+            });
+        })
+    };
 });
 
   

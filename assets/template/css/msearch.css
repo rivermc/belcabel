@@ -80,6 +80,3 @@
 
 .mse2-ac-item .mse2-ac-weight { display: inline-block; float: right; }
 
-.ui-autocomplete-loading {
-    background: white url('jquery-ui/images/ui-anim_basic_16x16.gif') right center no-repeat;
-}
