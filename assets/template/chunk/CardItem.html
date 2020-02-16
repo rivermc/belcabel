@@ -24,7 +24,7 @@
                                 <span class="price_cur">руб.</span>
                             </p>
                             <p class="price_total">
-                                <span>Итого: <span class="price_total js_price_charger_target" data-price="[[+price]]">[[+price:mpy=`[[+PriceCount:strip]]`]]</span> руб.</span>
+                                <span>Итого: <span class="price_total js_price_charger_target" data-price="[[*price]]">[[+price:mpy=`[[+PriceCount:strip]]`]]</span> руб.</span>
                             </p>
                         </div>
                         [[*PriceNotification:notempty=`<p class="price_notification">[[*PriceNotification]]</p>`]]
@@ -34,7 +34,14 @@
                     </div>
                     <div class="card__item_form_button">
                         <button type="submit" class="button buy button_svg" name="ms2_action" value="cart/add">В корзину</button>
-                        <a href="#fastbuy_modal" class="card__item_form_fastbuy js_no_preload js_fastbuy_button"  data-id="[[*id]]" data-title="[[*pagetitle]]" title='[[*pagetitle]]'>Купить в 1 клик</a>
+                        <a href="#fastbuy_modal" class="card__item_form_fastbuy js_no_preload js_fastbuy_button"
+                           title="[[*pagetitle]]"
+                           data-title="[[*pagetitle]]"
+                           data-price="[[*price]]"
+                           data-price_count="[[*PriceCount]]"
+                           data-price_unit="[[*PriceUnit]]"
+                           data-price_notification="[[*PriceNotification]]"
+                           data-id="[[*id]]">Купить в 1 клик</a>
                     </div>
                 </form>
             </div>
