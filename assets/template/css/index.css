@@ -1927,6 +1927,10 @@ footer .footer .planb img {
 }
 .msOrder_forms__form .form__basket {
   position: relative;
+  margin: 5px 0 15px;
+}
+.msOrder_forms__form .form__basket .error_message {
+  color: #f00f00;
 }
 .msOrder_forms__form .form__basket label.form__group_label {
   font-size: 10.4pt;
@@ -1945,7 +1949,7 @@ footer .footer .planb img {
   border-radius: 50px;
   display: table;
   max-width: 340px;
-  margin: 5px 0 15px;
+  margin: 5px 0 5px;
   padding: 5px 10px;
   resize: none;
 }

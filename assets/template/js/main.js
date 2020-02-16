@@ -88,9 +88,11 @@ $(document).ready(function() {
     };
     miniShop2.Callbacks.Order.submit.response.error = function(response) {
         var error_array = response.data;
+        $('.error_message').remove();
         error_array.forEach(function(item) {
+            $('input[name='+ item +']').after('<span class="error_message">' + response.message +'</span>');
             $('html, body').animate({
-                scrollTop: $(".msOrder_forms__title").offset().top
+                scrollTop: $(".js_order_error_target").offset().top
             }, 400, function () {
                 animation_shake($('input[name='+ item +']'));
             });
