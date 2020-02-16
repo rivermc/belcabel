@@ -231,5 +231,32 @@ footer {
         }
       }
     }
+
+    .planb {
+      .cols(16);
+      margin: 20px 0 0;
+      order: 2;
+
+      span {
+        color: @c_white;
+        font-size: @s_text_0;
+        display: block;
+        text-align: right;
+
+        @media @xs {
+          text-align: left;
+        }
+      }
+
+      img {
+        margin: 0 0 0 auto;
+        display: block;
+        width: 100px;
+
+        @media @xs {
+          margin: 0 auto 0 0;
+        }
+      }
+    }
   }
 }
