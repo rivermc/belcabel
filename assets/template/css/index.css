@@ -3665,12 +3665,10 @@ footer .footer .planb img {
 .vertical_menu ul li ul li ul li a {
   color: #1a1a1a;
   font-size: 9pt;
-  font-family: 'Montserrat-Bold', sans-serif;
   padding-left: 40px;
 }
 @media (max-width: 767.98px) {
   .vertical_menu ul li ul li ul li a {
-    font-family: 'Montserrat-Regular', sans-serif;
     padding-left: 10px;
   }
 }
