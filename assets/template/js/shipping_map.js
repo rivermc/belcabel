@@ -3,13 +3,13 @@ var myShip;
 
 function initShip() {
     myShip = new ymaps.Map("shipmap", {
-        center: [55.390051, 37.812067],
+        center: [55.71041806903893,37.410439],
         controls: ['typeSelector',  'fullscreenControl'],
         zoom: 8
     });
 
 
-    myPlacemark = new ymaps.Placemark([55.390051, 37.812067], {
+    myPlacemark = new ymaps.Placemark([55.71041806903893,37.410439], {
       hintContent: 'address',
       balloonContent: '<p>' + 'address' + '</p>'
     }, {
@@ -22,7 +22,7 @@ function initShip() {
     myShip.geoObjects.add(myPlacemark);
 
     function routeCreate(coords){
-      myRoute = ymaps.route([[55.390051, 37.812067],coords], {
+      myRoute = ymaps.route([[55.71041806903893,37.410439],coords], {
         mapStateAutoApply: true
       }).then(function (route) {
         myShip.geoObjects.add(route);

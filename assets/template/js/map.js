@@ -40,7 +40,7 @@ if (typeof ymaps != 'undefined') {
     var adrs = $('.js_contact_map');
     ymaps.ready(function() {
         if ($('#map').length) {
-            initMap([55.390051, 37.812067], adrs.data('address'));
+            initMap([55.71041806903893,37.410439], adrs.data('address'));
         }
     });
 }

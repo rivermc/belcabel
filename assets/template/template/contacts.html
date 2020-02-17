@@ -24,10 +24,12 @@
                     <h2 class="subtitle h4">Юридическая информация</h2>
                     [[*content]]
                 </div>
-                <div class="contacts_item dops_info">
-                    <h2 class="subtitle h4">Дополнительная информация</h2>
-                    [[*DopsInfo]]
-                </div>
+                [[*DopsInfo:notempty=`
+                    <div class="contacts_item dops_info">
+                        <h2 class="subtitle h4">Дополнительная информация</h2>
+                        [[*DopsInfo]]
+                    </div>
+                `]]
             </div>
         </div>
     </div>
