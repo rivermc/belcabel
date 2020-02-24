@@ -16,8 +16,8 @@ $theme = 'Интернет магазин БелКабель - Пришла за
 
 if ( $phone != '' ) {
           
-  $emailTo = "web@2f-vsk.ru";
-  $emailFrom ="web@2f-vsk.ru";
+  $emailTo = "info@belkabel.ru, web@2f-vsk.ru";
+  $emailFrom ="info@belkabel.ru";
 
   $emailTitle = $theme;
   $emailTitle = iconv("utf-8","windows-1251",$emailTitle);
