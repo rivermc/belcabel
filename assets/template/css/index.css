@@ -2017,6 +2017,7 @@ footer .footer .planb img {
   margin: 0;
   position: relative;
   padding-left: 15px;
+  line-height: 1em;
 }
 .msOrder_forms__delivery .checkbox > label .delivery_title:before,
 .msOrder_forms__payment .checkbox > label .delivery_title:before,
@@ -2030,7 +2031,7 @@ footer .footer .planb img {
   width: 8px;
   height: 8px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-55%);
   background: transparent;
   border-radius: 50%;
 }
@@ -3271,7 +3272,7 @@ footer .footer .planb img {
   margin-bottom: 40px;
 }
 .contacts_item {
-  width: 31.25%;
+  flex: 1;
 }
 .contacts_item .subtitle {
   font-family: 'Montserrat-Bold', sans-serif;
