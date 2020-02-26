@@ -24,8 +24,7 @@ if ( $phone != '' ) {
   $emailTitle = convert_cyr_string($emailTitle, "w", "k");
 
   $emailText="<html><head></head><body>";
-  $emailText.="<b>Имя:</b> {$name}";
-  $emailText.="<b>Телефон:</b> {$phone}";
+  $emailText.="<b>Телефон:</b> {$phone} </br>";
   $emailText.="</body></html>";
   $emailText=iconv("utf-8","windows-1251",$emailText);
   $emailText=convert_cyr_string($emailText, "w", "k");
