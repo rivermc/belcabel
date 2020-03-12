@@ -1945,8 +1945,10 @@ footer .footer .planb img {
 .msOrder_forms__form .form__basket textarea.form_input {
   transition: all 0.4s linear;
   width: 100%;
+  font-family: 'Montserrat-Regular', sans-serif;
   border: 1px solid #cccccc;
   border-radius: 50px;
+  font-size: 9pt;
   display: table;
   max-width: 340px;
   margin: 5px 0 5px;
@@ -3325,7 +3327,7 @@ footer .footer .planb img {
 }
 .contacts_item.ur_info p strong {
   display: block;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 @media (max-width: 767.98px) {
   .contacts_item.dops_info {
